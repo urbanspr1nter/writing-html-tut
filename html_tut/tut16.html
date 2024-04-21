@@ -1,0 +1,294 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>16. Colorful and Textured Backgrounds</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><I>Writing HTML</I>  | 
+<a href="index.html">About</a>  |  <a href="faq.html">FAQ</a>  | 
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a>  | 
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="ref/index.html">References</a>  |  
+<a href="tags/index.html">Tags</a>  | 
+<a href="lessons.html">Lessons</a>  | 
+<a href="tut15.html">previous</a>  |  
+<a href="tut17.html">next</a>  |  
+</h5>
+<h1>16. Colorful and Textured Backgrounds</h1>
+<p>Do not settle for that drab old grey page! Put a bold 
+<font size=+4 color=#3300FF>c</font>
+<font size=+3 color=#BB0000><b>o</b></font>
+<font size=+4 color=#33CC11>L</font>
+<font size=+3 color=#FF0099><b>O</b></font>
+<font size=+5 color=#774400><tt><b>r</b></tt></font> 
+or textured pattern behind the text.</p>
+
+<h2>Objectives</h2>
+<p>After this lesson you will be able to:</p>
+<ul>
+<li>Create a solid color background for a web page.</li>
+<li>Calculate the hexadecimal code for a color value.</li>
+<li>Change the color of text and hypertext link items.</li>
+<li>Create a textured background from a graphic file.</li>
+</ul>
+<hr>
+
+<h2>Lesson</h2>
+<p><a name="dlret"></a><b>Note: If you do not have the working documents from the previous
+lessons, <a href="tut16get.html">download a copy</a> now.</b></p>
+<p>
+The background of your page should be just that -- in the background. As we add different colors or even patterns, keep in mind that it should not interfere with the readability of text. But don't take our words for gospel, draw your own conclusions from <a href="http://www.mcli.dist.maricopa.edu/show/what/warmup4.html">an example</a> of what happens when you do not think about the impact of a noisy background.</p>
+<p>
+For the pages of this tutorial, we have used a solid white color that makes for a clean and non-interfering (even if not dramatic) backdrop. No, it is not very exciting, but it is readable.</p>
+<p>
+With some modifications to the <b><tt><font color="#000066">&lt;body&gt;</font></tt></b> tag (introduced way back in <a href="tut1.html">lesson 1</a>), you can add a solid color background to your web page. But before we show you how to do the fancy color stuff, we must first talk about RGB color values and their "hexadecimal" representation.</p>
+
+<H2>"Hex-Dec" and Color Basics</H2>
+<p>In a web browser, you have at your disposal many system colors to color text and backgrounds. Each color is identified by its </p>
+<font color="#FF0000"><b>Red</b></font>-
+<font color="#005500"><b>Green</b></font>-
+<font color="#0000FF"><b>Blue</b></font> (RGB) values, three numbers that range from 0 to 255, each of which represents the intensity of the <font color="#FF0000"><b>Red</b></font>, <font color="#005500"><b>Green</b></font>, or <font color="#0000FF"><b>Blue</b></font> component of the desired color. Maximum values of all three (R=255, G=255, B=255) produce the color <b>white</b> and minimal values (R=0, G=0, B=0) produce <b>black</b>. All other colors are represented by different of RGB triplets.</p>
+<p>
+Here is the tricky part. Rather than identifying a 
+<font color=#6699FF><b>color</b></font> as something like <b><tt><font color="#000066">"102,153,255"</font></tt></b> each number is converted from base 10 (normal everyday numbers, digits from <b><tt><font color="#000066">0,1,2,3,4,5,6,7,8,9</font></tt></b>) representation to hexadecimal, base 16 (digits from <b><tt><font color="#000066">0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F</font></tt></b>). Why? Hexadecimal is more easily and more efficiently
+understood by computers. So for the color example above, we would write in hexadecimal as <font color=#6699FF><tt><b>"6699FF"</b></tt></font>. 
+In this example, <b><tt><font color="#000066">"66"</font></tt></b> is the <font color="#FF0000"><b>Red</b></font> value, <b><tt><font color="#000066">"99"</font></tt></b> the <font color="#005500"><b>Green</b></font>, and <b><tt><font color="#000066">"FF"</font></tt></b> the <font color="#0000FF"><b>Blue</b></font>.</p>
+<p>
+Here are some hexadecimal examples of different colors:</p>
+
+<table border=0 cellpadding=4 cellspacing=2 align=center>
+<tr>
+<th bgcolor=#99FF99>Color</th><th bgcolor=#66CC66>Hex Code</th>
+<td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<th bgcolor=#99FF99>Color</th><th bgcolor=#66CC66>Hex Code</th>       
+</tr>
+
+<tr>
+<td align=center bgcolor=#FFCCCC><font color=#FFCCCC><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>FFCCCC</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=#3300FF><font color=#3300FF><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>3300FF</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=#33FF66><font color=#33FF66><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>33FF66</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=#AA0000><font color=#AA0000><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>AA0000</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=#663300><font color=#663300><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>663300</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=#9900FF><font color=#9900FF><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>9900FF</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=#000077><font color=#000077><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>000077</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=#FFFF00><font color=#FFFF00><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>FFFF00</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=#EEEEEE><font color=#EEEEEE><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>EEEEEE</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=#888888><font color=#888888><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>888888</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=#333333><font color=#333333><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>444444</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=#000000><font color=#000000><b><tt>xx oo xx </tt></b></font></td><td align=center bgcolor=#66CC66><tt>000000</tt></td>
+</tr>
+
+<tr>
+<td colspan=5>
+Now, don't panic about having to do a bunch of numerical conversions! There are many tools that will let you click on a color and they will provide the hexadecimal representation. Many color tools are available from those folks at <a href="http://dir.yahoo.com/Arts/Design_Arts/Graphic_Design/Web_Page_Design_and_Layout/Color_Information/">Yahoo</a>.
+<p>
+But better yet, many browsers support standard shorthands for these 16 colors (those Windows VGA favorites):<p>
+</td>
+
+<tr>
+<th bgcolor=#99FF99>Color</th><th bgcolor=#66CC66>Name</th>
+<td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<th bgcolor=#99FF99>Color</th><th  bgcolor=#66CC66>Name</th>       
+</tr>
+
+<tr>
+<td align=center bgcolor=aqua><font color=aqua><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>aqua</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=black><font color=black><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>black</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=blue><font color=blue><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>blue</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=fuchsia><font color=fuchsia><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>fuchsia</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=gray><font color=gray><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>gray</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=green><font color=green><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>green</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=lime><font color=lime><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>lime</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=maroon><font color=maroon><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>maroon</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=navy><font color=#000066><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>navy</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=olive><font color=olive><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>olive</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=purple><font color=purple><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>purple</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=red><font color=red><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>red</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=silver><font color=silver><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>silver</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=teal><font color=teal><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>teal</tt></td>
+</tr>
+<tr>
+<td align=center bgcolor=white><font color=white><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>white</tt></td><td> &nbsp;   &nbsp;  &nbsp;   &nbsp;  </td>
+<td align=center bgcolor=yellow><font color=yellow><b><tt>xx oo xx </tt></b></font></td><td  bgcolor=#66CC66 align=center><tt>yellow</tt></td>
+</tr>
+
+</table>
+<p>
+
+<H2>Solid Color Backgrounds</H2>
+<BLOCKQUOTE><b>NOTE: You may want to first try a <a href="tut16_ex/test1.html">test</a> to see if your browser supports solid color backgrounds.</b></bLOCKQUOTE>
+
+<p>For our <i>Volcano Web,</i> the first thing we will do is add a color background to the <b><tt><font color="#000066">index.html</font></tt></b> file. 
+The HTML format for adding a solid color background involves modifying the <b><tt><font color="#000066">&lt;body&gt;</font></tt></b> tag to read:</p>
+<pre><font color=#000066>    &lt;body bgcolor=#XXXXXX&gt;</font></pre>
+where <b><tt><font color="#000066">XXXXXX</font></tt></b> is the hexadecimal representation (indicated by the # sign in front of it) of the desired color. 
+<p>
+If you recall, the <a href="pictures/lava.gif">image</a> we use for the opening has pictures of volcanoes on a black background -- so if we were to use the same black color for the background of the web page, the picture would merge well into our page:</p>
+<ol>
+<li>Open the <b><tt><font color="#000066">index.html</font></tt></b> file in your text editor.</li>
+<li>Find the <b><tt><font color="#000066">&lt;body&gt;</font></tt></b> tag and change it to:</li>
+<pre><font color=#000066>    &lt;body bgcolor=#000000&gt;</font></pre></li>
+<li><b>Save</b> and <b>Load</b> your HTML file in your web browser</li>
+</ol>
+If you did things correctly, your browser should have changed the background to  a solid black. <b>But you may have noticed that you cannot see your text!</b> Why? Well, the default color for text is also black, so you now have black text on a black background! Fortunately, we have some other options to add to the body tag to color the text and the hypertext items:</p>
+
+<pre><font color=#000066>    &lt;BODY BGCOLOR=#XXXXXX TEXT=#XXXXXX LINK=#XXXXXX VLINK=#XXXXXX&gt;</font></pre>
+<p>where the XXXXXX values will determine:</p>
+<UL>
+	<LI><b><tt><font color="#000066">BGCOLOR</font></tt></b> = the color of the background (default is <font color=#777777><b>grey</b></font>)</LI>
+	<LI><b><tt><font color="#000066">TEXT </font></tt></b>= the color of normal body text (default is <b>black</b>)</LI>
+	<LI><b><tt><font color="#000066">LINK</font></tt></b> = the color of an item that is a hypertext link (default is <font color=#0000EE><b>blue</b></font>)</LI>
+	<LI><b><tt><font color="#000066">VLINK</font></tt></b> = the color of a hypertext item recently visited (default is <font color=#660099><b>purple</b></font>)</LI>
+</UL>
+<p>
+You can now add some of these other color values by changing the <BODY> tag to read:
+<pre><font color=#000066>  &lt;BODY BGCOLOR=#000000 TEXT=#FFFFCC LINK=#33CCFF VLINK=#FF6666&gt;</font></pre></p>
+
+
+<table border=2 cellpadding=3 cellspacing=0 align=center width=60%>
+
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+</tr>
+<tr bgcolor=#000000>
+	<td><font color=#FFFFFF>
+This will provide a <b>black</b> background, <font color=#FFFFCC><b><u>pale yellow</u></b></font> text, <font color=#33CCFF><b><u>light aqua blue </u></b></font> hypertext, and <font color=#CC3333><b><u>red</u></b></font> hypertext to visited links.</font>
+
+	</td>
+</tr>
+</table>
+
+<BLOCKQUOTE><b>NOTE: the order of the items in the &lt;BODY&gt; tag does not matter</b></bLOCKQUOTE>
+You should now modify the &lt;BODY&gt; tags in all of your HTML files (fast and easy to do by copying and pasting the above example for the new <b><tt><font color="#000066">&lt;body&gt;</font></tt></b> tag).
+
+<H2>Textured Backgrounds</H2>
+<BLOCKQUOTE><b>NOTE: You may want to first try a <a href="tut16_ex/test2.html">test</a> to see if your browser supports textured  backgrounds.</b></bLOCKQUOTE>
+<p>Solid colors add some variety to web pages -- but you can go even farther by adding a textured background. You use a small image file (GIF or JPEG) and the browser will "tile" the web page with repeated copies of the image. Some of the things you should keep in mind are:</p>
+<ul>
+<li><b>file size:</b> Adding a background texture will require that an additional graphic file be downloaded. We suggest that the image files be less than 10k in size.</li>
+
+<li><b>readability:</b> Be selective! Many background texture files are more distracting than enhancing for readability. Try to use background textures that are very light (with dark text) or very dark (with light text). Select for high contrast with the text and its background.</li>
+
+<li><b>effect:</b> In the first web browsers that used backgrounds, the page would not appear until the background file was downloaded. This might mean for a slow connection, your reader might have to wait long for the background image to arrive before even seeing any content! However, later browsers download the background <b>last</b> so the page first is grey, then the text and graphics appear, and lastly the background arrives. REMEMBER! The load time for your pages will likely be slower (considerably for older modems) when your pages are read from a web server.</li>
+
+</ul>
+
+<p>In this part of the lesson, we will give you a chance to experiment with three different background images. The HTML format for adding a background image file is:</p>
+<pre><font color=#000066>  &lt;body background=&quot;bgfile.gif&quot;&gt;</font></pre>
+<p> where <b><tt><font color="#000066">bgfile.gif</font></tt></b> is the name of the image file (this can be a full URL or a relative file path -- see <a href="tut8a.html">lesson 8a</a>).</p>
+<p>
+Below we list the names of three background files. You can download each one (if you do not know how to download graphics from a web page, please refer to our <a href="#" onClick="window.open('help-dl-images.html', 'help', 'status,scrollbars,resizable,width=450,height=300,left=20,screenX=20, top=40,screenY=40')">help sheet</a>). You should put each graphic file in your <b><tt><font color="#000066">pictures</font></tt></b> folder/directory in your web workspace:</p>
+<dl>
+<dt><a href="pictures/bg.gif">Blue Tile <tt>[bg.gif]</tt></a>
+<dd>A square repeating pattern:<br>
+HTML: <tt><font color=#000066>&lt;body background=&quot;../pictures/bg.gif&quot;&gt;</font></tt><br>
+<a href="tut16_ex/indexb1.html">Example</a> file with the Blue Tile background
+<p>
+<dt><a href="pictures/vtext.gif">Volcano Text <tt>[vtext.gif]</tt></a>
+<dd>Light grey large text:<br>
+HTML: <tt><font color=#000066>&lt;body background=&quot;../pictures/vtext.gif&quot;&gt;</font></tt><br>
+<a href="tut16_ex/indexb2.html">Example</a> file with the Volcano Text background
+<p>
+<dt><a href="pictures/paper.gif">Legal Paper <tt>[paper.gif]</tt></a>
+<dd>Long strip of notebook paper<br>
+HTML: <tt><font color=#000066>&lt;body background=&quot;../pictures/paper.gif&quot;&gt;</font></tt><br>
+<a href="tut16_ex/indexb3.html">Example</a> file with the Legal Paper background 
+</dl>
+
+<p>You can also modify the text colors for your page as we did in the above example. For example, if we want <font color=#CC0000><b>RED</b></font> text for the Legal Paper background, we might write this HTML:</p>
+<pre><font color=#000066>  &lt;body background=&quot;../pictures/paper.gif&quot; text=#CC0000&gt;</font></pre>
+<p>which gives us <a href="tut16_ex/indexb4.html">red text on yellow paper</a>.</p>
+
+<BLOCKQUOTE><b>NOTE: Many web browsers have the ability to change the default text colors -- sometimes a user may have the preferences set for colors that will interfere with the ones you have selected. Therefore, we suggest when using any background tags (solid color or texture file) that you include the "normal" colors -- black for text, blue for hypertext links, and purple for recent links:
+<tt><font color=#000066>&lt;BODY TEXT=#000000 VLINK=#660099 LINK=#0000FF&gt;</font></tt></b></bLOCKQUOTE>
+<p>
+If you are looking for some examples of background texture files, see the list of links from 
+<a href="http://dir.yahoo.com/Arts/Design_Arts/Graphic_Design/Web_Page_Design_and_Layout/Graphics/Backgrounds//">Yahoo</a>
+</p>
+<h2>Check Your Work</h2>
+<p>Compare your web pages with this <a href="tut16_ex/index.html" target="sample">sample</a>
+of how it should appear. If your pages are different from the sample or the hypertext links do not work correctly, review the text you entered in the text editor. We are going to keep the sample files with the solid black colors that we added in the early part of this lesson.</p>
+
+<h2>Review</h2>
+<p>Review topics for this lesson:</p>
+<ol>
+<li>How do you add a solid color background to your web page?</li>
+<li>Why are the color codes written in cryptic code like <b><tt><font color="#000066">#FF66CC</font></tt></b> ?</li>
+<li>How do you color the text of a web page?</li>
+<li>What is the difference between
+<pre><font color=#000066>  &lt;body bgcolor=#FFFFFF&gt;</font></pre>
+and
+<pre><font color=#000066>  &lt;body background="tiles.gif"&gt;</font></pre>
+?</li>
+</ol>
+
+<h2>More Information</h2>
+<p>If you would like to know that the colors you choose for your web pages will look the same on other computers, consider the hexadecimal codes. With the different combinations of letters and numbers, there are literally millions of colors to choose from, e.g. <b><tt><font color="#000066">#FD6A2C</font></tt></b>, <b><tt><font color="#000066">#06E293</font></tt></b> or <b><tt><font color="#000066">#55A92B</font></tt></b>. Yet, not all of these colors will be the same on all computers. Moreover, if your visitor does not have a cutting edge computer capable of displaying "millions" of colors, the web browser will make a closest "guess" to match the colors, with perhaps undesirable results.</p>
+<p>
+Fortunately, you can do something about this... only use hex colors that are included in the NetScape 216 color palette. "What is that?" you ask. It is a set of 216 unique colors that are common to the system colors of both Macintosh and Windows operating systems. Therefore, these colors can be displayed on almost any computer.</p>
+<p>
+If you are choosing these magical colors, you just need to choose ones that are triplet combinations of the following color codes: <b><tt><font color="#000066">00 33 66 99 CC FF</font></tt></b>. For examples, these colors are all part of the cross-platform color set: <b><tt><font color="#000066">#FF6600</font></tt></b>, <b><tt><font color="#000066">#00FF66</font></tt></b> or <b><tt><font color="#000066">#669933</font></tt></b>.</p>
+<h2>Independent Practice</h2>
+<p>Add a solid color background or a texture file background to your web page(s). 
+Ask some other people if they find that the text is suitably readable with the background elements you have chosen.</p>
+<hr>
+<h2>Coming Next....</h2>
+<p>Two of the most hideous and <blink><b><font color="#FF0033">obnoxious</font></b></blink> HTML tags ever created...</p>
+<h5>  GO TO....   |  <a href="lessons.html">Lesson Index</a>  |  
+<a href="tut15.html">previous:  "Standard vs Enhanced HTML"</a>  | 
+<a href="tut17.html">next:  "Don't Blink, Don't Marquee"</a>  | 
+</h5>
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b>  Lesson 16: Colorful and Textured Backgrounds<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut16.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut16.html</font>
+<br><br>
+
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/InteractiveResource" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/></License></rdf:RDF> -->
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+<p>
+</body>
+</html>
+
+
+
+

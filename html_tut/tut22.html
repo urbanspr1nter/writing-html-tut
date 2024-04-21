@@ -1,0 +1,484 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>22. More for Images and Lists</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><I>Writing HTML</I> |
+<a href="index.html">About</a> | <a href="faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="ref/index.html">References</a> | 
+<a href="tags/index.html">Tags</a> |
+<a href="lessons.html">Lessons</a> |
+<a href="tut21.html">previous</a> | 
+<a href="tut23.html">next</a> | 
+</h5>
+<h1>22. More for Images and Lists</h1>
+<p><font face="verdana,helvetica" color=#333333>Vaporize <a href="likethis.html"><IMG SRC="pictures/disk.gif" ALIGN=middle WIDTH=48 HEIGHT=40 border=0></a>  those annoying boxes 
+<a href="likethis.html"><IMG SRC="pictures/disk.gif" ALIGN=middle WIDTH=48 HEIGHT=40></a> around graphic buttons,</font></p>
+<p align=right><font face="verdana,helvetica" color=#333333>
+ or add extra <IMG SRC="pictures/disk.gif" ALIGN=middle WIDTH=48 HEIGHT=40 border=8> borders plus:</font></p>
+
+<table border=0 cellspacing=2 cellpadding=15 align=center>
+<tr>
+<td valign=top>
+<font face="verdana,helvetica" color=#333333>
+<ul>
+<li type=square>fiddle
+<li type=circle>with
+<li type=disc>bullets
+</ul>
+</font>
+</td>
+<td valign=top><font face="verdana,helvetica" color=#333333>
+<ol type=A>
+<li>plus
+<li type=a>change the
+<li type=I><b>number</b>
+<li type=i><b>style</b>
+<li type=1 value=109>and <b>value</b>
+<li> of list items
+</ol></font>
+</td>
+</tr>
+</table>
+
+
+<h2>Objectives</h2>
+<p>After this lesson you will be able to:</p>
+<ul>
+<li>Create a hyperlinked-graphic without a bounding border</li>
+<li>Place a framing border around an inline image</li>
+<li>Write the HTML for an un-ordered lists that uses different bullet styles</li>
+<li>Write an ordered list that numbers items via capital and small alphabetical letters or large or small Roman numerals</li>
+<li>Modify an ordered list to start counting from any positive value</li>
+</ul>
+<hr>
+<a name="dlret"></a>
+<h2>Lesson</h2>
+<p><b>Note: If you do not have the working documents from the previous
+lessons, <a href="tut22get.html">download a copy</a> now. Also, you may want to first look at the <a href="tut22_ex/test.html">test</a> page to see of your browser supports the tags used in this lesson.</b></p>
+
+<H2>No Hypertext Borders on Hyperlinked Images</H2>
+
+<p>In <a href="tut8e.html">lesson 8e</a> we learned how to make a small graphic image act as a hyperlink to some other web page or a larger size copy of a picture. We noticed that the web browser places a bounding box around the graphic, to identify it as being "hyper" like normal hypertext items:</p>
+
+
+<table border=2 cellpadding=3 cellspacing=0 align=center> 
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+</tr>
+<tr>
+	<td bgcolor=#EEEEEE>
+<a href="likethis.html"><IMG SRC="pictures/disk.gif" ALIGN=middle WIDTH=48 HEIGHT=40></a> works just like any other <a href="likethis.html">hypertext link.</a>
+	</td>
+</tr>
+</table>
+
+<p>
+However, the box is sometimes distracting, especially if we have an image that has non-rectangular borders. The user can typically determine if a picture is "hyper" simply by noting a change in the cursor as they move a mouse over the image (it usually changes to a "hand" when it is over an active link).</p>
+<p>
+You can hide the box by adding an attribute to the <b><tt><font color="#000066">&lt;img...&gt;</font></tt></b> tag:</p>
+
+<pre><font color=#000066>  &lt;a href=&quot;bigpict.gif&quot;&gt;&lt;img src=&quot;lilpict.gif&quot; border=0&gt;</a></font></pre>
+
+<p>In this example, the inline image <b><tt><font color="#000066">lilpict.gif</font></tt></b> acts as a hyperlink to the bigger image <b><tt><font color="#000066">bigpict.gif</font></tt></b>. The <b><tt><font color="#000066">border=0</font></tt></b> attribute has no meaning if the <b><tt><font color="#000066">&lt;img..&gt;</font></tt></b> tag is not inside of an <b><tt><font color="#000066">&lt;a href=...&lt;/a&gt;</font></tt></b> tag.</p>
+<p>
+We have two places in our <I>Volcano Web</I> web site where we have hyperlinked inline images -- do you remember where?</p>
+<p>
+The first is in the <a href="tut21_ex/usa.html"><b><tt><font color="#000066">usa.html</font></tt></b></a> file, where a small image of a seismometer links to a larger sized image. The second is the arrow button on the <a href="tut21_ex/msh.html"><b><tt><font color="#000066">msh.html</font></tt></b></a> page that leads back to the lesson.</p>
+
+<ol>
+<li>Open both the <b><tt><font color="#000066">usa.html</font></tt></b> and the <b><tt><font color="#000066">msh.html</font></tt></b> in your text editor.</li>
+<li>Locate the place where we have a small image that links to something else.</li>
+<li>Modify each <b><tt><font color="#000066">&lt;img src=....&gt;</font></tt></b> tag that is a hyperlink so that it contains a <b><tt><font color="#000066">border=0</font></tt></b> attribute. For example, in the <b><tt><font color="#000066">msh.html</font></tt></b> file it should look like:
+
+<pre><font color=#000066>  &lt;a href=&quot;usa.html&quot;&gt; 
+  &lt;img src=&quot;../pictures/left.gif&quot; alt=&quot;** &quot; border=0&gt; 
+  Return to &lt;i&gt;Volcano Web&lt;/i&gt;&lt;/a&gt;</font></pre>
+  
+<li><b>Save</b> and <b>Load</b> the  <b><tt><font color="#000066">usa.html</font></tt></b> and <b><tt><font color="#000066">msh.html</font></tt></b> files in your web browser.</li>
+<li>If the small images have lost their  borders but still connect to their intended target when clicked, your job is done.</li>
+</ol>
+
+<H2>Putting Borders around Images</H2>
+<p>And now we show you how to do the opposite of taking away borders; adding BIG THICK borders! You can use the same <b><tt><font color="#000066">border=X</font></tt></b> option to <b>add</b> a border around an image. The number you use for X determines the thickness, in pixels, of the border placed around an image:</p>
+
+<p>
+<b>8 pixel border on an inline image</b><br>
+<IMG SRC="pictures/disk.gif" ALIGN=left WIDTH=48 HEIGHT=40 border=8 hspace=8 vspace=8> <pre><font color=#000066>&lt;IMG SRC=&quot;pictures/disk.gif&quot; WIDTH=48 HEIGHT=40 border=8&gt;</font></pre>
+Note that the border color is the color defined as the <b><tt><font color="#000066">TEXT</font></tt></b> color in the <b><tt><font color="#000066">BODY</font></tt></b> tag. (see <a href="tut16.html">lesson 16</a>)
+<br clear=left></p>
+
+<p>
+You can also use this on an image that is acting as a hyperlink:</p>
+
+<p>
+<b>8 pixel border on an inline image, hyperlinked to another page</b><br>
+<a href="likethis.html"><IMG SRC="pictures/disk.gif" ALIGN=left WIDTH=48 HEIGHT=40 border=8 hspace=8 vspace=8></a> <pre><font color=#000066>&lt;a href=&quot;page.html&quot;&gt;
+  &lt;IMG SRC=&quot;pictures/disk.gif&quot; WIDTH=48 HEIGHT=40 border=8&gt;&lt;/a&gt;</font></pre>
+Note that the border color is the color defined as the <b><tt><font color="#000066">LINK</font></tt></b> color in the <b><tt><font color="#000066">BODY</font></tt></b> tag. (see <a href="tut16.html">lesson 16</a>)
+<br clear=left></p>
+
+<H2>Bullets for Un-Ordered Lists</H2>
+<p>In <a href="tut6.html">lesson 6</a> we first created unordered <b><tt><font color="#000066">&lt;ul&gt;...&lt;/ul&gt;</font></tt></b> lists. The web browser automatically puts a bullet mark in front of each item -- and the bullets change if we create a list inside of a list. With some web browsers, you can specify in your HTML any of three bullet characters by adding an attribute to the <b><tt><font color="#000066">&lt;ul&gt;</font></tt></b> tag:</p>
+
+<pre><font color=#000066> &lt;ul type=xxxx&gt;</font></pre>
+
+<p>where <b><tt><font color="#000066">xxxx</font></tt></b> can be:</p>
+<ul>
+<li type=circle><b><tt><font color="#000066">type=circle</font></tt></b></li>
+<li type=square><b><tt><font color="#000066">type=square</font></tt></b></li>
+<li type=disc><b><tt><font color="#000066">type=disc</font></tt></b> [default bullet for top level list]</li>
+</ul>
+
+<p>And here is even more! You can change the type <i>within</i> a list by putting the type attribute in the <b><tt><font color="#000066">&lt;li&gt;</font></tt></b> tag:</p>
+
+
+<table cellpadding=4 border=0 cellspacing=2 align=center width=80%>
+<tr bgcolor=#66FF66>
+<th>HTML</th>
+<th>How it Looks</th>
+</tr>
+<tr>
+<td valign=top>
+<pre><font color=#000066>&lt;ul type=square&gt;
+&lt;li&gt;this is item 1
+&lt;li&gt;this is item 2
+&lt;li&gt;this is item 3
+&lt;li type=circle&gt;
+     Hey! how about these circle bullets?
+&lt;li type=circle&gt;this is another item
+&lt;li type=circle&gt;and one more
+&lt;li type=disc&gt;
+     Hey! how about this disc bullet?
+&lt;/ul&gt;</font></pre>
+</td>
+<td valign=top>
+	<table border=2 cellpadding=3 cellspacing=0 align=center> 
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+	</tr>
+	<tr>
+		<td bgcolor=#EEEEEE>
+	<ul type=square>
+	<li>this is item 1
+	<li>this is item 2
+	<li>this is item 3
+	<li type=circle>Hey! how about these circle bullets?
+	<li type=circle>this is another item
+	<li type=circle>and one more
+	<li type=disc>Hey! how about this disc bullet?
+	</ul>
+		</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+<p>In NetScape browsers, the type specified in the <b><tt><font color="#000066">&lt;li type=xxxx&gt;</font></tt></b> tag is used by all succeeding <b><tt><font color="#000066">&lt;li&gt;</font></tt></b> tags that do not have a <b><tt><font color="#000066">type</font></tt></b> attribute until another bullet type is established. However, in Internet Explorer web browsers, list items without a  <b><tt><font color="#000066">type</font></tt></b> attribute will revert to the type set in the initial <b><tt><font color="#000066">&lt;ul&gt;</font></tt></b> tag. Therefore, our recommendation is that if you wish to change the bullet styles within a list is that you set it for each <b><tt><font color="#000066">&lt;li&gt;</font></tt></b> tag that requires a different bullet.</p>
+
+<p>Differences between the web browsers sure make life complicated! And this is another reason you should consider checking your site in more environments that just your own computer.</p>
+<p>
+We will now change the bullet list style used in our <a href="tut21_ex/proj.html">Research Projects</a> page (file <b><tt><font color="#000066">proj.html</font></tt></b>).</p>
+<ol>
+<li>Open your <b><tt><font color="#000066">proj.html</font></tt></b> file in your text editor.</li>
+<li>The first list in this file is an Ordered List <b><tt><font color="#000066">&lt;ol&gt;...&lt;/ol&gt;</font></tt></b> but we will now change it to an unordered list with <b><tt><font color="#000066">circle</font></tt></b> bullets. Edit your HTML for this first list so that it looks like:<pre><font color=#000066>
+  &lt;ul type=circle&gt;
+  &lt;li&gt;Type of volcano
+  &lt;li&gt;Geographic location
+  &lt;li&gt;Name, distance, and population of nearest major city
+  &lt;li&gt;Date of most recent eruption and date of most destructive
+      eruption
+  &lt;li&gt;Other events associated with the last eruption (earthquakes,
+      floods, mudslides, etc)
+  &lt;/ul&gt;</font></pre></li>
+<li><b>Save</b> and <b>Load</b> your file in your web browser. Compare your page with this <a href="tut22_ex/list1.html">sample</a> of how your list should like at this point.</li>
+</ol>
+
+<H2>Styles and Values for Ordered Lists</H2>
+<p>When we first created an ordered list <b><tt><font color="#000066">&lt;ol&gt;...&lt;/ol&gt;</font></tt></b> in <a href="tut6.html">lesson 6</a>, we saw how the web browser automatically numbers the items, one for each <b><tt><font color="#000066">&lt;li&gt;</font></tt></b> tag. What if we do not always want to use arabic numerals (1,2,3...)? Well, here are the answers, a <b><tt><font color="#000066">type=x</font></tt></b> attribute for the <b><tt><font color="#000066">&lt;ol&gt;</font></tt></b> and <b><tt><font color="#000066">&lt;li&gt;</font></tt></b> tags inside:</p>
+
+<table border=0 cellpadding=2 cellspacing=2>
+<tr bgcolor=#CCFFCC>
+<th>Arabic</th>
+<th>Capital Letters</th>
+<th>Small Letters</th>
+<th>Large Roman</th>
+<th>Small Roman</th>
+</tr>
+<tr bgcolor=#66FF66>
+<th><tt>&lt;ol type=1&gt;</tt></th>
+<th><tt>&lt;ol type=A&gt;</tt></th>
+<th><tt>&lt;ol type=a&gt;</tt></th>
+<th><tt>&lt;ol type=I&gt;</tt></th>
+<th><tt>&lt;ol type=i&gt;</tt></th>
+</tr>
+<tr>
+<td valign=top>
+<ol>
+<li>I am first!
+<li>I am second!
+<li>I am third!
+<li>I am fourth!
+<li>I am fifth!
+</ol>
+</td>
+<td valign=top>
+<ol type=A>
+<li>I am first!
+<li>I am second!
+<li>I am third!
+<li>I am fourth!
+<li>I am fifth!
+</ol>
+</td>
+<td valign=top>
+<ol type=a>
+<li>I am first!
+<li>I am second!
+<li>I am third!
+<li>I am fourth!
+<li>I am fifth!
+</ol>
+</td>
+<td valign=top>
+<ol type=I>
+<li>I am first!
+<li>I am second!
+<li>I am third!
+<li>I am fourth!
+<li>I am fifth!
+</ol>
+</td>
+<td valign=top>
+<ol type=i>
+<li>I am first!
+<li>I am second!
+<li>I am third!
+<li>I am fourth!
+<li>I am fifth!
+</ol>
+</td>
+</tr>
+</table>
+
+<p>
+We presented an example of using ordered lists within ordered lists to create outlines -- with the <b><tt><font color="#000066">type</font></tt></b> attribute we can have pages with standard format:</p>
+
+<ol type=I>
+<li>Cheese in Pre-Historic time
+	<ol type=A>
+	<li>Africa
+		<ol type=1>
+		<li>Afar Triangle
+		<li>East Coast
+		</ol>
+	<li>Asia
+	<li>Europe
+		<ol type=1>
+		<li>France
+			<ol type=a>
+			<li>Cave paintings depicting cheese harvesting
+			<li>Burial rituals inferred from dried cheese remnants
+			</ol>
+		<li>British Isles
+		</ol>
+	<li>North America
+	</ol>
+<li>Cheese in the Middle Ages
+	<ol type=A>
+	<li>King Arthur's Longhorn
+	<li>Sharp Cheddar for the Crusades
+	</ol>
+<li>Cheese in the Space Age
+</ol>
+
+<p>Another thing we can do with ordered lists is to have them start counting from some other value than 1. To do this, we add the <b><tt><font color="#000066">start=y</font></tt></b> attribute to the <b><tt><font color="#000066">&lt;ol&gt;</font></tt></b> tag. Note that even if we have some other <b><tt><font color="#000066">type=x</font></tt></b> attribute, we still specify the starting value y as "2,3,10,100, etc". Look at some of these examples:</p>
+
+<table border=0 cellpadding=2 cellspacing=2>
+<tr bgcolor=#CCFFCC>
+<th>Arabic</th>
+<th>Capital Letters</th>
+<th>Small Letters</th>
+<th>Large Roman</th>
+<th>Small Roman</th>
+</tr>
+<tr bgcolor=#66FF66>
+<th><tt>&lt;ol type=1<br> start=11&gt;</tt></th>
+<th><tt>&lt;ol type=A<br> start=11&gt;</tt></th>
+<th><tt>&lt;ol type=a<br> start=11&gt;</tt></th>
+<th><tt>&lt;ol type=I<br> start=11&gt;</tt></th>
+<th><tt>&lt;ol type=i<br> start=11&gt;</tt></th>
+</tr>
+<tr>
+<td valign=top>
+<ol start=11>
+<li>I am eleventh!
+<li>I am twelfth!
+<li>I am thirteenth!
+<li>I am fourteenth!
+<li>I am fifteenth!
+</ol>
+</td>
+<td valign=top>
+<ol type=A start=11>
+<li>I am eleventh!
+<li>I am twelfth!
+<li>I am thirteenth!
+<li>I am fourteenth!
+<li>I am fifteenth!
+</ol>
+</td>
+<td valign=top>
+<ol type=a start=11>
+<li>I am eleventh!
+<li>I am twelfth!
+<li>I am thirteenth!
+<li>I am fourteenth!
+<li>I am fifteenth!
+</ol>
+</td>
+<td valign=top>
+<ol type=I start=11>
+<li>I am eleventh!
+<li>I am twelfth!
+<li>I am thirteenth!
+<li>I am fourteenth!
+<li>I am fifteenth!
+</ol>
+</td>
+<td valign=top>
+<ol type=i start=11>
+<li>I am eleventh!
+<li>I am twelfth!
+<li>I am thirteenth!
+<li>I am fourteenth!
+<li>I am fifteenth!
+</ol>
+</td>
+</tr>
+</table>
+
+<p>
+And finally you can change the numbering sequence <b>within</b> a list by adding a <b><tt><font color="#000066">value=z</font></tt></b> attribute to the <b><tt><font color="#000066">&lt;li&gt;</font></tt></b> tag. Look at this example:</p>
+
+
+<table border=0 cellpadding=2 cellspacing=2  align=center>
+<tr bgcolor=#66FF66>
+<th>HTML</th>
+<th>How it Looks</th>
+</tr>
+<tr>
+<td valign=top>
+<pre><font color=#000066>&lt;i&gt;Important Cheese Laws&lt;/i&gt;
+&lt;ol type=A start=5&gt;
+&lt;li&gt;Cheese Curing Act of 1905
+&lt;li&gt;Milk Content Ruling of 1923
+&lt;p&gt;
+&lt;li value=12&gt;Cheese Import Tariff of 1942
+&lt;li&gt;Cheese Freshness Codes of 1942
+&lt;p&gt;
+&lt;li value=1&gt;Cheese Values Act of 1789</font></pre>
+</ol>
+</td>
+<td valign=top>
+
+	<table border=2 cellpadding=3 cellspacing=0 align=center> 
+	<tr>
+		<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+	</tr>
+	<tr>
+		<td bgcolor=#EEEEEE>
+		<i>Important Cheese Laws</i>
+	<ol type=A start=5>
+	<li>Cheese Curing Act of 1905
+	<li>Milk Content Ruling of 1923
+	<p>
+	<li value=12>Cheese Import Tarif of 1942
+	<li>Cheese Freshness Codes of 1942
+	<p>
+	<li value=1>Cheese Values Act of 1789
+	</ol>
+		</td>
+	</tr>
+	</table>
+</td>
+</tr>
+</table>
+<p>
+It may not be exactly clear (especially from this silly example!) when you might use these tags -- just keep them in your mind as potential tools in your web writing.
+We will demonstrate again on our <a href="tut21_ex/proj.html">Research Projects</a> page (file <b><tt><font color="#000066">proj.html</font></tt></b>). If you recall, in our <a href="tut21.html">lessons on tables</a> we split the unordered list of reference sites into a two column list. Let's change this to an ordered list and use the <b><tt><font color="#000066">type</font></tt></b> attribute to list them using small letters. Because we have actually <b>two</b> individual lists,  see if you can determine why we would use the <b><tt><font color="#000066">start</font></tt></b> attribute as well.</p>
+
+<ol>
+<li>Open your <b><tt><font color="#000066">proj.html</font></tt></b> file in your text editor.</li>
+<li>Look at the table we created under the <b>References</b> section. Change both <b><tt><font color="#000066">&lt;ul&gt;</font></tt></b> and <b><tt><font color="#000066">&lt;/ul&gt;</font></tt></b> tags to <b><tt><font color="#000066">&lt;ol type=a&gt;</font></tt></b> and <b><tt><font color="#000066">&lt;/ol&gt;</font></tt></b>.</li>
+<li>Now, we have 6 items in the first list so we want the second list to start numbering at 7. Modify the <b><tt><font color="#000066">&lt;ol&gt;</font></tt></b> tag now to read:
+
+<pre><font color=#000066>  &lt;ol type=a start=7&gt;</font></pre></li>
+
+<li><b>Save</b> and <b>Reload</b> your file in your web browser. Compare your page with this <a href="tut22_ex/list2.html">sample</a> of how your list should like at this point. The first column should list items from "a" to "f" and the second column from "g" to "l".</li>
+</ol>
+
+<h2>Check Your Work</h2>
+<p>
+Compare your web pages with this <a href="tut22_ex/index.html" target="sample">sample</a>
+of how it should appear. If your pages are different from the sample or the hypertext links do not work correctly, review the text you entered in the text editor.</p>
+
+<h2>Review</h2>
+<p>Review topics for this lesson:</p>
+<ol>
+<li>How do you get rid of the hypertext box that surrounds a graphic that is hyperlinked to another item?</li>
+<li>How can you put a 20 pixel border around an inline image? What color will it be?</li>
+<li>How can you change the bullet markers for an unordered list?</li>
+<li>Do you have to use the same bullet markers for an entire list? If not, how
+do you change the markers mid-list?</li>
+<li>How can you create a list that marks items by Roman Numerals?</li>
+</ol>
+
+<h2>Independent Practice</h2>
+<p>
+Experiment with different bullet markers and numbering styles in the lists of your own web pages. Can you think of some unique ways to use these added features? Can you make a complex outline with "standard" formatting? All of those <pre><font color=#000066>&lt;ol&gt;...&lt;/ol&gt;</font></pre> tags get to be pretty complicated!</p>
+
+<hr>
+<h2>Coming Next....</h2>
+<p>Map your way from an image... <b>Click n' go</b> hyperlinked sections within a graphic...</p>
+
+<h5>  GO TO....  | <a href="lessons.html">Lesson Index</a> | 
+<a href="tut21.html">previous:  "Tables"</a> |
+<a href="tut23.html">next:  "Image Maps"</a> |
+</h5>
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+
+<b>Writing HTML:</b>  Lesson 22: More for Images and Lists
+<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut22.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut22.html</font>
+<br><br>
+
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/InteractiveResource" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/></License></rdf:RDF> -->
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+
+
+

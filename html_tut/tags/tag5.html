@@ -1,0 +1,226 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>Tags- Multimedia</title>
+<script language="javascript">
+<!-- hide scripts from crusty old browsers
+
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+			
+		} else {  
+// send page to designated URL		 	
+   			document.location.href = newURL;
+   		}
+   	}
+   	return true;
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 4;
+}
+
+
+// done hiding -->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" onLoad="resetMenu()">
+<h5><I>Writing HTML</I> |
+<a href="../index.html">About</a> | <a href="../faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="../ref.html">References</a> | 
+<a href="index.html">Tags</a> |
+<a href="../lessons.html">Lessons</a> |
+</h5>
+<h2>Summary of HTML Tags Used in the Tutorial</h2>
+<noscript>
+<tt>
+<a href="tag1.html">Web Page Structure</a> |
+<a href="tag2.html">Text Formatting</a> |
+<a href="tag3.html">Text Breaks & Divisions</a> |
+<a href="tag4.html">Lists</a> | 
+Multimedia |
+<a href="tag6.html">Hyper-Links</a></tt> | 
+</tt>
+</noscript>
+
+<center>
+<form name="gomenu">
+<select onChange="goPage(this.options[this.selectedIndex].value.toString())" name="selector">
+<option value = "tag1.html">Web Page Structure
+<option value = "tag2.html">Text Formatting
+<option value = "tag3.html">Text Breaks & Divisions
+<option value = "tag4.html">Lists
+<option value = "" selected>Multimedia
+<option value = "tag6.html">Hyper-Links
+<option value = "tag7.html">JavaScript
+<option value = "tag8.html">Forms
+<option value = "-"> --------------
+<option value = "../ref.html">Other HTML References
+</select>
+</form>
+</center>
+
+
+<table border=0 cellspacing=3 cellpadding=8>
+
+<tr bgcolor="#CCCC99">
+
+<td valign=top>
+<pre>&lt;img src="file.gif"&gt;
+
+&lt;img src="file.jpg"&gt;
+
+&lt;img src="file.gif" 
+alt="###"
+align=top|middle|bottom|
+left|right
+height=x width=y
+hspace=H vspace=V
+border=B&gt;</pre>
+</td>
+<td valign=top><b>Inline Image</b><br> 
+Display a GIF/JPEG/PNG image or animated GIF within web page. <b><tt><font color="#000066">src</font></tt></b> (source) is the
+name, file path, or URL for the image file; <b><tt><font color="#000066">alt</font></tt></b> (alternative) is
+a string of text displayed for non-graphic browsers or users with image loading turned off; <b><tt><font color="#000066">align</font></tt></b> controls relation of image and surrounding text
+(<b><tt><font color="#000066">top/middle/bottom</font></tt></b> will align ONE line of succeeding text; <b><tt><font color="#000066">left/right</font></tt></b> will place image to side of page and wrap text around it); <b><tt><font color="#000066">height</font></tt></b> and <b><tt><font color="#000066">width</font></tt></b> are the dimensions of the image measured in pixels; <b><tt><font color="#000066">hspace</font></tt></b> and <b><tt><font color="#000066">vspace</font></tt></b> indicate how much blank space (in pixels) to "pad" around the image; <b><tt><font color="#000066">BORDER</font></tt></b> attribute defines in pixels, how thick a border to be placed around the image.</td>
+<td valign=top><a href="../tut7a.html">Lesson 7a</a><br>
+<a href="../tut20.html">Lesson 20</a><br>
+<a href="../tut22.html">Lesson 22</a><br>
+<a href="../tut29a.html">Lesson 29a</a>
+</td>
+</tr>
+
+<tr bgcolor="#CCFFCC">
+
+<td valign=top>
+<pre>&lt;a href="xxxx.jpg"&gt;
+link text&lt;/a&gt; 
+
+&lt;a href="xxxx.jpg"
+target="_blank"&gt;
+link text&lt;/a&gt; 
+</pre>
+</td>
+<td valign=top><b>Hyperlink to an Image</b><br> 
+Hypertext link that jumps to a displayed image, the file can be a GIF, JPEG and the value of <b><tt><font color="#000066">href</font></tt></b> can be a local image file or a full URL. Using the <b><tt><font color="#000066">TARGET</font></tt></b> attribute can load the image in a new browser window.</td>
+<td valign=top><a href="../tut8a.html">Lesson 8a</a><br>
+<a href="../tut25.html">Lesson 25</a><br>
+
+</td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;embed src="video.mov"&gt;
+
+&lt;embed src="video.mpg"&gt;
+&lt;embed src="audio.wav"&gt;
+
+height=x width=y
+
+autoplay=true|false
+controller=true|false
+loop=true|false
+
+URL=http://...
+target="window_name"
+pluginspage=http://...
+</pre>
+</td>
+<td valign=top><b>Embedded Video/audio</b><br> 
+Displays a digital video or audio clip within a web page, may require extra software "plug-in" to play back. Most common video formats are <a href="http://www.apple.com/quicktime/">QuickTime</a> or <a href="http://www.mpeg.org/">MPEG</a>. Audio files can be a video without an image track, or MIDI, AIFF, or WAVE. 
+<p>
+Parameters include <b><tt><font color="#000066">src</font></tt></b> (source), the
+name, file path, or URL for the media file; <b><tt><font color="#000066">height</font></tt></b> and <b><tt><font color="#000066">width</font></tt></b> of the video clip (or the size of the controller for an audio file); <b><tt><font color="#000066">autoplay</font></tt></b> determines if it plays automatically when the page loads; <b><tt><font color="#000066">controller</font></tt></b> determines if the control bar is visible on the page; <b><tt><font color="#000066">loop</font></tt></b> can make the media play endlessly; <b><tt><font color="#000066">URL</font></tt></b> can direct the browser if the user clicks on the video, loading content to <b><tt><font color="#000066">target</font></tt></b> if specified; <b><tt><font color="#000066">pluginspage</font></tt></b> links a visitor if the plug-in is not installed.
+</td>
+<td valign=top>
+<a href="../tut29b.html">Lesson 29b</a><br>
+<a href="../tut29c.html">Lesson 29c</a>
+</td>
+</tr>
+
+<tr bgcolor="#CCFFCC">
+
+<td valign=top>
+<pre>&lt;object 
+classid=".... 
+codebase="...." 
+WIDTH="XX" HEIGHT="XX" 
+NAME="sw" ID="swmovie"&gt;
+
+&lt;PARAM NAME="SRC" 
+  VALUE="sw_file.dcr"&gt;
+&lt;PARAM NAME="BGCOLOR" 
+  VALUE="#FFFFFF"&gt;
+
+&lt;embed src="sw_file.dcr" 
+width=XX height=YY 
+bgcolor=#FFFFFF 
+pluginspage="....&gt;
+&lt;/embed&gt;
+&lt;/object&gt;</pre>
+</pre>
+</td>
+<td valign=top><b>Shockwave</b><br>
+Loads a Shockwave multimedia application into the page. The nested <b><tt><font color="#000066">object</font></tt></b> and <b><tt><font color="#000066">embed</font></tt></b> tags are needed for it to work with Internet Explorer browsers and NetScape browsers. 
+<p>
+Parameters for the <b><tt><font color="#000066">object</font></tt></b> tag include <b><tt><font color="#000066">classid</font></tt></b> and <b><tt><font color="#000066">codebase</font></tt></b> which identify the code and source for the Active X controller; <b><tt><font color="#000066">width</font></tt></b> and <b><tt><font color="#000066">height</font></tt></b> are the screen dimensions of the shockwave file; <b><tt><font color="#000066">NAME</font></tt></b> and <b><tt><font color="#000066">ID</font></tt></b> are used mainly in integration with browser scripting, such as VBScript; <b><tt><font color="#000066">PARAM "SRC"</font></tt></b> is the file name for the shockwave file; <b><tt><font color="#000066">PARAM "BGCOLOR"</font></tt></b> is a solid color to display in area while the file loads.
+<p> 
+Parameters for the <b><tt><font color="#000066">embed</font></tt></b> tag include <b><tt><font color="#000066">src</font></tt></b> the file name for the shockwave file; <b><tt><font color="#000066">width</font></tt></b> and <b><tt><font color="#000066">height</font></tt></b> are the screen dimensions of the shockwave file; <b><tt><font color="#000066">bgcolor</font></tt></b> is a solid color to display in area while the file loads; <b><tt><font color="#000066">pluginspage</font></tt></b> is web location to get latest version of Shockwave plug-in.
+</td>
+<td valign=top><a href="../tut29d.html">Lesson 29d</a>
+</td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;APPLET 
+CODE=MyApplet.class 
+WIDTH=XX HEIGHT=YY&gt;
+  &lt;param name="param1" 
+    value=my1Value&gt;
+  &lt;param name="param2" 
+     value=my2Value&gt;
+&lt;/aPPLET&gt;</pre>
+</td>
+<td valign=top><b>Java Applet</b><br>
+Loads a compiled Java applet into the web page. Parameters include <b><tt><font color="#000066">code</font></tt></b> (source), the
+name of the Java .class file; <b><tt><font color="#000066">height</font></tt></b> and <b><tt><font color="#000066">width</font></tt></b> screen dimensions of the applet ; <b><tt><font color="#000066">param</font></tt></b>  and <b><tt><font color="#000066">value</font></tt></b> are the names of variables and data that need to be passed to the applet.
+</td>
+<td valign=top>
+<a href="../tut29e.html">Lesson 29e</a>
+</td>
+</tr>
+
+</table>
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+
+<b>Writing HTML</b> Summary of HTML Tags: Multimedia<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tags/tag5.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tags/tag5.html</font></font>
+</p>
+<!-- end writing HTML footers  -->
+</body>
+</html>
+
+

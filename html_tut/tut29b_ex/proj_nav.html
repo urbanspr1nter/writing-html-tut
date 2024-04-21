@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+			
+		} else {  
+// send framed page to designated URL		 	
+   			parent.document.location.href = newURL;
+   		}
+   	}
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 6;
+}
+	
+//-->
+</SCRIPT>
+</head>
+<BODY BGCOLOR=#000000 TEXT=#FFFFCC LINK=#33CCFF VLINK=#FF6666 onLoad="resetMenu()">
+<form name="gomenu">
+
+<h5>Volcano Web /  
+<select onChange="goPage(this.options[this.selectedIndex].value)" name="selector">
+<option value = "index1.html">Volcano Web</option>
+<option value = "-"> --------------</option>
+<option value = "intro.html">Introduction</option>
+<option value = "term.html">Volcano Terminology</option>
+<option value = "usa.html">Volcanic Places in the USA</option>
+<option value = "mars.html">Volcanic Places on Mars</option>
+<option value = "" selected>Research Project</option>
+</select>
+<noscript>
+<base target="_top">
+<a href="index1.html">Index</a> / 
+<a href="mars.html">back</a> / 
+next
+</noscript>
+</form></h5>
+</body>
+</html>

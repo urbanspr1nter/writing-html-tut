@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>DHTML References</title>
+<script language="javascript">
+<!-- hide scripts from crusty old browsers
+
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+		} else {  
+
+// send page to designated URL		 	
+   			document.location.href = newURL;
+   		}
+   	}
+   	return true;
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 1;
+}
+
+
+// done hiding -->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" onLoad="resetMenu()">
+<h5><I>Writing HTML</I> |
+<a href="../index.html">About</a> | <a href="../faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="../ref.html">References</a> |
+<a href="../tags/index.html">Tags</a> |
+<a href="../lessons.html">Lessons</a> |
+</h5>
+<p align=center>
+<center>
+<font size=+3><tt>r e f e r e n c e s</tt></font>
+</center>
+</p>
+<center>
+<form name="gomenu">
+<font size=2 face"helvetica,arial" size=2 color=#666666>select a category</font><br>
+<select onChange="goPage(this.options[this.selectedIndex].value.toString())" name="selector">
+<option value = "css.html">Cascading Style Sheets
+<option value = "" selected>Dynamic HTML
+<option value = "cgi.html">Forms and CGI
+<option value = "frames.html">Frames
+<option value = "graphics.html">Graphics
+<option value = "html.html">HTML Reference
+<option value = "java.html">Java
+<option value = "javascript.html">JavaScript
+<option value = "tables.html">Tables
+<option value = "design.html">Web Design and Style
+<option value = "xml.html">XML
+<option value = "-"> -----------
+<option value = "all.html"> All References
+</select>
+</form>
+</center>
+
+<noscript>
+<b>The menu above requires JavaScript! Apparently you do not have JavaScript active, so try the <a href="all.html">alternative static reference page</a>.
+</noscript>
+<p>
+<table cellpadding=10 cellspacing=2 border=0>
+<tr>
+<td valign=top align=right bgcolor=#CCFFCC width=110><font size=+2><b>Dynamic HTML</b></font><br>
+<font color="#333333" face="verdana,helvetica" size=2>What can you do by combining JavaScript and a 4.0 version browser? Animated and interactive web pages.</font>
+</td>
+<td valign=top>
+<dl>
+<dt><b><a href="http://www.geocities.com/ResearchTriangle/Facility/4490/">Beginner's Guide to DHTML</a></b>
+<dd>David Gardner makes it understandable
+<tt>http://www.geocities.com/ResearchTriangle/Facility/4490/</tt>
+<dt><b><a href="http://www.hotwired.com/webmonkey/98/10/index0a.html">Taylor's Dynamic HTML Tutorial</a></b>
+<dd>another well-done guide from webmonkey<br>
+<tt>http://www.hotwired.com/webmonkey/98/10/index0a.html</tt>
+<dt><b><a href="http://www.webreference.com/dhtml/">Dynamic HTML Lab</a></b>
+<dd>sample and inspiring demos from webreference.com<br>
+<tt>http://www.webreference.com/dhtml/</tt>
+<dt><b><a href="http://www.ruleweb.com/dhtml/">Jeff Rule's Dynamic HTML and SMIL Site</a></b>
+<dd>author of the book <i>Dynamic HTML: The HTML Developer's Guide</i> shares resources and demos to learn more about DHTML<br>
+<tt>http://www.ruleweb.com/dhtml/</tt>
+<dt><b><a href="http://www.projectcool.com/developer/dynamic/">ProjectCool Developer's Zone</a></b>
+<dd>presents an indepth tutorial of DHTML<br>
+<tt>http://www.projectcool.com/developer/dynamic/</tt>
+<dt><b><a href="http://www.dhtmlzone.com/">Dynamic HTML Zone</a></b>
+<dd>from Macromedia, creators of Dreamweaver software for creating DHTML sites.<br>
+<tt>http://www.dhtmlzone.com/</tt>
+<dt><b><a href="http://www.sitenavigation.net/">Site Navigation.net</a></b>
+<dd>offers a collection of free Javascript and Java menus and DHTML navigation code you can use for your web site.<br>
+<tt>http://www.sitenavigation.net/</tt>
+<dt><b><a href="http://www.webcoder.com/">WebCoder.com</a></b>
+<dd>a mega resource for both JavaScript and DHTML<br>
+<tt>http://www.webcoder.com/</tt>
+</dl>
+</td>
+</tr>
+
+</table>
+
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b> References<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http%3A//www.mcli.dist.maricopa.edu/tut/dhtml.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+

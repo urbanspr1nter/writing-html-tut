@@ -1,0 +1,225 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>Tags- Web Page Structure</title>
+<script language="javascript">
+<!-- hide scripts from crusty old browsers
+
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+			
+		} else {  
+// send page to designated URL		 	
+   			document.location.href = newURL;
+   		}
+   	}
+   	return true;
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 0;
+}
+
+
+// done hiding -->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" onLoad="resetMenu()">
+<h5><I>Writing HTML</I> |
+<a href="../index.html">About</a> | <a href="../faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="../ref.html">References</a> | 
+<a href="index.html">Tags</a> |
+<a href="../lessons.html">Lessons</a> |
+</h5>
+<h2>Summary of HTML Tags Used in the Tutorial</h2>
+<noscript>
+<tt>
+Web Page Structure |
+<a href="tag2.html">Text Formatting</a> |
+<a href="tag3.html">Text Breaks & Divisions</a> |
+<a href="tag4.html">Lists</a> | 
+<a href="tag5.html">Multimedia</a> |
+<a href="tag6.html">Hyper-Links</a></tt> | 
+</tt><br>
+</noscript>
+<p>
+<center>
+<form name="gomenu">
+<select onChange="goPage(this.options[this.selectedIndex].value.toString())" name="selector">
+<option value = "" selected>Web Page Structure
+<option value = "tag2.html">Text Formatting
+<option value = "tag3.html">Text Breaks & Divisions
+<option value = "tag4.html">Lists
+<option value = "tag5.html">Multimedia
+<option value = "tag6.html">Hyper-Links
+<option value = "tag7.html">JavaScript
+<option value = "tag8.html">Forms
+<option value = "-"> --------------
+<option value = "../ref.html">Other HTML References
+</select>
+</form>
+</center>
+
+<table border=0 cellspacing=3 cellpadding=8>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;html&gt;
+&lt;head&gt;...&lt;/head&gt;
+&lt;body&gt;...&lt;/body&gt;
+&lt;/html&gt;</pre>
+</td>
+<td valign=top><b>HTML Structure</b><br>Basic structure for any HTML document</td>
+<td valign=top><a href="../tut1.html">Lesson 1</a></td>
+</tr>
+
+<tr bgcolor="#CCFFCC">
+<td valign=top>
+<pre>&lt;title&gt;...&lt;/title&gt;</pre>
+</td>
+<td valign=top><b>Document Title</b><br>
+Goes inside the <b><tt><font color="#000066">&lt;head&gt;...&lt;/head&gt;</font></tt></b></td>
+<td valign=top><a href="../tut1.html">Lesson 1</a></td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;!-- blah --&gt;</pre>
+</td>
+<td valign=top><b>Comment</b><br>
+Notes and information in the body but
+not displayed in the browser</tt></td>
+<td valign=top><a href="../tut1.html">Lesson 1</a></td>
+</tr>
+
+<tr bgcolor=#CCFFCC>
+<td valign=top>
+<pre>&lt;body bgcolor=#XXXXXX&gt;</pre>
+</td>
+<td valign=top><b>Solid Color Background</b><br>
+Color the background of the web page.
+</td>
+<td valign=top><a href="../tut16.html">Lesson 16</a></td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;body background=
+"filename.gif"&gt;</pre>
+</td>
+<td valign=top><b>Texture File Background</b><br> 
+Use a graphic image to repeatedly "tile" and fill
+the web browser page.
+</td>
+<td valign=top><a href="../tut16.html">Lesson 16</a></td>
+</tr>
+
+<tr bgcolor="#CCFFCC">
+<td valign=top>
+<pre>&lt;body 
+TEXT=#XXXXXX
+LINK=#YYYYYY 
+VLINK=#00HH00&gt;</pre>
+</td>
+<td valign=top><b>Colored Text and Hyperlinks</b><br> 
+Color all of the text or hypertext items to any color
+the reader desires.
+</td>
+<td valign=top><a href="../tut16.html">Lesson 16</a></td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;META 
+HttP-EQUIV="REFRESH" 
+CONTENT="X; 
+URL=zzzzzzzz"&gt;</pre>
+</td>
+<td valign=top><b>META Refresh</b><br> 
+Causes browser to pause for <b><tt><font color="#000066">X</font></tt></b> seconds before automatically jumping to the url or page specified by <b><tt><font color="#000066">zzzzzzzz</font></tt></b>
+</td>
+<td valign=top><a href="../tut24.html">Lesson 24</a></td>
+</tr>
+
+<tr bgcolor="#CCFFCC">
+<td valign=top>
+<pre>&lt;META 
+name="DESCRIPTION" 
+CONTENT="blah blah"&gt;
+
+&lt;META 
+name="KEYWORDS" 
+CONTENT="zing, zang, 
+zung"&gt;
+</pre>
+</td>
+<td valign=top><b>META Descriptors</b><br> 
+<b><tt><font color="#000066">DESCRIPTION</font></tt></b> provides text for use in display for your site when displayed by some web search engines. <b><tt><font color="#000066">KEYWORDS</font></tt></b> indicates the primary keywords that might be used by people trying to find your pages via a web search.
+</td>
+<td valign=top><a href="../tut24.html">Lesson 24</a></td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;FRAMESET
+ROWS|COLS=X,Y,...Z 
+frameborder="1|0"
+border=N&gt;
+
+&lt;FRAME
+SRC="xxx.html
+scrolling=
+yes|no|auto&gt;
+NORESIZE
+
+&lt;NOFRAMES&gt;
+  :
+  :
+&lt;/NOFRAMES=N&gt;
+
+</pre>
+</td>
+<td valign=top><b>Frames</b><br> 
+<b><tt><font color="#000066">FRAMESET</font></tt></b> tags define a collection of rows or columns in a frame designed web page. Values for dimensions can be percentages (e.g. <b><tt><font color="#000066">COLS="20%,30%,50%"</font></tt></b> or absolute pixels. A value of <b><tt><font color="#000066">"*"</font></tt></b> fills the remaining space. <b><tt><font color="#000066">Frameborder</font></tt></b> turns the dividers on (1) or off (0); if the dividers are "on" then they have a width specified by the value of <b><tt><font color="#000066">BORDER</font></tt></b>.
+<p>
+<b><tt><font color="#000066">FRAME</font></tt></b> tags define content for a frame; <b><tt><font color="#000066">SRC</font></tt></b> indicates URL for content. Value of <b><tt><font color="#000066">scrolling</font></tt></b> determines whether scroll bars are displayed. If </tt>NORESIZE</tt> is included, the frames cannot be adjusted in size by the viewer.
+<p>
+Content in the <b><tt><font color="#000066">NOFRAMES</font></tt></b> tags is displayed if the browser does not support frames.
+</td>
+<td valign=top><a href="../tut24.html">Lesson 24</a></td>
+</tr>
+
+
+</table>
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+
+<b>Writing HTML</b> Summary of HTML Tags: Web Page Structure<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http%3A//www.mcli.dist.maricopa.edu/tut/">feedback center</A></B>
+
+<br><br>
+UURL: http://www.mcli.dist.maricopa.edu/tut/tags/tag1.html</font>
+</p>
+<!-- end writing HTML footers  -->
+</body>
+</html>
+
+
+

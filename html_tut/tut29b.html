@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>29b. Movie Time</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><I>Writing HTML</I> |
+<a href="index.html">About</a> | 
+<a href="faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="ref/index.html">References</a> | 
+<a href="tags/index.html">Tags</a> |
+<a href="lessons.html">Lessons</a> |
+<a href="tut29a.html">previous</a> | 
+<a href="tut29c.html">next</a> | 
+</h5>
+
+<h1>29b. Movie Time</h1>
+
+<table border=0 align=center>
+<tr>
+<td align=right><img src="pictures/projector2.gif" alt="Movie Projector" width="176" height="123"></td>
+<td>
+<font size=+2><i>Adding Movies<br>to Your Web Page</i></font>
+<bbr><br>
+<font size=3 color=#666666>&nbsp; &nbsp; &nbsp; &nbsp; please pass the popcorn!</font>
+</td>
+</tr>
+</table>
+
+<h2>Objectives</h2>
+<p>After this lesson you will be able to:</p>
+<ul>
+<li> Identify the types of content appropriate for using video</li>
+<li> Describe the issues related to using video over the web</li>
+<li> Write the HTML to insert a digital video file into your web page</li>
+</ul>
+<hr>
+
+<h2>Lesson</h2>
+<p>
+Blame it on television, Hollywood, MTV, etc, but we are a society tuned to video. And with the web, we can also include information in a video format.</p>
+<p>
+But just because you <i>can</i> does not mean that you <i>should.</i> Why not? Very simply, video is a lot, a lot, of data to send across the internet, and likely your experiences to date are those "tiny" squares of herky jerky video segments where the voices seem horribly out of synch with the action. If you think about it, to make a "moving picture" means sending a lot of still images (like the frames of old movie film) to create the sense of movement, not to mention adding a layer of audio information.</p>
+<p>
+So until high speed internet access is the norm (and it might be some day), we use technology to compensate via some clever techniques that "compress" video to make the file sizes smaller, and other techniques that allow the video information to "stream" to us (meaning we see content as it is sent, not having to wait for a large file to download.</p>
+
+
+
+<table border=0 cellpadding=4 cellspacing=1 width=75% align=center>
+<tr>
+<td valign=top bgcolor=#66FF66 align=right><font size=+1>media type:</font>
+<td colspan=2 bgcolor=#CCFFCC>digital video
+</td>
+</tr>
+<tr>
+<td valign=top bgcolor=#66FF66 align=right><font size=+1>what it does well:</font>
+<td colspan=2 bgcolor=#CCFFCC>time-based information, sequences, historic events, places impossible or unsafe to experience
+</td>
+</tr>
+
+
+<tr bgcolor=#66FF66>
+<th>issue to consider</th>
+<th>rating</th>
+<th>comments</th>
+</tr>
+
+<tr bgcolor=#EEEEEE>
+<td align=center valign=top>"hurdle" or barrier for creating media</td>
+<td valign=top><font face="verdana,helvetica" size=2>low <img src="pictures/clear.gif" alt="" width="48" height="2"> high</font><br>
+<img src="pictures/cc99ff.gif" alt="----" width="60" height="8"></td>
+<td valign=top>Special equipment needed to take video source material and convert it to digital computer files. There are low cost solutions, but they still call for special hardware, a lot of disk space, and video editing software.</td>
+</tr>
+
+<tr bgcolor=#FFFFFF>
+<td align=center valign=top>"breadth" of audience that can view media</td>
+<td valign=top><font face="verdana,helvetica" size=2>narrow <img src="pictures/clear.gif" alt="" width="30" height="2"> wide</font><br>
+<img src="pictures/cc99ff.gif" alt="----" width="60" height="8"></td>
+<td valign=top>To view video, you typically need a web browser "plug-in", but most newer browsers come with one already installed.</td>
+</tr>
+
+<tr bgcolor=#EEEEEE>
+<td align=center valign=top>bandwidth consumption</td>
+<td valign=top><font face="verdana,helvetica" size=2>low <img src="pictures/clear.gif" alt="" width="48" height="2"> high</font><br>
+<img src="pictures/cc99ff.gif" alt="----" width="90" height="8"></td>
+<td valign=top>Can be quite large. Video represents a tremendous amount of information and is reduced quality over modem speeds. Options exist to "stream" content but it may require special servers.</td>
+</tr>
+</table>
+<p>
+We suggest you try to think about the use of video without comparing it to television or the movies. The worst uses are what we call "Talking heads", i.e. a person sitting still talking to you. The video adds very little, and as we see later, you can send the equivalent information using less bandwidth intensive media by combining still images and audio.</p>
+<p>
+When might it be crucial to use video in your web page? Most likely it will be to show something that it changes over time, like we saw in animation, but perhaps needs to have a more "real-world" look over as compared to graphics. Often it might be a historic event (the assassination of John F Kennedy). Video may be important to show us something that we cannot see easily because of location (landing on the Moon, the Mars rovers) or physical limitations/ safety considerations (deep ocean exploration, inside a nuclear reactor). Or video may be critical to demonstrating a procedure (surgery, welding a steel beam). </p>
+<p>
+You can use a "digitized" movie simply to play back like video, non-stop, from start to finish. But you can also use a sliding "control" to quickly jump to any point in the movie sequence. This can allow you to explore "snapshots" of a time-based process.</p> 
+<p>
+Let's shift and talk about video technology. Traditionally, movies/films were recorded via a photographic process (think about movie reels) and played back through projector. To use video on a computer, all of the information must be <b>digitized</b> or turned into a data file, essentially a series of still images that when played back at an appropriate speed, looks to the human eye like actual motion. Generally, this is achieved when we see about 30 images every second (or "frames per second").</p>
+<p>
+To create a video clip you must have some special computer hardware to take a video input (from a source such as a VCR, a television output, a video camera) to do the magic of making a video file. While several years ago this was considered high end equipment, there are many low end (i.e. cheap) tools to do this. You would also likely need some special software to edit video clips once they are on your computer, which again range from very cheap (simple) to expensive (complex, professional).</p>
+<p>
+When we start talking about digital video, we enter a region of acronym soup for the various kinds of video files. Probably the most important and commonly used formats are <a href="http://www.apple.com/quicktime/">Apple's QuickTime</a> and <a href="http://www.mpeg.org/">Moving Picture Experts Group (MPEG)</a>. There are of course, many others, and we cannot really review all of them here. For more information visit the  <a href="http://desktopvideo.about.com/">About.com guide to Desktop Video</a>. For this tutorial, we will present the code to embed a QuickTime movie into your web page. While other video formats may be used (e.g. MPEG, AVI) QuickTime is currently the most (and architecturially robust) format that can be used by the widest range of web browsers.</p>
+<p>
+For more information on video, see the <a href="http://wdvl.com/Multimedia/Video/">Web Developer's Virtual Library</a>.</p>
+<p>
+When the web first emerged, video clips were rarely used because, to watch them, you had to download the entire video file (which can be several megabytes for even short segments) before you could see anything. Later as web technology has evolved, solutions have emerged that allow video to be "streamed" to you, meaning when you ask for video (clicking on a web page link), you will start to see the video information as soon as enough has been sent to show you a portion, and the rest continues to "stream" in as you watch the beginning parts. The leading technology here is <a href="http://www.real.com/">RealNetworks</a>; the limitation for you, the humble web page developer, is that RealVideo requires specialized servers to transmit streaming data. You can find great examples of RealVideo from the <a href="http://cnn.com/">CNN news site</a>.</p>
+<p>
+It also takes some special web browser "add-ons" from the viewers end to see digital video. RealVideo and QuickTime require browser "plug-ins" to work. Fortunately, most web browsers now come with these technologies already included, but sometimes they may be updated. You should not, however count on everyone being ready to view video content!</p>
+<p>
+Because video is a high bandwidth media format, as a design principle you should place video at a "click away", meaning that you present video as an option for your web site visitor to click to view, with some advance notice. We will demonstrate this in our lesson.</p>
+<p>
+To include a digital video clip in a web page, we use the <b><tt><font color="#000066">&lt;EMBED&gt;</font></tt></b> tag, which in some ways is similar to the <b><tt><font color="#000066">&lt;IMG)</font></tt></b> tag in that we specify a file source and the dimensions of the media we want inserted into the page:</p>
+
+<pre><font color=#000066> &lt;EMBED src="video.mov" width="320" height="240"&gt;&lt;/embed&gt;</font></pre>
+
+<p>There are other options to add to this tag to control the playback:</p>
+
+
+<table border=0 cellspacing=2 cellpadding=3 width=80% align=center>
+<tr>
+<th bgcolor=#66FF66>embed option</th>
+<th bgcolor=#66FF66>values</th>
+<th bgcolor=#66FF66>notes</th>
+</tr>
+
+<tr>
+<td valign=top align=center><b><tt><font color="#000066">src</font></tt></b></td>
+<td valign=top>path to movie file name</td>
+<td valign=top>can be relative or full URL</td>
+</tr>
+
+<tr bgcolor=#EEEEEE>
+<td valign=top align=center><b><tt><font color="#000066">width height</font></tt></b></td>
+<td valign=top>dimensions of movie file</td>
+<td valign=top>&nbsp;</td>
+</tr>
+
+<tr>
+<td valign=top align=center><b><tt><font color="#000066">autoplay</font></tt></b></td>
+<td valign=top>true/false</td>
+<td valign=top>whether the movie should automatically start playing or wait for user to click the play button</td>
+</tr>
+
+<tr bgcolor=#EEEEEE>
+<td valign=top align=center><b><tt><font color="#000066">controller</font></tt></b></td>
+<td valign=top>true/false</td>
+<td valign=top>whether the movie displays a control bar the bottom</td>
+</tr>
+
+<tr>
+<td valign=top align=center><b><tt><font color="#000066">href</font></tt></b></td>
+<td valign=top>URL</td>
+<td valign=top>location to send visitor if they click on the movie</td>
+</tr>
+
+<tr bgcolor=#EEEEEE>
+<td valign=top align=center><b><tt><font color="#000066">target</font></tt></b></td>
+<td valign=top>window name</td>
+<td valign=top>allows <b><tt><font color="#000066">href</font></tt></b> to be displayed in another browser window</td>
+</tr>
+
+<tr>
+<td valign=top align=center><b><tt><font color="#000066">loop</font></tt></b></td>
+<td valign=top>true/false</td>
+<td valign=top>whether the repeat the movie in a loop</td>
+</tr>
+
+<tr bgcolor=#EEEEEE>
+<td valign=top align=center><b><tt><font color="#000066">pluginspage</font></tt></b></td>
+<td valign=top>URL</td>
+<td valign=top>where to send a visitor that does not have the QuickTime plug-in</td>
+</tr>
+</table>
+
+<p>
+For more details on the EMBED parameters, see <a href="http://www.apple.com/quicktime/authoring/embed.html">Apple's QuickTime Authoring site</a>.</p>
+
+<a name="dlret"></a>
+
+<h3>Adding Volcano Videos</h3>
+
+<p><b>Note: If you do not have the working documents from the previous
+lessons, <a href="tut29bget.html">download</a> them now.</b></p>
+<p>
+In this lesson, we will add a QuickTime movie file to our <i>Volcano Web</i> site. The QuickTime movie we use here has been saved in the format that allows it to start playing before the file is fully downloaded.</p>
+<p>
+This movie was generated by a computer model of the AD79 eruption of the volcano Vesuvius, which destroyed the city of Pompeii. We obtained permission for use of this video from its creator-- see our <a href="tut29b_ex/request.html">request message</a>.</p>
+
+<a name="theater"></a>
+<ol>
+<li>Since we will be adding a new media type, first create a new folder/directory in your main workspace and name it <b><tt><font color="#000066">movies</font></tt></b>. This should be at the same level of your computer files as the  <b><tt><font color="#000066">pictures</font></tt></b> folder/directory where we have been storing our image files.</li>
+
+<li> Go to <a href="tut29b_ex/movie.html">Lesson 29b Movie Theater</a> to get a copy of the QuickTime movie needed for this lesson (If you cannot see the movie on this page, then you may have to download the software necessary to view it). This movie should be saved as a file called <b><tt><font color="#000066">vesuvius.mov</font></tt></b> inside your "movies" folder.</li>
+<li> Create a new HTML file in your text editor and save it as a file called <b><tt><font color="#000066">vesuvius.html</font></tt></b> in the same folder/directory as your main volcano web site HTML files.</li>
+<li> Enter the following HTML code into the new <b><tt><font color="#000066">vesuvius.html</font></tt></b> file:
+
+<pre><font color=#000066>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Vesuvius Simulation&lt;/title&gt;
+&lt;/head&gt;
+&lt;BODY BGCOLOR=#000000 TEXT=#FFFFCC LINK=#33CCFF VLINK=#FF6666&gt;
+&lt;center&gt;
+&lt;embed src="../movies/vesuvius.mov" width="301" height="191" 
+       autoplay="false" controller="true" 
+       href="http://tribeca.ios.com/~dobran/" target="_blank" 
+       loop="false" 
+       pluginspage="http://www.apple.com/quicktime/download/"&gt; 
+&lt;/embed&gt;
+&lt;p&gt;
+&lt;h2&gt;Computer Simulation of the A.D. 79 Pompeii Eruption&lt;/h2&gt;
+This animation sequence simulates a &lt;b&gt;Plinian&lt;/b&gt; type 
+eruption where the collapse of a tall eruption column 
+generates a high speed pyroclastic flow which travels 
+laterally along the ground. View the entire animation 
+sequence several times, and then use the slider to 
+identify the point where the pyroclastic flow is initiated.
+&lt;p&gt;
+&lt;i&gt;used with permission from Flavio Dobran&lt;/i&gt;&lt;br&gt;
+&lt;a href="http://tribeca.ios.com/~dobran/"&gt;http://tribeca.ios.com/~dobran/&lt;/a&gt;
+&lt;p&gt;
+&lt;font face="verdana,arial,helvetica" size=2&gt;
+Note: If the movie does not display in this page, try linking 
+directly to the &lt;a href="../movies/vesuvius.mov"&gt;movie file&lt;/a&gt;&lt;/font&gt;
+
+&lt;form&gt;
+&lt;input type=button value="Return to Volcano Terminology" onClick="self.close()"&gt;
+&lt;/form&gt;
+&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</font></pre>
+
+<blockquote><b>NOTE: We have assigned a URL (<b><tt><font color="#000066">href="http://tribeca.ios.com/~dobran/", target="_blank"</font></tt></b>) so that any click inside the movie area will launch a connection to the Vesuvius web site that is the original source in a new browser window.  In this movie we will not have the movie play automatically when the page loads (<b><tt><font color="#000066">autoplay=false</font></tt></b>) because we want the person watching the page to drag the movie slider to any point in the movie file. This allows them to interactively explore the movie as a sequence of events in time. If they desire, they can click the play button and watch it play as a movie.
+<br><br>
+We have also added a hyperlink near the bottom of the page for cases where the viewer may not have an appropriate plug-in to play the video embedded in the web page. A direct link may work for them by opening an external software program to play the video.
+</b></blockquote></li>
+
+<li><b>Save</b> and <b>Load</b> this html file in your web browser. If the movie does not appear, first check that the file <b><tt><font color="#000066">vesuvius.mov</font></tt></b> is stored inside a folder called <b><tt><font color="#000066">movies</font></tt></b>.</li>
+</ol>
+
+<p>By this point you should have a stand alone web page that includes a QuickTime movie file. We will now modify one of our existing web pages, "Volcano Terminology", so that it links to this new page, using some JavaScript to open it in a new window. We will link it using the same method we used in the <a href="tut29a.html">previous lesson</a> to launch a window with an animated GIF.</p>
+<ol>
+<li>Open the file <b><tt><font color="#000066">term.html</font></tt></b> in your text editor.</li>
+<li>After the end of the <b><tt><font color="#000066">&lt;map&gt;..&lt;/map&gt;</font></tt></b> code, and after the line that reads 
+
+<b><tt><font color="#000066">&lt;base target="_self"&gt;</font></tt></b> add the following HTML:
+
+<pre><font color=#000066>
+&lt;h3&gt;Volcanoes in Action&lt;/h3&gt;
+&lt;a href="vesuvius.html" onClick="window.open('vesuvius.html', 'plinian', 
+'width=400,height=400,status,menubar'); return false" 
+onMouseOver="window.status='view computer animation of Plinian eruption'; 
+return true"&gt;&lt;img src="../pictures/projector.gif" alt="showtime!" 
+width="46" height="32" align="left" border=0&gt;&lt;/a&gt;  
+Watch a &lt;a href="vesuvius.html" onClick="window.open('vesuvius.html', 
+'plinian', 'width=400,height=400,status,menubar'); return false" 
+onMouseOver="window.status='view computer animation of Plinian eruption'; 
+return true"&gt;computer animation of a Plinian style eruption&lt;/a&gt;, 
+modeled after the AD 79 eruption of Vesuvius which destroyed 
+the city of Pompeii. Use the animation to understand the 
+formation of Plinian eruption columns and how their collapse 
+generates pyroclastic flows [295k QuickTime movie].
+</font></pre>
+
+<blockquote><b>NOTE: In this code we have linked both an icon of a movie projector and the adjacent text, some JavaScript code that will open our new <b><tt><font color="#000066">vesuvius.html</font></tt></b> page in a new browser window. If you have trouble with this method, be sure to review <a href="tut27c.html">lesson 27c</a> where we introduced how to use JavaScript to open new windows.
+<br><br>
+Also note how we provide information to our visitor that the link they may click in will load a file that is 295k in file size, so if they are using a slow Internet connection, they may choose whether they want to receive the content.
+</b></blockquote></li>
+
+<li><b>Save</b> and <b>Reload</b> the <b><tt><font color="#000066">term.html</font></tt></b> file in your web browser. Test the link to see if it opens the new page that includes the lava flow movie.</li>
+</ol>
+
+<h2>Check Your Work</h2>
+<p>
+Compare your web pages with this <a href="tut29b_ex/term.html" target="sample">sample</a>
+of how it should appear. If your pages are different from the sample or the hypertext links do not work correctly, review the text you entered in the text editor. Compare your work to the HTML of the samples (look for something like <b>Source</b> from your browser's <b>View</b> menu). </p>
+
+
+<h2>Review</h2>
+<p>Review topics for this lesson:</p>
+<ol>
+<li> What are examples of types of information that might be worth presenting as video over the Internet?</li>
+<li> What are some of the limitations of placing video in your web page?</li>
+<li> What is the HTML code for including a digital video clip in your web page?</li>
+<li> What would you write in an <b><tt><font color="#000066">&lt;embed&gt;</font></tt></b> tag to have a video clip automatically start playing when the page loads?</li>
+</ol>
+
+<h2>More Information</h2>
+<p>Unfortunately the variety in types of digital movie formats makes it difficult to choose the right one. If the QuickTime file format is not a viable solution for you, you can try the same approach using two other video formats, AVI and MPEG. For these formats, certain web browsers will not be able to display them embedded in the web page but can still be viewed via the direct link.
+</p>
+<p>
+We have not included these other formats in the downloaded version of the tutorial, but you can find them from the <a href="tut29b_ex/movie.html">Lesson 29b Movie Theater</a>:</p>
+<ul>
+<li><b><tt><font color="#000066">vesuvius.mpg</font></tt></b> (MPEG format)</li>
+<li><b><tt><font color="#000066">vesuvius.avi</font></tt></b> (AVI format)</li>
+</ul>
+<p>
+Once you download these video clips, you can try and substitute all HTML references to <b><tt><font color="#000066">vesuvius.mov</font></tt></b> with the new file names.
+</p>
+
+
+
+<h2>Independent Practice</h2>
+<p>
+Try adding some video clips to your own web pages. <b>Before you use any video clips in a published web page, be sure to obtain permission from the person that created it.</b></p>
+<p>
+
+Visit <a href="http://volcano.und.edu/vwdocs/movies/movie.html">Volcano World</a> to view other examples of movie clips of volcanoes. Or if you are tired of lava, try:</p>
+
+<ul>
+<li><b>Lycos Multimedia Search</b><br>
+<tt><a href="http://multimedia.lycos.com/">http://multimedia.lycos.com/</a></tt></li>
+
+<li><b>Excite Video Search</b><br>
+<tt><a href="http://www.excite.com/search/video/">http://www.excite.com/search/video/</a></tt></li>
+
+<li><b>WebSeek Video Search</b><br>
+<tt><a href="http://disney.ctr.columbia.edu/webseek/">http://disney.ctr.columbia.edu/webseek/</a></tt></li>
+
+<li><b>Yahoo Multimedia:Video</b><br>
+<tt><a href="http://dir.yahoo.com/Computers_and_Internet/Multimedia/Video/">http://dir.yahoo.com/Computers_and_Internet/Multimedia/Video/</a></tt></li>
+<li><b>NASA's Observatorium</b><br>
+<tt><a href="http://observe.ivv.nasa.gov/">http://observe.ivv.nasa.gov/</a></tt></li>
+</ul>
+ 
+                         
+<hr>
+<h2>Coming Next....</h2>
+
+<p>"Watson, Come Quick! I need sound in my web page"</p>
+
+<h5>  GO TO....  | <a href="lessons.html">Lesson Index</a> | 
+<a href="tut29a.html">previous:  "Animate My GIF!"</a> |
+<a href="tut29c.html">next:  "Multimedia: Sound of [web] Music"</a> |</h5>
+
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b>  Lesson 29b: Movie Time<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut29b.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut29b.html</font>
+<br><br>
+
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/InteractiveResource" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/></License></rdf:RDF> -->
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Testing HTML for Lesson 27a</title> 
+</head> 
+<body bgcolor=#FFFFFF>
+
+<h5><I>Writing HTML</I> |
+<a href="../tut27a.html">Return to Lesson 27a</a> |</h5>
+
+<h1>Testing HTML for Lesson 27a</h1>
+
+The HTML for this page contains a JavaScript error. It should generate an error message when the page loads. 
+<ul>
+<li>Some browsers will display the message immediately as an alert message</li>
+<li>For Internet Explorer 6, you must enable the display of script errors:
+	<ol type="a">
+	<li>Select <strong>Internet Options</strong> from the <strong>Tools</strong> menu.</li>
+	<li>Click the <strong>Advanced</strong> tab.</li>
+	<li>Check the box under "Browsing" that reads <strong>Display a notication about every script error</strong></li>
+	<li>Click <strong>Apply</strong> and then <strong>Okay</strong></li>
+	</ol>
+	</li>
+<li>In NetScape or Mozilla you may have to bring up a JavaScript Console window by going to the URL <a href="javascript:">javascript:</a>
+<li>Other browsers (Safari) may not generate an error message at all, but the page may not work correctly. </li>
+</ul>
+
+<p>
+If you view the source of this web page, you will see the following JavaScript code that has a mistake in it (you will learn more about this command in the next lesson, but trust us- it has a mistake!):
+
+<pre>
+&lt;script type="text/javascript" language="Javascript"&gt;
+&lt;!--
+document.write('&lt;p&gt;This shows what happens in a document.write statement
+if it has an extraneous RETURN that breaks the commans in half');
+//--&gt;
+&lt;/script&gt;
+</pre>
+
+
+
+<script type="text/javascript" language="Javascript">
+<!--
+document.write('<p>This shows what happens in a document.write statement
+if it has an extraneous RETURN that breaks the commans in half');
+//-->
+</script>
+
+
+<p>Note that if you receive an  error message it indicates the type of error, the line number of the HTML where the error occurs, and the location in the line where it found the error. Note that one error in a JavaScript code section can trigger many others that follow it, so fixing the first error may take care of others error messages displayed.
+<p>
+Also, note that the error prevents the button from following its instructions.
+
+<p><br><hr noshade size=1><font face="verdana,helvetica" size=-1><center>
+<b>Writing HTML:</b> Testing HTML for Lesson 27a<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http%3A//www.mcli.dist.maricopa.edu/tut/">feedback center</A></B>
+</font>
+
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut27a_ex/test.html</tt>
+<p>
+</body>
+</html>
+
+
+

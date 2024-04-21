@@ -1,0 +1,124 @@
+<html>
+<head>
+<title>Frames References</title>
+<script language="javascript">
+<!-- hide scripts from crusty old browsers
+
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+		} else {  
+
+// send page to designated URL		 	
+   			document.location.href = newURL;
+   		}
+   	}
+   	return true;
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 3;
+}
+
+
+// done hiding -->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" onLoad="resetMenu()">
+<h5><I>Writing HTML</I> |
+<a href="../index.html">About</a> | <a href="../faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="../ref.html">References</a> |
+<a href="../tags/index.html">Tags</a> |
+<a href="../lessons.html">Lessons</a> |
+</h5>
+<p align=center>
+<center>
+<font size=+3><tt>r e f e r e n c e s</tt></font>
+</center>
+</p>
+<center>
+<form name="gomenu">
+<font size=2 face"helvetica,arial" size=2 color=#666666>select a category</font><br>
+<select onChange="goPage(this.options[this.selectedIndex].value.toString())" name="selector">
+<option value = "css.html">Cascading Style Sheets
+<option value = "dhtml.html">Dynamic HTML
+<option value = "cgi.html">Forms and CGI
+<option value = "" selected>Frames
+<option value = "graphics.html">Graphics
+<option value = "html.html">HTML Reference
+<option value = "java.html">Java
+<option value = "javascript.html">JavaScript
+<option value = "tables.html">Tables
+<option value = "design.html">Web Design and Style
+<option value = "xml.html">XML
+<option value = "-"> -----------
+<option value = "all.html"> All References
+</select>
+</form>
+</center>
+
+<noscript>
+<b>The menu above requires JavaScript! Apparently you do not have JavaScript active, so try the <a href="all.html">alternative static reference page</a>.
+</noscript>
+</center>
+<p>
+<table cellpadding=10 cellspacing=2 border=0>
+<tr>
+<td valign=top align=right bgcolor=#CCFFCC width=110><font size=+2><b>Frames</b></font><br>
+<font color="#333333" face="verdana,helvetica" size=2>Controversial and often un-necessarily used, frames can provide a better navigational structure to your site.</font>
+</td>
+<td valign=top>
+<dl>
+
+
+<dt><b><a href="http://www.ahfb2000.com/htmlframes.php">Advanced HTML for Beginners: Frames</a></b>
+<dd>a fairly detailed review of HTML for frames<br>
+<tt>http://www.ahfb2000.com/htmlframes.php</tt>
+<dt><b><a href="http://www.newbie.net/sharky/frames/">Sharkey's Netscape Frames Tutorial</a></b>
+<dd> by Charlton Douglas Rose <br>
+<tt>http://www.newbie.net/sharky/frames/</tt>
+<dt><b><a href="http://webreference.com/dev/frames/">Framing the Web</a></b>
+<dd> by Dab Brown<br>
+<tt>http://webreference.com/dev/frames/</tt>
+<dt><b><a href="http://home.netscape.com/assist/net_sites/frames.html">Net Assist for Frames</a></b>
+<dd>from Netscape's site<br>
+<tt>http://home.netscape.com/assist/net_sites/frames.html</tt>
+<dt><b><a href="http://www.pagetutor.com/pagetutor/frames/index.html">Frames Tutor</a></b>
+<dd>a step-by-step guide from Joe Barta<br>
+<tt>http://www.pagetutor.com/pagetutor/frames/index.html</tt>
+</dl>
+</td>
+</tr>
+
+</table>
+
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b> References<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http%3A//www.mcli.dist.maricopa.edu/tut/ref/frames.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+

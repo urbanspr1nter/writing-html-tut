@@ -1,0 +1,170 @@
+<html>
+<head>
+<title>HTML References</title>
+<script language="javascript">
+<!-- hide scripts from crusty old browsers
+
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+		} else {  
+
+// send page to designated URL		 	
+   			document.location.href = newURL;
+   		}
+   	}
+   	return true;
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 5;
+}
+
+
+// done hiding -->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" onLoad="resetMenu()">
+<h5><I>Writing HTML</I> |
+<a href="../index.html">About</a> | <a href="../faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="../ref.html">References</a> |
+<a href="../tags/index.html">Tags</a> |
+<a href="../lessons.html">Lessons</a> |
+</h5>
+
+<p align=center>
+<center>
+<font size=+3><tt>r e f e r e n c e s</tt></font>
+</center>
+</p>
+
+<center>
+<center>
+<form name="gomenu">
+<font size=2 face"helvetica,arial" size=2 color=#666666>select a category</font><br>
+<select onChange="goPage(this.options[this.selectedIndex].value.toString())" name="selector">
+<option value = "css.html">Cascading Style Sheets
+<option value = "dhtml.html">Dynamic HTML
+<option value = "cgi.html">Forms and CGI
+<option value = "frames.html">Frames
+<option value = "graphics.html">Graphics
+<option value = "" selected>HTML Reference
+<option value = "java.html">Java
+<option value = "javascript.html">JavaScript
+<option value = "tables.html">Tables
+<option value = "design.html">Web Design and Style
+<option value = "xml.html">XML
+<option value = "-"> -----------
+<option value = "all.html"> All References
+</select>
+</form>
+</center>
+
+<noscript>
+<b>The menu above requires JavaScript! Apparently you do not have JavaScript active, so try the <a href="all.html">alternative static reference page</a>.
+</noscript>
+<p>
+<table cellpadding=10 cellspacing=2 border=0>
+
+<tr>
+<td valign=top align=right bgcolor=#66FF66 width=110><font size=+2><b>HTML</b></font><br>
+<font color="#333333" face="verdana,helvetica" size=2>Here are some of our favorite indispensible guides that are either high quality references or greate tutorials (other than our own!</font>
+</td>
+<td valign=top>
+<dl>
+
+<dt><b><a href="http://www.ahfb2000.com/">Advanced HTML for Beginners</a></b>
+<dd>covers the basics of HTML plus detailed support for Tables, Forms, and Frames, plus a forum where you can post questions.<br>
+<tt>http://www.ahfb2000.com/</tt>
+
+
+<dt><b><a href="http://webreview.com/pub/1999/10/29/feature/index3b.html">Browser Campatability Chart</a></b>
+<dd>from WebReview, shows you what tags are supported on different web browsers/versions<br>
+<tt>http://webreview.com/pub/1999/10/29/feature/index3b.html</tt>
+<dt><b><a href="http://www.htmlcompendium.org/">Compendium of HTML Elements</a></b>
+<dd>is a reference manual of all HTML tags in general use.<br>
+<tt>http://www.htmlcompendium.org/</tt>
+
+<dt><b><a href="http://www2.imagiware.com/rxHTML/">Dr. HTML</a></b>
+<dd>is a tool that can diagnose problems on any web page<br>
+<tt>http://www2.imagiware.com/rxHTML/</tt>
+
+<dt><b><a href="http://www.htmlgoodies.com/">HTML Goodies</a></b>
+<dd>a giant collection of tutorials, resources, and even graphics for web developers<br>
+<tt>http://www.htmlgoodies.com/</tt>
+
+<dt><b><a href="http://www.yourhtmlsource.com/">HTMLSource</a></b>
+<dd>offers a "huge pile" of tutorials for beginner to advanced HTML topics.<br>
+<tt>http://www.yourhtmlsource.com/</tt>
+
+<dt><b><a href="http://www.blooberry.com/indexdot/html/">Index dot HTML</a></b>
+<dd>Brian Wilson provides this worthy reference to HTML that also includes very useful information on web browsers, their differences, and histories.<br>
+<tt>http://www.blooberry.com/indexdot/html/</tt>
+
+
+<dt><b><a href="http://werbach.com/barebones/">Bare Bones Guide to HTML</a></b>
+<dd>Kevin Werbach's extremely useful "cheat sheet"<br>
+<tt>http://werbach.com/barebones/</tt>
+
+<dt><b><a href="http://www.davesite.com/webstation/html/">HTML An Interactive Tutorial for Beginners</a></b>
+<dd>Teenager Dave Kristula wrote this hands-on tutorial that allows you to learn and experiment with HTML all inside the comfort of your web browser<br>
+<tt>http://www.davesite.com/webstation/html/</tt>
+
+<dt><b><a href="http://www.trainingtools.com/online/html/index.htm">Learning HTML</a></b>
+<dd>a free, comprehensive online course from TraningTools.com<br>
+<tt>http://www.trainingtools.com/online/html/index.htm</tt>
+
+<dt><b><a href="http://www.pagetutor.com/pagetutor/makapage/index.html">So You Wanna Make a Web Page?</a></b>
+<dd>Joe Barta provides this tutorial that  "will give anyone a solid grasp of basic HTML and will teach you how to put together a web  page from scratch... and without any big cumbersome editors."<br>
+<tt>http://www.pagetutor.com/pagetutor/makapage/index.html</tt>
+
+<dt><b><a href="http://wdvl.com/authoring/HTML/4/Tags/">Web Developer's Virtual Library HTML 4.0 Tags</a></b>
+<dd>This handy page provides a printable chart of the 91 possible HTML 4.0 tags, that have anywhere from 2 to 25 possible attributes. <br>
+<tt>http://wdvl.com/authoring/HTML/4/Tags/</tt>
+
+<dt><b><a href="http://vzone.virgin.net/sizzling.jalfrezi/">Sizzling HTML Jalfrezi</a></b>
+<dd>gives examples for every HTML element and attribute including new Netscape and Microsoft extensions<br>
+<tt>http://vzone.virgin.net/sizzling.jalfrezi/</tt>
+
+<dt><b><a href="http://www.hotwired.com/webmonkey/teachingtool/">webmonkey</a></b>
+<dd>a tutorial using the "Monkey See, Monkey Do" approach
+<tt>http://www.hotwired.com/webmonkey/teachingtool/</tt>
+
+<dt><b><a href="http://www.zdnet.com/devhead/Resources/tag_library/">ZDNet's Tag Library</a></b> 
+<dd>features a summary of HTML history and a tag by tag description<br>
+<tt>http://www.zdnet.com/devhead/Resources/tag_library/</tt>
+</dl>
+</td>
+</tr>
+
+</table>
+
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b> References<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http%3A//www.mcli.dist.maricopa.edu/tut/ref/html.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/
+</font>
+</p>
+<!-- end writing HTML footers  -->
+</body>
+</html>
+
+

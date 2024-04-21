@@ -1,0 +1,147 @@
+<html>
+<head>
+<title>CSS References</title>
+<script language="javascript">
+<!-- hide scripts from crusty old browsers
+
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+		} else {  
+
+// send page to designated URL		 	
+   			document.location.href = newURL;
+   		}
+   	}
+   	return true;
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 0;
+}
+
+
+// done hiding -->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" onLoad="resetMenu()">
+<h5><I>Writing HTML</I> |
+<a href="../index.html">About</a> | <a href="../faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="../ref.html">References</a> | 
+<a href="../tags/index.html">Tags</a> |
+<a href="../lessons.html">Lessons</a> |
+</h5>
+<p align=center>
+<center>
+<font size=+3><tt>r e f e r e n c e s</tt></font>
+</center>
+</p>
+<center>
+<form name="gomenu">
+<font size=2 face"helvetica,arial" size=2 color=#666666>select a category</font><br>
+<select onChange="goPage(this.options[this.selectedIndex].value.toString())" name="selector">
+<option value = "" selected>Cascading Style Sheets
+<option value = "dhtml.html">Dynamic HTML
+<option value = "cgi.html">Forms and CGI
+<option value = "frames.html">Frames
+<option value = "graphics.html">Graphics
+<option value = "html.html">HTML Reference
+<option value = "java.html">Java
+<option value = "javascript.html">JavaScript
+<option value = "tables.html">Tables
+<option value = "design.html">Web Design and Style
+<option value = "xml.html">XML
+<option value = "-"> -----------
+<option value = "all.html"> All References
+</select>
+</form>
+</center>
+
+<noscript>
+<b>The menu above requires JavaScript! Apparently you do not have JavaScript active, so try the <a href="all.html">alternative static reference page</a>.
+</noscript>
+
+</center>
+<p>
+<table cellpadding=10 cellspacing=2 border=0>
+<tr>
+<td valign=top align=right bgcolor=#66FF66 width=110><font size=+2><b>CSS</b></font><br>
+<font color="#333333" face="verdana,helvetica" size=2>Cascading Style Sheets (CSS) is the likely future trend for creating web pages; supported presently by version 4.0 and later web browsers, it makes it easier to re-format content by separating content from formatting. However, it changes the way we have been using HTML up to now <em>and</em>, CSS is not exactly supported equally across the different browsers.</font>
+</td>
+<td valign=top>
+<dl>
+
+
+<dt><b><a href="http://builder.cnet.com/authoring/CSS/">CNET Builder.com</a></b>
+<dd>has a guide for getting Started with Cascading Style Sheets<br>
+<tt>http://builder.cnet.com/authoring/CSS/</tt>
+
+
+<dt><b><a href="http://www.quadzilla.com/">D.J. Quad;s Ultimate HTML Site</a></b>
+<dd>features among many other resources, a CSS tutorial.<br>
+<tt>http://www.quadzilla.com/</tt>
+
+<dt><b><a href="http://www.westciv.com/style_master/house/">House of Style</a></b>
+<dd>a well-designed overview of CSS featuring an easy to understand tutorial and a guide to browser support<br>
+<tt>http://www.westciv.com/style_master/house/</tt>
+
+<dt><b><a href="http://www.yourhtmlsource.com/stylesheets/">HTMLSource</a></b>
+<dd>offers a collection of tutorials to help learn CSS<br>
+<tt>http://www.yourhtmlsource.com/stylesheets/</tt>
+
+
+
+<dt><b><a href="http://www.webreference.com/html/tutorial5/">The Human Factor</a></b>
+<dd>WebReference.com provides this overview of the power of CSS to separate form from content.<br>
+<tt>http://www.webreference.com/html/tutorial5/</tt>
+
+<dt><b><a href="http://www.blooberry.com/indexdot/css/">Index dot CSS</a></b>
+<dd>Brian Wilson's comprehensive reference guide to CSS<br>
+<tt>http://www.blooberry.com/indexdot/css/</tt>
+
+<dt><b><a href="http://www.htmlhelp.com/reference/css/">Guide to Cascading Style Sheets</a></b>
+<dd>from the Web Design Group, features references and a quick tutorial<br>
+<tt>http://www.htmlhelp.com/reference/css/</tt>
+
+<dt><b><a href="http://hotwired.lycos.com/webmonkey/98/15/index0a.html">Mulder's Stylesheets Tutorial</a></b>
+<dd>a five day or five step series of lessons from webmonkey<br>
+<tt>http://hotwired.lycos.com/webmonkey/98/15/index0a.html</tt>
+
+<dt><b><a href="http://wdvl.com/authoring/Style/Sheets/">Web Developers Virtual Library</a></b>
+<dd>includes useful information and tutorials<br>
+<tt>http://wdvl.com/authoring/Style/Sheets/</tt>
+</dl>
+</td>
+</tr>
+
+</table>
+
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b> References<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http%3A//www.mcli.dist.maricopa.edu/tut/css.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/
+</font>
+</p>
+<!-- end writing HTML footers  -->
+</body>
+</html>
+
+

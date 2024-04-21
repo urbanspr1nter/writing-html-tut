@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>9. Preformatted Text</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><I>Writing HTML</I> |
+<a href="index.html">About</a> | <a href="faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="ref/index.html">References</a> | 
+<a href="tags/index.html">Tags</a> |
+<a href="lessons.html">Lessons</a> |
+<a href="tut8e.html">previous</a> | 
+<a href="tut10.html">next</a>   | 
+</h5>
+
+<h1>9. Preformatted Text</h1>
+<p>How do you </p>
+<pre><font color="#FF6600">      display  
+          <b>text</b> 
+       where        space, 		TABS   and   carriage return
+                  characters     count?
+</font></pre>
+<h2>Objectives</h2>
+<p>After this lesson you will be able to:</p>
+<ul>
+<li>Create a table of aligned text</li>
+<li>Control the placement of text on a page when tabs and spaces</li>
+are important.
+</ul>
+<hr>
+
+<h2>Lesson</h2>
+<p><a name="dlret"></a><b>Note: If you do not have the working documents from the previous
+lessons, <a href="tut9get.html">download a copy</a> now.</b></p>
+<P>
+In previous lessons we have seen that a web browser will ignore extraneous space
+characters, tabs, and carriage returns in your HTML files. However, there are some instances where it
+will be important to maintain these aspects of page layout. 
+In this lesson, the example will be where we want to insert a table of 
+text with aligned columns.</p>
+<P>
+The <b><tt><font color="#000066">preformat</font></tt></b> tag instructs your web browser to display the text <b>exactly</b> as typed in the HTML document, including spaces, tabs, and carriage returns.
+A browser typically displays such text as a</p>
+
+<p align=center>
+<center><font size=+2><tt>m o n o s p a c e d</tt></font></center></p>
+<p>
+type, meaning a font in which every character has the same width. Here is example
+of what the <b><tt><font color="#000066">preformat</font></tt></b> does:
+
+</p>
+
+<table border=2 cellpadding=3 cellspacing=0 width=75% align=center> 
+
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+</tr>
+<tr>
+	<td bgcolor=#EEEEEE>
+<pre><font color=#000066>
+   &lt;pre&gt;
+    We have indented with 5 space characters.
+    And used the carriage return to jump
+    to
+    a
+    new
+    line.
+    
+          Here      we
+          use       
+          spaces    to
+          create    a
+          text      table.
+   &lt;/pre&gt;
+</font></pre>
+
+	</td>
+</tr>
+</table>
+
+<p>
+Without the <b><tt><font color="#000066">&lt;pre&gt;</font></tt></b> and  <b><tt><font color="#000066">&lt;/pre&gt;</font></tt></b> tags, 
+the same HTML produce:</p>
+
+
+<table border=2 cellpadding=3 cellspacing=0 width=75% align=center> 
+
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+</tr>
+<tr>
+	<td bgcolor=#EEEEEE>
+    We have indented with 5 space characters.
+    And used the carriage return to jump
+    to
+    a
+    new
+    line.
+    
+          Here      we
+          use       
+          spaces    to
+          create    a
+          text      table.
+	</td>
+</tr>
+</table>
+<p>
+With the <b><tt><font color="#000066">preformat</font></tt></b> tag, it helps if the text editor you are using can display in a monospaced font (such as "Courier" or "Monaco"); if not, you will
+have to count spaces when aligning text into columns (and you will mutter bad words under your breath).</p>
+<P>
+For our Volcano lesson, we want to add a table under the <b>Introduction</b> section
+that lists several well-known volcanoes, when they erupted, and the volume
+of erupted material. To do this:</p>
+<ol>
+<li>Open the second HTML file, <b><tt><font color="#000066">index.html</font></tt></b> in your text editor.</li>
+<li>Under the last portion of the <b>Introduction</b> section, place a header of level 4
+(&lt;h4&gt;) with the text <b><b><tt><font color="#000066">Volumes of Some Well-Known Volcanic Eruptions</font></tt></b></b> (If you
+do not remember how to make headers, see <a href="tut3.html">lesson 3</a>).</li>
+<li>Below this heading, enter the following text <b>exactly</b> as follows (this would by an opportune time to cut and paste from this web page!):
+<pre><font color=#000066>
+&lt;pre&gt;
+  Eruption                      Date           Volume in km^3
+  --------                      ----           --------------
+  Paricutin, Mexico             1943                 1.3
+  Mt. Vesuvius, Italy          79 A.D.                3
+  Mount St. Helen, Washington   1980                  4
+  Krakatoa, Indonesia           1883                 18
+  Long Valley, California     pre-historic        500 - 600
+  Yellowstone, Wyoming        pre-historic           2400
+&lt;/pre&gt;
+</font></pre>
+<BLOCKQUOTE><b>In this example we use space characters to make the first column left
+justified and the other 2 columns center-justified. The dashes are used
+to highlight the column headings.</b></bLOCKQUOTE>
+</li>
+<li><b>Save</b> and <b>Reload</b> in your web browser.</li>
+</ol>
+
+<hr>
+<h2>Check Your Work</h2>
+<p>Compare your web page with a <a href="tut9_ex/index.html">sample</a> of how this document should appear. If your web page was different from the sample, review the text you entered in the text editor. If the columns are not aligned, then it is likely that you are missing or have too many space characters.</p>
+
+<h2>Review</h2>
+<p>Review topics for this lesson:</p>
+<ol>
+<li>How does the <b><tt><font color="#000066">preformat</font></tt></b> tag change the way that a web browser
+interprets HTML?</li>
+<li>In what other situations might you use this tag?</li>
+</ol>
+
+<H2>More Information</H2>
+<p>You can still use HTML tags inside text that is marked by the <b><tt><font color="#000066">preformat</font></tt></b> tag.
+For example we can add a hypertext link and some style tags that are <b>within</b> the <b><tt><font color="#000066">&lt;pre&gt;...&lt;/pre&gt;</font></tt></b> tags:</p>
+
+<table border=0 cellsapcing=4 cellpadding=2>
+<tr>
+<th bgcolor=#66FF66>HTML</th>
+<th bgcolor=#66FF66>Result</th>
+</tr>
+
+<tr>
+<td valign=top>
+<pre><font color=#000066>&lt;pre&gt;
+This tutorial is copyright 
+1995, 1996
+    
+    &lt;b&gt;Be sure to tell all of 
+    your friends about it!&lt;/b&gt;     
+             &lt;i&gt;We
+                  Welcome
+                    Your
+                      Feedback&lt;/i&gt;
+fondly,
+&lt;a href=
+&quot;http://www.mcli.dist.maricopa.edu/&quot;&gt;
+mcli&lt;/a&gt; 
+&lt;/pre&gt;
+</font></pre>
+</td>
+<td valign=top align=center>
+	<table border=2 cellpadding=3 cellspacing=0> 
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+	</tr>
+	<tr>
+		<td bgcolor=#EEEEEE>
+	<pre>
+	This tutorial is copyright 
+	1995, 1996
+	    
+	    <b>Be sure to tell all of 
+	    your friends about it!</b>     
+	                <i>We
+	                  Welcome
+	                    Your
+	                      Feedback</i>
+	fondly,
+	<a href="http://www.mcli.dist.maricopa.edu/">mcli</a>
+	</pre>
+	
+	</td>
+	</tr>
+	</table>
+
+</td>
+</tr>
+<tr>
+<td colspan=2>
+<BLOCKQUOTE><b>Note that the HTML tags do not count as spaces; they are ignored within the preformat region.</b></bLOCKQUOTE>
+Some web page developers will use the <b><tt><font color="#000066">&lt;pre&gt;...&lt;/pre&gt;</font></tt></b> tags with carriage returns in between to add white space between text or graphics in their web pages -- especially if they wish more white space than provided by the <b><tt><font color="#000066">&lt;p&gt;</font></tt></b> tag. For example:
+</td>
+</tr>
+
+<tr>
+<th bgcolor=#66FF66>HTML</th>
+<th bgcolor=#66FF66>Result</th>
+</tr>
+
+<tr>
+<td valign=top>
+<PRE><font color=#000066>Cheese was long since 
+abolished from the Orient.
+&lt;pre&gt;
+
+
+
+&lt;/pre&gt;
+...until Sir Longhorn arrived with the 
+great Cheese Crusade of 1167.</font></PRE>
+</td>
+<td align=center>
+	<table border=2 cellpadding=3 cellspacing=0> 
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+	</tr>
+	<tr>
+		<td bgcolor=#EEEEEE>
+Cheese was long since 
+abolished from the Orient.
+<pre>
+
+
+
+</pre>
+...until Sir Longhorn arrived with the 
+great Cheese Crusade of 1167.</td>
+	
+	</td>
+	</tr>
+	</table>
+</tr>
+</table>
+
+<h2>Independent Practice</h2>
+<p>Add a table or chart to your HTML document using the <b><tt><font color="#000066">preformat</font></tt></b> tag.</p>
+<hr>
+<h2> Coming Next....</h2>
+<p>Use special character sets to add some <font size=+4 color="#6666CC"><b> &acirc;cc&egrave;&ntilde;t </b></font> 
+to your web pages.
+</p>
+<h5>  GO TO....  |  <a href="lessons.html">Lesson Index</a> | 
+<a href="tut8e.html">previous:  "HyperGraphics"</a> |
+<a href="tut10.html">next:  "Special Characters"</a> |
+</h5>
+
+			
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b>  Lesson 9: Preformatted Text<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut9.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut9.html</font>
+</font>
+</p>
+</body>
+</html>
+
+
+
+
+

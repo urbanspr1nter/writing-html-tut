@@ -1,0 +1,241 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>Tags- Forms</title>
+<script language="javascript">
+<!-- hide scripts from crusty old browsers
+
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+			
+		} else {  
+// send page to designated URL		 	
+   			document.location.href = newURL;
+   		}
+   	}
+   	return true;
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 7;
+}
+
+
+// done hiding -->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" onLoad="resetMenu()">
+<h5><I>Writing HTML</I> |
+<a href="../index.html">About</a> | <a href="../faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="../ref.html">References</a> | 
+<a href="index.html">Tags</a> |
+<a href="../lessons.html">Lessons</a> |
+</h5>
+<h2>Summary of HTML Tags Used in the Tutorial</h2>
+<noscript>
+<tt>
+<a href="tag1.html">Web Page Structure</a> |
+<a href="tag2.html">Text Formatting</a> |
+<a href="tag3.html">Text Breaks & Divisions</a> |
+<a href="tag4.html">Lists</a> | 
+<a href="tag5.html">Multimedia</a> |
+Hyper-Links | 
+</tt>
+<br>
+</noscript>
+<p>
+<center>
+<form name="gomenu">
+<select onChange="goPage(this.options[this.selectedIndex].value.toString())" name="selector">
+<option value = "tag1.html">Web Page Structure
+<option value = "tag2.html">Text Formatting
+<option value = "tag3.html">Text Breaks & Divisions
+<option value = "tag4.html">Lists
+<option value = "tag5.html">Multimedia
+<option value = "tag6.html">Hyper-Links
+<option value = "tag7.html">JavaScript
+<option value = "" selected">Forms
+<option value = "-"> --------------
+<option value = "../ref.html">Other HTML References
+</select>
+</form>
+</center>
+
+
+<table border=0 cellspacing=3 cellpadding=8>
+
+<tr bgcolor="#CCFFCC">
+<td valign=top>
+<pre>&lt;form action=...
+method=...
+enctype=....
+onSubmit=....
+  :
+  :
+&lt;/form&gt;
+</pre>
+</td>
+<td valign=top><b>Basic Form Structure</b><br> 
+These are the basic tags for creating a web page form.  The value of <b><tt><font color="#000066">action</font></tt></b> should be a valid URL to server-side CGI program for processing the form; <b><tt><font color="#000066">method</font></tt></b> is either "post" or "get" depending on how the server-side CGI is written; <b><tt><font color="#000066">enctype</font></tt></b> can have a value of "text/plain" to try to send form data by email; <b><tt><font color="#000066">onSubmit</font></tt></b> is optional tag used to run a JavaScript function before the server is contacted.
+<p>
+Some forms can be operable without a value for <b><tt><font color="#000066">action</font></tt></b> if they use JavaScript rather than CGI. </td>
+<td valign=top><a href="../tut28a.html">Lesson 28a</a><br>
+<a href="../tut28b.html">Lesson 28b</a><br>
+<a href="../tut28c.html">Lesson 28c</a>
+</td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;input type="text" 
+  name="...." 
+  size="X" 
+  maxlength="Y"
+  value="..."&gt;</pre>
+</td>
+<td valign=top><b>Single Line Text Input</b><br> 
+Form element for entering text. Value of <b><tt><font color="#000066">name</font></tt></b> identifies the contents to the CGI; <b><tt><font color="#000066">size</font></tt></b> is optional for the width of the field in characters; <b><tt><font color="#000066">maxlength</font></tt></b> is optional to limit the length of input in characters; <b><tt><font color="#000066">value</font></tt></b> is optional text string to be displayed when the form first loads.</td>
+<td valign=top><a href="../tut28a.html">Lesson 28a</a><br>
+</td>
+</tr>
+
+<tr bgcolor="#CCFFCC">
+<td valign=top>
+<pre>&lt;input type="password" 
+  name="...." 
+  size="X" 
+  maxlength="Y"
+  value="..."&gt;</pre>
+</td>
+<td valign=top><b>Password Input</b><br> 
+Similar to the single line test input except all letter entered are disguised.</td>
+<td valign=top><a href="../tut28a.html">Lesson 28a</a><br>
+</td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;textarea name="..." 
+  rows="X" cols="Y" 
+  wrap="virtual"&gt;
+  ...&lt;/textarea&gt;</pre>
+</td>
+<td valign=top><b>Text Area Inputs</b><br> 
+Multi-line text input field. Value of <b><tt><font color="#000066">name</font></tt></b> identifies the contents to the CGI; <b><tt><font color="#000066">rows</font></tt></b> is the number of lines for the size of the box and <b><tt><font color="#000066">cols</font></tt></b> is the width of the box in characters; <b><tt><font color="#000066">wrap</font></tt></b> is optional to indicate input text should be wrapped if value is "virtual"; and any text before the closing <b><tt><font color="#000066">&lt;/textarea&gt;</font></tt></b> is displayed in the form field when the page loads. </td>
+<td valign=top><a href="../tut28a.html">Lesson 28a</a><br>
+</td>
+</tr>
+
+<tr bgcolor="#CCFFCC">
+<td valign=top>
+<pre>&lt;input type="radio" 
+  name="..." 
+  value="..." checked&gt;
+&lt;input type="radio" 
+  name="..." 
+  value="..."&gt; 
+  </pre>
+</td>
+<td valign=top><b>Radio Buttons</b><br> 
+Sets of buttons where only one button within the set can be selected at a time. A set of buttons is defined by having the same value for <b><tt><font color="#000066">name</font></tt></b>; the contents of <b><tt><font color="#000066">value</font></tt></b> are what is sent when the form data is transmitted to a CGI program; an optional <b><tt><font color="#000066">checked</font></tt></b> inside a tag indicates which radio button in the set is initially selected when the page loads.</td>
+<td valign=top><a href="../tut28a.html">Lesson 28a</a><br>
+</td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;input type="checkbox" 
+  name="..." 
+  value="..." checked&gt;
+&lt;input type="checkbox" 
+  name="..." 
+  value="..." checked&gt;
+  </pre>
+</td>
+<td valign=top><b>Check Box</b><br> 
+Sets of items where more than one (or none) may be selected at a time. Value of <b><tt><font color="#000066">name</font></tt></b> identifies the contents to the CGI; the contents of <b><tt><font color="#000066">value</font></tt></b> are what is sent when the form data is transmitted to a CGI program; optional <b><tt><font color="#000066">checked</font></tt></b> inside a tag indicates that the box is initially selected when the page loads.</td>
+<td valign=top><a href="../tut28a.html">Lesson 28a</a><br>
+</td>
+</tr>
+
+<tr bgcolor="#CCFFCC">
+<td valign=top>
+<pre>&lt;select name="..."&gt;
+  &lt;option value="..."&gt; XXXXX&lt;/option&gt;
+  &lt;option value="..." selected&gt; YYYYY&lt;/option&gt;
+  &lt;option value="..."&gt; ZZZZZ&lt;/option&gt;
+&lt;/select&gt;&lt;/pre></td>
+<td valign=top><b>Menu Select</b><br> 
+Creates a drop down menu. Value of <b><tt><font color="#000066">name</font></tt></b> identifies the contents to the CGI; contents of <b><tt><font color="#000066">value</font></tt></b> are what is sent when the form data is transmitted to a CGI program (if there are no <b><tt><font color="#000066">value</font></tt></b> paramaters, the form will send the text string of the menu item); <b><tt><font color="#000066">XXXXX, YYYYY, ZZZZZ</font></tt></b> are the items that appear in the menu; <b><tt><font color="#000066">selected</font></tt></b> indicates which menu item is displayed when the page loads.</td>
+<td valign=top><a href="../tut28a.html">Lesson 28a</a><br>
+<a href="../tut28c.html">Lesson 28c</a><br>
+</td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;input type="submit" 
+value="..."&gt;</pre>
+</td>
+<td valign=top><b>Submit button</b><br> 
+Tells the browser to send the form data to the CGI. The contents of <b><tt><font color="#000066">value</font></tt></b> appear as the label for the button in the web page.</td>
+<td valign=top><a href="../tut28a.html">Lesson 28a</a><br>
+</td>
+</tr>
+
+<tr bgcolor="#CCFFCC">
+<td valign=top>
+<pre>&lt;input type="reset" 
+ value="..."&gt;
+</pre>
+</td>
+<td valign=top><b>Reset Button</b><br> 
+Tells the web browser to restore all form elements to their initial state. The contents of <b><tt><font color="#000066">value</font></tt></b> appear as the label for the button in the web page.</td>
+<td valign=top><a href="../tut28a.html">Lesson 28a</a><br>
+</td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>
+&lt;input type="hidden" 
+  name="..." 
+  value="..."&gt;</pre>
+</td>
+<td valign=top><b>Hidden Form Element</b><br> 
+Value of <b><tt><font color="#000066">name</font></tt></b> identifies the contents to the CGI; contents of <b><tt><font color="#000066">value</font></tt></b> is what is sent to the CGi program.</td>
+<td valign=top><a href="../tut28b.html">Lesson 28b</a><br>
+</td>
+</tr>
+</table>
+
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML</b> Summary of HTML Tags: Forms<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tags/tag8.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tags/tag8.html</font></font>
+</p>
+<!-- end writing HTML footers  -->
+</body>
+</html>
+
+

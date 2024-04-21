@@ -1,0 +1,594 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>27b. JavaScript- Dynamic Content</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><I>Writing HTML</I> |
+<a href="index.html">About</a> | 
+<a href="faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="ref/index.html">References</a> | 
+<a href="tags/index.html">Tags</a> |
+<a href="lessons.html">Lessons</a> |
+<a href="tut27a.html">previous</a> | 
+<a href="tut27c.html">next</a> | 
+</h5>
+
+<IMG SRC="pictures/dose.gif" ALIGN=LEFT WIDTH="77" HEIGHT="180" HSPACE="18">
+<h1>27b. JavaScript : Dynamic Content</h1>
+<p>
+<font size=+2 face="helvetica,arial" color="#CC6699"><b> Let's Increase our Dosage...<br><br>
+write dynamic content to a page...<br><br> different messages for different conditions... </b>
+</font></p>
+<br clear=left>
+
+<h2>Objectives</h2>
+<p>After this lesson you will be able to:</p>
+<ul>
+<li> Write the JavaScript code to dynamically write any HTML code</li>
+<li> Write the JavaScript code to display automatically the web page title, the URL and file modification dates</li>
+<li> Write the JavaScript code to print a formatted date</li>
+<li> Write the JavaScript code to determine the current web browser brand and version</li>
+</ul>
+<hr>
+<a name="dlret"></a>
+<h2>Lesson</h2>
+<p><b>Note: If you do not have the working documents from the previous
+lessons, <a href="tut27bget.html">download a copy</a> now.</b></p>
+<p>
+We have reminded you before that as an HTML document loads into a web browser, it is interpreted as the browser reads in more data. For HTML, this means that as soon as the browser gets enough information to display something, it tries to do that, even as it reads in the remainder of the document.</p>
+<p>
+When we refer to <b>dynamic</b> content that you can write in JavaScript, that means that the web browser can do more than just "read and display", "read and display"... as it reads in JavaScript code among your HTML, it can make decisions based upon the way the code is set up, test against some built in functions, and then write different HTML code according to its programmed instructions. It may even be programmed to do something randomly different every time the page loads.</p>
+<p>
+It makes your web pages a bit more "intelligent" than just sitting there looking pretty!</p>
+<p>
+
+
+We can use JavaScript to write any other kind of HTML content using the format:</p>
+
+<pre><font color=#000066>  document.write('xxxxxxxx xxxxxxxxxx');
+  document.write('xxxx xxxxxxx xxxxxxx xxxxx');
+  document.write('xx xx xxxxxxxxxxxx xx');</font></pre>
+
+<p>Each line of this code writes a chunk of HTML, that is everything inside of the single quote characters. This series of JavaScript statements:</p>
+
+<pre><font color=#000066>  document.write('&lt;h1&gt;Wide World of Cheese&lt;/h1&gt;')
+  document.write('&lt;b&gt;&lt;i&gt;Not everyone in this world likes cheese');
+  document.write('as much as I!&lt;i&gt;&lt;/b&gt;&lt;br&gt; -- Colby Jack (1903)');</font></pre>
+  
+<p>will produce the exact same display as this chunk of HTML:</p>
+  
+<pre><font color=#000066>  &lt;h1&gt;Wide World of Cheese&lt;/h1&gt;
+  &lt;b&gt;&lt;i&gt;Not everyone in this world likes cheese 
+  as much as I!&lt;i&gt;&lt;/b&gt;&lt;br&gt; -- Colby Jack (1903)</font></pre>
+  
+<p>Now if this was all there was to JavaScript, we would not even be trying to teach it to you! JavaScript provides other types of information that you can display that is not available via HTML. There are built in functions that can provide the current date and time, information about the user's web browser, and more as we will soon see. But even more than this, we can set up logical statements to test, so that we can do things like:</p>
+
+<BLOCKQUOTE>  <font face="verdana,helvetica" color=#990000>If today is Tuesday or Wednesday and the time is after 12:00 PM then display this custom message morning greeting; but if it is before 12:00 PM, then display this different message for the afternoon. But if it is Friday, at any time, let's display a different type of message no matter what time of day it is. Any other day or time, just display a standard "Have a nice day" message.</font></blockquote>
+  
+<p>JavaScript code gives us some flexibility to create <b>dynamic</b> content that can behave and display differently to the viewer.</p>
+<p>
+The first thing we will do is to write a series of JavaScript statements that will create the footers of all of our documents-- but unlike the ones to date that we have written by hand, this same block of HTML/JavaScript can be cut and pasted into every document but will also dynamically print <font  color=#990000>(with examples for this page shown in parentheses)</font>:</p>
+
+
+<script language="JavaScript">
+<!--
+document.write('<ol type=a><li>The title of the web page, from the text in the &lt;TITLE&gt;..&lt;/TITLE&gt; tags<br><tt><font  color=#990000>(');
+document.write( document.title + ')</font></tt>');
+document.write('<li>An e-mail link that by default will insert the web page title as the subject line<br><tt><font color=#990000>(</font>');
+document.write( '<a href="mailto:alan.levine@domail.maricopa.edu?subject=' + document.title + '&body=this is just to show you that it works, please do not send this message!"><font color=#990000>email test with this page title as subject</font></a><font color=#990000>)</font></tt>' );
+document.write('<li>The date that the document was most recently modified, if valid');
+if (Date.parse(document.lastModified) > 0) {
+	document.write('<br><tt><font  color=#990000>(' + document.lastModified + ')</font></tt>');
+} else {
+	document.write('<br><tt><font  color=#990000>(this feature not available from this host)</font></tt>');
+}
+document.write('<li>The actual URL of the file <br><tt><font  color=#990000>(');
+document.write( document.location.href + ')</font></tt></ol>');
+// -->
+</script>
+<p>
+Not all web servers provide accurate document modification dates, item (c), and typically when you are testing documents on your desktop computer, you will not be able to get this information and it would print some erroneous date like January 1900. We will show you how to test for these conditions.
+Item (d) is extremely useful because if we were to move our web pages to different web servers or re-arrange our site, the URL would be updated automatically.</p>
+<p>
+The template for our "standard" web page footer for the Volcano Web project looks like the code below. We'll present it first section by section with some explanations. It's not critical that you understand exactly how it works, since when you incorporate it into your working pages, it will be simply a cut and paste operation.</p>
+
+
+
+<table width=100% border=0 cellpadding=6 cellspacing=5 align=center>
+<tr>
+<th colspan=2 bgcolor=#CCFFCC><font size=+2>JavaScript Footers</font></th>
+</tr>
+<tr>
+<th  bgcolor=#66FF66>HTML code</th>
+<th bgcolor=#66FF66>explanation</th>
+</tr>
+
+<tr>
+<td valign=top><font color=#000066><pre>
+&lt;!-- start of Volcano Web standard footers --&gt;
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+&lt;!-- hide scripts from old browsers</pre></font>
+</td>
+<td valign=top bgcolor=#EEEEEE>
+Marks the beginning of the footer area, with proper JavaScript tags
+</td>
+</tr>
+
+<tr>
+<td valign=top><font color=#000066><pre>
+document.write('&lt;p&gt;&lt;hr&gt;
+&lt;FONT FACE=&quot;helvetica,arial&quot; size=-1&gt;
+&lt;i&gt;Volcano Web:&lt;/i&gt; &lt;b&gt;');
+</pre></font>
+</td>
+<td valign=top bgcolor=#EEEEEE>
+Horizontal rule, begin text font size and main web site title
+</td>
+</tr>
+
+<tr>
+<td valign=top><font color=#000066><pre>document.write(document.title + '&lt;/b&gt;&lt;BR&gt;');
+</pre></font>
+</td>
+<td valign=top bgcolor=#EEEEEE>
+Write the current document title
+</td>
+</tr>
+
+<tr>
+<td valign=top><font color=#000066><pre>
+document.write('created by Lorrie Lava, ');
+document.write('&lt;a href=&quot;mailto:lava@pele.bigu.edu?subject=' 
++ document.title + '&quot;&gt;');
+document.write('lava@pele.bigu.edu&lt;/a&gt;&lt;br&gt;');
+</pre></font>
+</td>
+<td valign=top bgcolor=#EEEEEE>
+Credits for page with an e-mail link that automatically inserts the page title into the subject line.
+</td>
+</tr>
+
+<tr>
+<td valign=top><font color=#000066><pre>
+document.write('Volcanic Studies, 
+&lt;a href=&quot;http://www.bigu.edu/&quot;&gt;');
+document.write('Big University&lt;/a&gt;&lt;p&gt;');&lt;/tt&gt;&lt;/font&gt;</pre>
+</td>
+<td valign=top bgcolor=#EEEEEE>
+More static content.
+</td>
+</tr>
+
+<tr>
+<td valign=top><font color=#000066><pre>
+// append a modification date only if
+// server provides a valid date
+if (Date.parse(document.lastModified) &gt; 0) {
+  document.write('&lt;b&gt;last modified: &lt;/b&gt;' 
+  + document.lastModified + '&lt;BR&gt;');
+}
+</pre>
+</td>
+<td valign=top bgcolor=#EEEEEE>
+This looks tricky. We have set up a <b>conditional</b> test on the value that is returned by <b><tt><font color="#000066">document.lastModified</font></tt></b>, and if it is valid (a non zero return from a <b>function</b> we use called <b><tt><font color="#000066">Date.parse</font></tt></b>, we write the modification date. If we do not get a valid date, this whole block is ignored.
+</td>
+</tr>
+
+<tr>
+<td valign=top><font color=#000066><pre>
+document.write('&lt;b&gt;URL: &lt;/b&gt;' 
+  + document.location.href + '&lt;/FONT&gt;&lt;P&gt;');</pre>
+  </td>
+<td valign=top bgcolor=#EEEEEE>
+Write the URL of the current document given by the value returned by the JavaScript variable <b><tt><font color="#000066">document.location.href</font></tt></b>
+</td>
+</tr>
+
+<tr>
+<td valign=top><font color=#000066><tt>
+// done hiding from old browsers --&gt;<br>
+&lt;/SCRIPT&gt;<br>
+&lt;!-- end of Volcano Web standard footers --&gt;<br>
+<td valign=top bgcolor=#EEEEEE>
+End of the footer code block. </td>
+</tr>
+</table>
+
+<p>Most of the dynamic content in this examples comes from "properties" of different JavaScript "objects", namely in this case the <b><tt><font color="#000066">document</font></tt></b> object. Each HTML document has built-in identifying pieces of information--  namely it's title, date of last modification, URL, etc. We can query the <b><tt><font color="#000066">document</font></tt></b> object to get and then use this information.</p>
+<p>
+Information we are writing to the page using <b><tt><font color="#000066">document.write</font></tt></b>  that is fixed content (strings of text in quotes) and information that is stored in JavaScript variables, like <b><tt><font color="#000066">document.title</font></tt></b>, we join with the "+" sign:</p>
+
+<pre><font color=#000066> 'Here is some fixed &lt;b&gt;HTML&lt;/b&gt; text for the page:' + document.title + '! Nice, eh?'</font></pre>
+
+<p>The "+" sign joins the text together into one longer string, so if we were using it in this lesson page, we would see:</p>
+
+	<table border=2 cellpadding=3 cellspacing=0 align=center width=65%> 
+	
+	<tr>
+		<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" 	ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+	</tr>
+	<tr>
+		<td bgcolor=#EEEEEE>
+	Here is some fixed <b>HTML</b> text for the page: 27b. JavaScript- Dynamic Content! Nice, eh?
+	</td>
+	</tr>
+	</table>
+<p>
+Our JavaScript footer also uses a "conditional" test ("if this then do that") for the modification date, that looks like:</p>
+
+<pre><font color=#000066>  if ( some condition to test ) {
+    JavaScript statement1;
+    JavaScript statement2;
+          :
+          :
+    JavaScript statementN;
+  }</font></pre>
+
+<p>which means that if the condition test in the first line's parenthesis results in a TRUE value, we would follow the steps inside the "{" and "}" brackets; if the test is FALSE, we skip these statements. With the power of JavaScript, we can construct very complex conditional tests, but for now we will keep it simple.</p>
+<p>
+This is how our JavaScript footer would look if it were used in this lesson page:</p>
+
+	<table border=2 cellpadding=3 cellspacing=0 align=center width=70%> 	
+	<tr>
+		<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" 	ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+	</tr>
+	<tr>
+		<td bgcolor=#EEEEEE>
+<!-- start of Volcano Web standard footers -->
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide  scripts from old browsers
+
+document.write('<p><hr><FONT FACE="helvetica,arial" size=-1><i>Volcano Web:</i> <b>');
+document.write(document.title + '</b><BR>');
+document.write('created by Lorrie Lava, ');
+document.write('<a href="mailto:lava@pele.bigu.edu?subject=' + document.title + '">');
+document.write('lava@pele.bigu.edu</a><br>');
+document.write('Volcanic Studies, <a href="http://www.bigu.edu/">');
+document.write('Big University</a><p>');
+
+// append a modification date only if server provides a valid date
+if (Date.parse(document.lastModified) > 0) {
+	document.write('<b>last modified: </b>' + document.lastModified + '<BR>');
+}
+document.write('<b>URL: </b>' + document.location.href + '</FONT><P>');	
+
+// done hiding from old browsers -->
+</SCRIPT>
+<!-- end of Volcano Web standard footers -->		
+	</td>
+	</tr>
+	</table>
+
+<p>
+Now we will insert the footer into our <i>Volcano Web</i> HTML documents.</p>
+<ol>
+<li> First, open your main entry page, <b><tt><font color="#000066">index1.html</font></tt></b> in your HTML editor. (we will not put the footer on our opening "splash" page, <b><tt><font color="#000066">index.html</font></tt></b>).</li>
+<li> Delete our old footer HTML content:
+<pre><font color=#000066>
+&lt;hr&gt;
+&lt;address&gt;&lt;b&gt;Volcano Web&lt;/b&gt;&lt;br&gt;
+created by Lorrie Lava, &lt;a href=&quot;mailto:lava@pele.bigu.edu&quot;&gt;lava@pele.bigu.edu&lt;/a&gt;&lt;p&gt;
+Volcanic Studies, &lt;a href=&quot;http://www.bigu.edu/&quot;&gt;Big University&lt;/a&gt;&lt;p&gt;
+&lt;tt&gt;last modified: April 1, 1995&lt;/tt&gt;
+&lt;/address&gt;
+&lt;p&gt;
+&lt;tt&gt;URL: http://www.bigu.edu/web/index.html&lt;/tt&gt;
+&lt;p&gt;</font></pre></li>
+
+<li>Replace it with our new JavaScript footer content:
+<font color=#000066>
+<pre>&lt;!-- start of Volcano Web standard footers --&gt;
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+&lt;!-- hide  scripts from old browsers
+
+document.write('&lt;p&gt;&lt;hr&gt;&lt;FONT FACE=&quot;helvetica,arial&quot; size=-1&gt;&lt;i&gt;Volcano Web:&lt;/i&gt; &lt;b&gt;');
+document.write(document.title + '&lt;/b&gt;&lt;BR&gt;');
+document.write('created by Lorrie Lava, ');
+document.write('&lt;a href=&quot;mailto:lava@pele.bigu.edu?subject=' 
+  + document.title + '&quot;&gt;');
+document.write('lava@pele.bigu.edu&lt;/a&gt;&lt;br&gt;');
+document.write('Volcanic Studies, &lt;a href=&quot;http://www.bigu.edu/&quot;&gt;');
+document.write('Big University&lt;/a&gt;&lt;p&gt;');
+
+// append a modification date only if server provides a valid date
+if (Date.parse(document.lastModified) &gt; 0) {
+	document.write('&lt;b&gt;last modified: &lt;/b&gt;' + 
+	       document.lastModified + '&lt;BR&gt;');
+}
+document.write('&lt;b&gt;URL: &lt;/b&gt;' + document.location.href + 
+           '&lt;/FONT&gt;&lt;P&gt;');	
+
+// done hiding from old browsers --&gt;
+&lt;/SCRIPT&gt;
+&lt;!-- end of Volcano Web standard footers --&gt;</pre></font>
+
+<blockquote><b>
+NOTE: It is critical that all of your JavaScript statements are on a single line, starting from <b><tt><font color="#000066">document.write('...</font></tt></b> and ending with <b><tt><font color="#000066">');</font></tt></b>, If you have extra RETURN characters in the code, it will not work. Also, be sure the structure of the <b><tt><font color="#000066">if (...) {</font></tt></b> block of statements is exactly as shown above.
+<br><br>
+JavaScript is even more picky than HTML about typos! And there is more room for mistakes with the ways quote characters are used. 
+</b></blockquote></li>
+<li><b>Save</b> and <b>Reload</b> in your web browser. If there are no JavaScript errors, then see if the content in the footer appears similar to the example shown above (the URL should be different, of course, it will generate a URL that may include your local hard drive). If you do get JavaScript errors, compare your code in detail with the example. Finally, if nothing appears, try <b>reload</b> again. If this does not work, most likely your JavaScript code is missing a quote or a ">".
+</li>
+
+<li>Now you are ready to cut and paste the new JavaScript footer into the same areas of these other files that are part of your <i>Volcano Web</i>:
+	<ol type=a>
+	<li><b><tt><font color="#000066">explode.html</font></tt></b>
+	<li><b><tt><font color="#000066">height.html</font></tt></b>
+	<li><b><tt><font color="#000066">intro.html</font></tt></b>
+	<li><b><tt><font color="#000066">mars.html</font></tt></b>
+	<li><b><tt><font color="#000066">msh.html</font></tt></b>
+	<li><b><tt><font color="#000066">term.html</font></tt></b>
+	<li><b><tt><font color="#000066">usa.html</font></tt></b>
+	</ol>
+</li>
+</ol>
+<p>We have not yet updated the footer that is part of our <b>project</b> page, which we broke into a framed set up in <a href="tut26.html">lesson 26</a>. You may think that all we have to do is to paste it into the frame on that page for the footer document, <b><tt><font color="#000066">proj_footer.html</font></tt></b>. But the problem here is that the JavaScript function <b><tt><font color="#000066">document.location.href</font></tt></b> will not display the URL for the framed web page, "...project.html" but for the footer document. Also, many browsers return the file name rather than the page title for <b><tt><font color="#000066">document.title</font></tt></b> of a framed web page. We would end up with something that looked like:</p>
+
+	<table border=2 cellpadding=3 cellspacing=0 align=center width=70%> 
+	
+	<tr>
+		<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" 	ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+	</tr>
+	<tr>
+		<td bgcolor=#EEEEEE>
+<!-- start of Volcano Web standard footers -->
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide  scripts from old browsers
+
+document.write('<p><hr><FONT FACE="helvetica,arial" size=-1><i>Volcano Web:</i> <b>');
+document.write('proj_footer.html</b><BR>');
+document.write('created by Lorrie Lava, ');
+document.write('<a href="mailto:lava@pele.bigu.edu?subject=proj_footer.html">');
+document.write('lava@pele.bigu.edu</a><br>');
+document.write('Volcanic Studies, <a href="http://www.bigu.edu/">');
+document.write('Big University</a><p>');
+
+// append a modification date only if server provides a valid date
+if (Date.parse(document.lastModified) > 0) {
+	document.write('<b>last modified: </b>' + document.lastModified + '<BR>');
+}
+document.write('<b>URL: </b>http://www.bigu.edu/web/proj_footer.html</FONT><P>');	
+
+// done hiding from old browsers -->
+</SCRIPT>
+<!-- end of Volcano Web standard footers -->		
+	</td>
+	</tr>
+	</table>
+
+<p>To get around this problem we could go back to a regular HTML footer... or use some more creative (and complex) JavaScript. We will take the second option, using JavaScript to "extract" the information we wish to display from the <b><tt><font color="#000066">document</font></tt></b> object.
+</p>
+<ol>
+<li>Open your <b><tt><font color="#000066">proj_footer.html</font></tt></b> in your text editor</li>
+<li>Delete the old footer content as we did in the above sections.</li>
+<li>Replace it with this JavaScript code:
+<pre><font color=#000066>
+&lt;!-- start of Volcano Web standard footers --&gt;
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+&lt;!-- hide  scripts from old browsers
+
+document.write('&lt;p&gt;&lt;hr&gt;&lt;FONT FACE=&quot;helvetica,arial&quot; size=-1&gt;&lt;i&gt;Volcano Web:&lt;/i&gt; &lt;b&gt;');
+document.write('Project&lt;/b&gt;&lt;BR&gt;');
+document.write('created by Lorrie Lava, ');
+document.write('&lt;a href=&quot;mailto:lava@pele.bigu.edu?subject=Project&quot;&gt;');
+document.write('lava@pele.bigu.edu&lt;/a&gt;&lt;br&gt;');
+document.write('Volcanic Studies, &lt;a href=&quot;http://www.bigu.edu/&quot;&gt;');
+document.write('Big University&lt;/a&gt;&lt;p&gt;');
+
+// append a modification date only if server provides a valid date
+if (Date.parse(document.lastModified) &gt; 0) {
+	document.write('&lt;b&gt;last modified: &lt;/b&gt;' 
+	  + document.lastModified + '&lt;BR&gt;');
+}
+
+// extract proper URL from this file name, assuming this file
+// is &quot;proj_footer.html&quot; or &quot;proj_footer.htm&quot;
+// and the proper URL for the frameset is &quot;proj.html&quot; or &quot;proj.htm&quot;
+myURL = document.location.href;
+
+// Get the suffix on the file name (everything after &quot;_footer&quot;)
+myExt = myURL.substring(myURL.indexOf(&quot;_footer&quot;) + 7, myURL.length) 
+
+// Get the part of the URL that goes up to &quot;proj&quot;
+myUrl = myURL.substring(0,myURL.indexOf(&quot;_footer&quot;))
+
+// Assemble the appropriate string
+document.write('&lt;b&gt;URL: &lt;/b&gt;' + myUrl + myExt + '&lt;/FONT&gt;&lt;P&gt;');	
+
+// done hiding from old browsers --&gt;
+&lt;/SCRIPT&gt;
+&lt;!-- end of Volcano Web standard footers --&gt;
+</font></pre></li>
+<li><b>Save</b> this document and <b>Reload</b> the main frame web page, <b><tt><font color="#000066">project.html</font></tt></b> in your web browser.</li>
+</ol>
+
+<p>In this example, we have used some more advanced JavaScript functions to do things like extract portions of one string from another, and finding the location of a particular character in a string. Unfortunately, explaining it all is beyond what we can cover here; please see our <a href="ref/index.html">references</a> for recommended tutorials and resources.</p>
+
+<h3>More Dynamic Content</h2>
+<p>Now we will show you even more things to do with JavaScript. Another built-in functionality is the ability to use the viewer's computer to get the date and time (assuming they have it set correctly!). We can use this to "stamp" a greeting on the front page. We could write "Good Morning!", "Good Afternoon!", "Good Evening!", or "Isn't it Late to be At the Computer?" depending on what time of day the function returns to us through JavaScript.</p>
+<p>
+The first thing you have to do is to create a <b><tt><font color="#000066">Date</font></tt></b> object in JavaScript:</p>
+
+<pre><font color=#000066>  var today = new Date(); </font></pre>
+
+<p>Now we have something called <b><tt><font color="#000066">today</font></tt></b> that we can reference to get information about the date and time. JavaScript stores this information internally as something like the number of seconds since a reference date such as January 1, 1900.  But the JavaScript <b><tt><font color="#000066">Date</font></tt></b> object has properties that allow us to get the month, day, year, hour, minute, second, etc. </p>
+<p>
+One of the easier object properties to use is <b><tt><font color="#000066">Date.toLocaleString()</font></tt></b> which will display the date in accordance to the settings of the user's computer (since there are different conventions for displaying dates in other countries). So we could write code like:</p>
+<pre><font color=#000066>  var today = new Date(); 
+
+  document.write('According to my JavaScript watch, it is ' + today.toLocaleString() );</font></pre>
+
+<p>which would display like:</p>
+
+	<table border=2 cellpadding=3 cellspacing=0 align=center width=70%> 
+	
+	<tr>
+		<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" 	ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+	</tr>
+	<tr>
+		<td bgcolor=#EEEEEE>
+<!-- start of Volcano Web standard footers -->
+<SCRIPT LANGUAGE="JavaScript">
+<!-- 
+  var today = new Date(); 
+  document.write('According to my JavaScript watch, it is ' + today.toLocaleString() );
+//  -->
+</SCRIPT>
+<!-- end of Volcano Web standard footers -->		
+	</td>
+	</tr>
+	</table>
+
+<p>If you <b>reload</b> this lesson page, the time on the display will change. Note that the date format returned is dependent on the type of computer.</p>
+<p>
+JavaScript offers other information about the web browser that the viewer is using, via the <b><tt><font color="#000066">navigator</font></tt></b> object, so we can test which web browser it is (NetScape, Internet Explorer, etc) as well as which version. This is useful if you are using features in a web page that require certain web browsers-- you can use JavaScript to "test" the set up and display information specific for different browsers or versions.</p>
+<p>
+We will now use JavaScript Date objects and navigator objects to display a customized greeting in our main page. we will do some extra work so that JavaScript displays the day of the week ("Monday, Tuesday", etc) and then write some message if the viewer has an older browser version. We briefly explain below what the code is doing, but if you just want to try it out, you may copy, paste, and test in your browser.</p>
+<ol>
+<li> Open the <b><tt><font color="#000066">index1.html</font></tt></b> document in your text editor.</li>
+<li> Between the part that reads:
+
+<pre><font color=#000066>In this lesson you will use the Internet
+to research information on volcanoes and then write a report on your
+results.</font></pre>
+
+and
+
+<pre><font color=#000066>&lt;br clear=left&gt;
+&lt;hr&gt;
+&lt;p align=center&gt;</font></pre>
+
+insert this JavaScript code:
+
+<pre><font color=#000066>&lt;p&gt;
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+&lt;!-- hide from old browsers
+
+// get date object
+var today = new Date(); 
+var days = new Array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
+
+// write the date 
+document.write('Welcome on this fine &lt;b&gt;' + days[today.getDay()]);
+document.write('&lt;/b&gt;, or more precisely,&lt;br&gt;');
+document.write('&lt;font color="#FFFF33" size=+2&gt;&lt;tt&gt;'); 
+document.write(today.toLocaleString() + '&lt;/tt&gt;&lt;/font&gt;');
+
+// write a welcome string acknowledging the browser version
+document.write('&lt;p&gt;We hope you enjoy your web experience with your version of '); 
+document.write(navigator.appName + ' ' + parseFloat(navigator.appVersion));
+
+// write a warning for old web browsers
+if ( parseInt( navigator.appVersion) &lt; 3 ) {
+	document.write('&lt;font color=#FFFF33&gt; Hmmm.. that\'s a pretty old version of ');
+	document.write(navigator.appName + '! Perhaps it is time to consider an upgrade?&lt;/font&gt;');
+}
+
+// done hiding --&gt;
+&lt;/SCRIPT&gt;</font></pre>
+
+<blockquote><b>NOTE: On the last section of this code, you may see something that looks out of place, a forward slash <tt>\</tt> in the word <b><tt><font color="#000066">that's</font></tt></b>. This is not a typo! You need this special marker so that JavaScript interprets the single quote as an apostrophe character and not the single quote that marks the end of the JavaScript text string. If you remove this forward slash, the code will generate an error.
+</b></blockquote></li>
+<li><b>Save</b> and <b>Reload</b>.</li>
+</ol>
+
+<p>
+In this script we first create the <b><tt><font color="#000066">Date</font></tt></b> object and put it in a variable we call <b><tt><font color="#000066">today</font></tt></b>. We then create an "array", or a list of things, called <b><tt><font color="#000066">days</font></tt></b> that contains names of the days of the week.</p>
+
+<p>
+Arrays are very handy containers because we can refer to items in them like:</p>
+
+<pre>  <font color=#000066>  days[2]</font></pre>
+
+<p>where the number in the square brackets indicates the location in the array for the item we are looking for. But watch out! JavaScript starts counting arrays at 0, so <b><tt><font color="#000066">days[2]</font></tt></b> actually returns the third item, or "Tuesday".</p>
+<p>
+Our code writes a welcome text string and then uses the array to extract the correct name of the day. The <b><tt><font color="#000066">Date</font></tt></b> object function <b><tt><font color="#000066">today.getDay()</font></tt></b> returns a number from 0 to 6 that corresponds to which day of the week it is. So we can combine the <b><tt><font color="#000066">Date</font></tt></b> object function and our array of names to print the correct day of the week.</p>
+<p>
+Following this, we use the format provided from <b><tt><font color="#000066">today.toLocaleString()</font></tt></b> to write the full date information.</p>
+<p>
+The next piece prints the browser name ("NetScape", "Internet Explorer") followed by the version returned to us by the function <b><tt><font color="#000066">navigator.appVersion</font></tt></b>, which actually returns a longer descriptive name (see note below). By putting that inside a function called <b><tt><font color="#000066">parseFloat</font></tt></b>, it pulls out or "parses" the part of that string that corresponds to a whole number. As a comparison, see:</p>
+
+<script language="JavaScript">
+<!--
+document.write('<ol type=a><li>navigator.appName<br><tt><font  color=#990000>');
+document.write( navigator.appName + '</font></tt>');
+document.write('<li>navigator.appVersion<br><tt><font color=#990000>');
+document.write( navigator.appVersion + '</font></tt>' );
+document.write('<li>parseFloat(navigator.appVersion) <br><tt><font color=#990000>');
+document.write( parseFloat(navigator.appVersion) + '</font></tt>');
+document.write('<li>parseInt(navigator.appVersion) <br><tt><font color=#990000>');
+document.write( parseInt(navigator.appVersion) + '</font></tt>');
+document.write('<li>navigator.appName + \' \' + parseFloat(navigator.appVersion) <br><tt><font  color=#990000>');
+document.write( navigator.appName + ' ' + parseFloat(navigator.appVersion) + '</font></tt></ol>');
+// -->
+</script>
+<p>
+This last item provides a nicely formatted string to display the browser and version number. The code <b><tt><font color="#000066">parseInt(navigator.appVersion)</font></tt></b> parses out the whole number part of this information. if you look at the last portion of our code above, we test the parseInt value and write an extra warning if it is less than our test value of 3. To see the difference, you should change the 3 to a number higher than your present browser version. </p>
+
+<blockquote><b>Note: The result of this function for Microsoft Internet Explorer browsers usually report a number on eless than the actual version. Do not be dismayed if the browser version reported by <tt><font color="#000066">navigator.appVersion</font></tt> does not match what you know is installed on your computer. It is <em>not</em> reporting the version on your computer, but the compatible version of NetScape as far as the JavaScript capability. For example, Internet Explorer version 5.0 has JavaScript capability of NetScape 4.0.<br><br>
+It is confusing, but keep in mind that if you are doing any JavaScript coding to determine a browser version, you first need to check if the browser is Internet Explorer, and if it is, you must add 1.0 to the reported <tt><font color="#000066">navigator.appVersion</font></tt> to get the actual browser version. For more information, see WebReference's information on <a href="http://www.webreference.com/tools/browser/javascript.html">JavaScript Browser Sniffing</a>.
+
+</b></blockquote>
+
+<h2>Check Your Work</h2>
+<p>Compare your web pages with this <a href="tut27b_ex/index1.html" target="sample">sample</a>
+of how it should appear. If your pages are different from the sample or the hypertext links do not work correctly, review the text you entered in the text editor. Note that JavaScript is <b>very</b> sensitive to typographical mistakes -- one missing quote or semi-colon can ruin the page!</p>
+
+
+<h2>Review</h2>
+<p>Review topics for this lesson:</p>
+<ol>
+<li> Why does it matter where in your HTML document you insert JavaScript code for writing dynamic content?</li>
+<li> What information can you get from the JavaScript <b><tt><font color="#000066">document</font></tt></b> object? What is the format for printing that information to the web page?</li>
+<li> How do you get the current date and time from JavaScript? the day of the week?</li>
+<li> Using JavaScript, what information can you get about the web browser?</li>
+</ol>
+
+
+<h2>Independent Practice</h2>
+<p>Copy the format for the JavaScript footer used here to your own documents and see if you can change the HTML format to match your design. </p>
+<p>
+Can you think of a way to write JavaScript code that would display a different welcome message for every hour of the day? <I>Hint:</I> Use an array to create the text of all your messages, create a date object called <b><tt><font color="#000066">today</font></tt></b> and use the <b><tt><font color="#000066">today.getHours()</font></tt></b> function to determine the current hour.</p>
+<hr>
+<h2>Coming Next....</h2>
+
+<p>Your JavaScript Doctor gives you the next dose of code... functions and code for opening browser windows of any size and configuration. Where you want them and with as many or as few browser buttons as you like.</p>
+
+<h5>  GO TO....  | <a href="lessons.html">Lesson Index</a> | 
+<a href="tut27a.html">previous:  "JavaScript: Alerts and MouseOvers"</a> |
+<a href="tut27c.html">next:  "JavaScript: Custom Window Openers"</a> |</h5>
+
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b>  Lesson 27b: A Wee Dose of JavaScript : Dynamic Content<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut27b.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut27b.html</font>
+<br><br>
+
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/InteractiveResource" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/></License></rdf:RDF> -->
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,173 @@
+<html>
+<head>
+<title>Tags- Lists</title>
+<script language="javascript">
+<!-- hide scripts from crusty old browsers
+
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+			
+		} else {  
+// send page to designated URL		 	
+   			document.location.href = newURL;
+   		}
+   	}
+   	return true;
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 3;
+}
+
+
+// done hiding -->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" onLoad="resetMenu()">
+<h5><I>Writing HTML</I> |
+<a href="../index.html">About</a> | <a href="../faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="../ref.html">References</a> | 
+<a href="index.html">Tags</a> |
+<a href="../lessons.html">Lessons</a> |
+</h5>
+<h2>Summary of HTML Tags Used in the Tutorial</h2>
+<noscript>
+<tt>
+<a href="tag1.html">Web Page Structure</a> |
+<a href="tag2.html">Text Formatting</a> |
+<a href="tag3.html">Text Breaks & Divisions</a> |
+Lists | 
+<a href="tag5.html">Multimedia</a> |
+<a href="tag6.html">Hyper-Links</a></tt> | 
+</tt>
+</noscript>
+
+<center>
+<form name="gomenu">
+<select onChange="goPage(this.options[this.selectedIndex].value.toString())" name="selector">
+<option value = "tag1.html">Web Page Structure
+<option value = "tag2.html">Text Formatting
+<option value = "tag3.html">Text Breaks & Divisions
+<option value = "" selected>Lists
+<option value = "tag5.html">Multimedia
+<option value = "tag6.html">Hyper-Links
+<option value = "tag7.html">JavaScript
+<option value = "tag8.html">Forms
+<option value = "-"> --------------
+<option value = "../ref.html">Other HTML References
+</select>
+</form>
+</center>
+
+<table border=0 cellspacing=3 cellpadding=8>
+<tr bgcolor="#CCFFCC">
+<td valign=top>
+<pre>
+&lt;ul&gt;       &lt;ol&gt;
+  &lt;li&gt;       &lt;li&gt;
+  &lt;li&gt;       &lt;li&gt;
+&lt;/ul&gt;      &lt;/ol&gt;</pre>
+</td>
+<td valign=top><b>Item Lists</b><br> 
+Unordered Lists <b><tt><font color="#000066">&lt;ul&gt;</font></tt></b> for bulleted items,
+ordered lists <b><tt><font color="#000066">&lt;ol&gt;</font></tt></b> for numbered items</td>
+<td valign=top><a href="../tut6.html">Lesson 6</a></td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;ul type=xxxx&gt;
+
+&lt;li type=xxxx&gt;</pre>
+</td>
+<td valign=top><b>Bullets for Unordered Lists</b><br>
+Over-ride the default bullets:
+<ul>
+<li type=circle><b><tt><font color="#000066">type=circle</font></tt></b>
+<li type=square><b><tt><font color="#000066">type=square</font></tt></b>
+<li type=disc><b><tt><font color="#000066">type=disc</font></tt></b>
+</ul> 
+</td>
+<td valign=top><a href="../tut22.html">Lesson 22</a></td>
+</tr>
+
+<tr bgcolor="#CCFFCC">
+<td valign=top>
+<pre>&lt;ol type=X&gt;
+
+&lt;li type=X&gt;</pre>
+</td>
+<td valign=top><b>Number Styles for Ordered Lists</b><br>
+Use different characters for lists:
+<ul>
+<li><b><tt><font color="#000066">type=1</font></tt></b> (1,2,3...)
+<li><b><tt><font color="#000066">type=A</font></tt></b> (A,B,C,...)
+<li><b><tt><font color="#000066">type=a</font></tt></b> (a,b,c,...)
+<li><b><tt><font color="#000066">type=I</font></tt></b> (I,II,III,...)
+<li><b><tt><font color="#000066">type=i</font></tt></b> (i,ii,iii,...)
+</ul>
+</td>
+<td valign=top><a href="../tut22.html">Lesson 22</a></td>
+</tr>
+
+<tr bgcolor="#CCCC99">
+<td valign=top>
+<pre>&lt;ol start=i&gt;
+
+&lt;li value=j&gt;</pre>
+</td>
+<td valign=top><b>Number Values for Ordered Lists</b><br>
+<b><tt><font color="#000066">start</font></tt></b> will begin a list with any positive number.
+<b><tt><font color="#000066">value</font></tt></b> will renumber the list from the item and following with
+the new value.
+</td>
+<td valign=top><a href="../tut22.html">Lesson 22</a></td>
+</tr>
+
+<tr bgcolor="#CCFFCC">
+<td valign=top>
+<pre>&lt;dl&gt;
+  &lt;dt&gt;
+  &lt;dd&gt;
+  &lt;dt&gt;
+  &lt;dd&gt;
+&lt;/dl&gt;</pre>
+</td>
+<td valign=top><b>Definition Lists</b><br> 
+Lists with text items <b><tt><font color="#000066">&lt;dt&gt;</font></tt></b> and indented definitions <b><tt><font color="#000066">&lt;dd&gt;</font></tt></b></td>
+<td valign=top><a href="../tut11.html">Lesson 11</a></td>
+</tr>
+
+
+</table>
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML</b> Summary of HTML Tags: Lists<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tags/tag4.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tags/tag4.html
+</font>
+</p>
+<!-- end writing HTML footers  -->
+</body>
+</html>
+
+
+

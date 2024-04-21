@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Volcano Web</title> 
+</head>
+<body>
+<img alt="A Lesson on:" src="../pictures/lava.gif" width=300 height=259>
+<h1>Volcano Web</h1>
+<BLOCKQUOTE>
+<b><I>
+"Nature raves savagely, threatening the lands"
+</I></b><br>
+-- <a href="http://www.livius.org/pi-pm/pliny/pliny_e.html">Pliny the Elder</a>, who died of asphyxiation after 
+observing the destruction of Pompeii by the
+79 A.D. eruption of Mount Vesuvius.
+</bLOCKQUOTE>
+
+In this lesson you will use the Internet
+to research information on volcanoes and then write 
+a report on your results.
+<hr>
+<b>In this Lesson...</b>
+<ul><i>
+<li><a href="intro.html">Introduction</a>
+<li><a href="term.html">Volcano Terminology</a>
+<li><a href="usa.html">Volcanic Places in the USA</a>
+<li><a href="mars.html">Volcanic Places on Mars</a>
+<li><a href="proj.html">Research Project</a></i>
+</ul>
+
+<hr>
+<address><b>Volcano Web</b><br>
+created by Lorrie Lava, 
+<a href="mailto:lava@pele.bigu.edu">
+lava@pele.bigu.edu</a><br>
+Volcanic Studies, 
+<a href="http://www.bigu.edu/">Big University</a><p>
+<tt>last modified: April 1, 1995</tt>
+</address>
+<p>
+<tt>URL: http://www.bigu.edu/web/volc.html</tt>
+<p>
+<body>
+</html>

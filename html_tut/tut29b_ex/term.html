@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Volcano Terminology</title> 
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+			
+		} else {  
+// send page to designated URL		 	
+   			document.location.href = newURL;
+   		}
+   	}
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 3;
+}
+	
+//-->
+</SCRIPT>
+</head>
+<BODY BGCOLOR=#000000 TEXT=#FFFFCC LINK=#33CCFF VLINK=#FF6666 onLoad="resetMenu()">
+<form name="gomenu">
+
+<h5>Volcano Web /  
+<select onChange="goPage(this.options[this.selectedIndex].value)" name="selector">
+<option value = "index1.html">Volcano Web</option>
+<option value = "-"> --------------</option>
+<option value = "intro.html">Introduction</option>
+<option value = "" selected>Volcano Terminology</option>
+<option value = "usa.html">Volcanic Places in the USA</option>
+<option value = "mars.html">Volcanic Places on Mars</option>
+<option value = "proj.html">Research Project</option>
+</select>
+<noscript>
+<a href="index1.html">Index</a> / 
+<a href="intro.html">back</a> / 
+<a href="usa.html">next</a>
+</noscript>
+</form></h5>
+
+<h2 align=center>Volcano Terminology</h2>
+The study of volcanoes, or <tt>Volcanology</tt>, includes many odd
+terms. How many of these do you know?
+<ul>
+<li><a href="term_1.html" onClick="alert('A caldera is a circular shaped landform depression caused by the eruption of a large, near surface body of magma.'); return false" onMouseOver="window.status='what is a caldera?'; return true">caldera</a>
+<li><a href="term_2.html" onClick="alert('Vesicularity is a measure how much of a rock volume consists of air chambers.'); return false" onMouseOver="window.status='what is vesicularity?'; return true">vesicularity</a>
+<li><a href="term_3.html" onClick="alert('Pahoehoe is a type of basaltic lava flow texture that comes from the Hawaiian word for smooth and ropy.'); return false"  onMouseOver="window.status='what is pahoehoe?'; return true">pahoehoe</a>
+<li><a href="term_4.html" onClick="alert('Rheology is the study of how materials deform.'); return false"  onMouseOver="window.status='what is rheology?'; return true">rheology</a>
+<li><a href="term_5.html" onClick='alert("A lahar is a mudslide generated from the flanks of a volcano. Some say it comes from the phrase \"Look Out!\" in the Indonesian language."); return false'  onMouseOver="window.status='what is a lahar?'; return true">lahar</a>
+</ul>The term <I>nu&eacute;e ardente,</I> or "glowing cloud"
+was first used by La Croix (1904)
+in his description of the volcanic flows he observed in the 
+1902 eruption of Mt Pel&eacute;e, a historically active volcano on
+the island of Martinique.
+<p>
+There are many different types of volcanic eruptions and landforms. They can be classified according to the <a href="explode.html">degree of "explosiveness"</a> and the <a href="height.html">height</a> of the eruption column:<p>
+<center>
+<font size=+2>Investigate each type by clicking on a picture</font><br>
+<font size=-1>each link will open its own browser window</font><br>
+<a href="nomap.html"><img src="../pictures/volc.jpg" usemap="#volcmap" border=0></a>
+<p>
+</center>
+<base target="_blank">
+<map name="volcmap">
+<area shape="rect" href="http://volcano.und.edu/vwdocs/frequent_questions/grp7/europe/question308.html" coords="48,46,204,153" onMouseOver="window.status='information about surtseyan type volcanos'; return true">
+<area shape="rect" href="explode.html" coords="0,66,26,227" onMouseOver="window.status='description of explosiveness scale'; return true">
+<area shape="rect" href="height.html" coords="95,283,378,309" onMouseOver="window.status='description of height scale'; return true">
+<area shape="rect" href="http://www.geo.mtu.edu/volcanoes/pinatubo/" coords="321,154,468,261" onMouseOver="window.status='information about plinian type volcanos'; return true">
+<area shape="rect" href="http://stromboli.net/" coords="172,155,318,274" onMouseOver="window.status='information about strombolian type volcanos'; return true">
+<area shape="rect" href="http://hvo.wr.usgs.gov/volcanowatch/" coords="36,155,168,276" onMouseOver="window.status='information about hawaiian type volcanos'; return true">
+<area shape="rect" href="http://www.geo.mtu.edu/volcanoes/santamaria/" coords="205,3,343,123" onMouseOver="window.status='information about phreato-plinian type volcanos'; return true">
+</map>
+<base target="_self">
+
+<h3>Volcanoes in Action</h3>
+<a href="vesuvius.html" onClick="window.open('vesuvius.html', 'plinian', 
+'width=600,height=480,status,menubar'); return false" 
+onMouseOver="window.status='view computer animation of Plinian eruption'; 
+return true"><img src="../pictures/projector.gif" alt="showtime!" 
+width="46" height="32" align="left" border=0></a>  
+Watch a <a href="vesuvius.html" onClick="window.open('vesuvius.html', 'plinian', 
+'width=600,height=480,status,menubar'); return false" 
+onMouseOver="window.status='view computer animation of Plinian eruption'; 
+return true">computer animation of a Plinian style eruption</a>, modeled after the AD 79 eruption of Vesuvius which destroyed the city of Pompeii. Use the animation to understand the formation of Plinian eruption columns and how their collapse generates pyroclastic flows [295k QuickTime movie].
+
+<!-- start of Volcano Web standard footers -->
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide  scripts from old browsers
+
+document.write('<p><hr><FONT FACE="helvetica,arial" size=-1><i>Volcano Web:</i> <b>');
+document.write(document.title + '</b><BR>');
+document.write('created by Lorrie Lava, ');
+document.write('<a href="mailto:lava@pele.bigu.edu?subject=' + document.title + '">');
+document.write('lava@pele.bigu.edu</a><br>');
+document.write('Volcanic Studies, <a href="http://www.bigu.edu/">');
+document.write('Big University</a><p>');
+
+// append a modification date only if server provides a valid date
+if (Date.parse(document.lastModified) > 0) {
+	document.write('<b>last modified: </b>' + document.lastModified + '<BR>');
+}
+document.write('<b>URL: </b>' + document.location.href + '</FONT><P>');	
+
+// done hiding from old browsers -->
+</SCRIPT>
+<!-- end of Volcano Web standard footers -->
+</body>
+</html>

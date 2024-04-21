@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Testing HTML for Lesson 21</title> 
+</head> 
+<body bgcolor=#FFFFFF>
+
+<h5><I>Writing HTML</I> |
+<a href="../tut21.html">Return to Lesson 21</a> |</h5>
+
+<h1>Testing HTML for Lesson 21</h1>
+This page is to test to see if your browser supports the HTML discussed in the lesson for <b>Tables</b>. If it does not, then it is probably not worth your time doing this lesson!
+<dl>
+
+<dt><b>Basic Table With Border</b> <tt>&lt;table border&gt;</tt>
+<dd>If the figure below is a three by three grid of X's and O's, then your browser supports HTML tables.
+<p>
+<table border>
+<tr><td>X</td><td>X</td><td>O</td></tr>
+<tr><td>O</td><td>O</td><td>X</td></tr>
+<tr><td>X</td><td>O</td><td>X</td></tr>
+</table>
+<p>
+<dt><b>Variable-Width Border</b> <tt>&lt;table border=10&gt;</tt>
+<dd>If the table below has a thick, shaded border 10 pixels thick, then your browser supports HTML tables with the border width set by <tt>border</tt> attribute.
+<p>
+<table border=10>
+<tr><td>X</td><td>X</td><td>O</td></tr>
+<tr><td>O</td><td>O</td><td>X</td></tr>
+<tr><td>X</td><td>O</td><td>X</td></tr>
+</table>
+<p>
+<dt><b>Invisible Border</b> <tt>&lt;table&gt;</tt>
+<dd>If the table below has no border, then your browser supports HTML tables with invisible borders by omitting the <tt>border</tt> attribute.
+<p>
+<table>
+<tr><td>X</td><td>X</td><td>O</td></tr>
+<tr><td>O</td><td>O</td><td>X</td></tr>
+<tr><td>X</td><td>O</td><td>X</td></tr>
+</table>
+<p>
+<dt><b>Invisible Border</b> <tt>&lt;table border=0&gt;</tt>
+<dd>If the table below has no border, then your browser supports HTML tables with invisible borders by setting the <tt>border=0</tt> attribute.
+<p>
+<table border=0>
+<tr><td>X</td><td>X</td><td>O</td></tr>
+<tr><td>O</td><td>O</td><td>X</td></tr>
+<tr><td>X</td><td>O</td><td>X</td></tr>
+</table>
+<p>
+<dt><b>Variable Cell Wall Width</b> <tt>&lt;table border=5 cellspacing=15&gt;</tt>
+<dd>If the table below has cell walls that are wider than one pixel, then your browser supports HTML tables with variable cell wall widths via the <tt>cellspacing=y</tt> attribute.
+<p>
+<table border=5 cellspacing=15>
+<tr><td>X</td><td>X</td><td>O</td></tr>
+<tr><td>O</td><td>O</td><td>X</td></tr>
+<tr><td>X</td><td>O</td><td>X</td></tr>
+</table>
+<p>
+<dt><b>Variable Cell Padding</b> <tt>&lt;table border=5 cellspacing=15 cellpadding=8&gt;</tt>
+<dd>If the table below has cell walls with empty space between the contents and the cell walls, then your browser supports HTML tables with variable cell padding via the <tt>cellpadding=z</tt> attribute.
+<p>
+<table border=5 cellspacing=15 cellpadding=8>
+<tr><td>X</td><td>X</td><td>O</td></tr>
+<tr><td>O</td><td>O</td><td>X</td></tr>
+<tr><td>X</td><td>O</td><td>X</td></tr>
+</table>
+<p>
+<dt><b>Colored Cells</b> <tt>&lt;tr bgcolor=#xxyyzz&gt; &lt;td bgcolor=#xxzzyy&gt;</tt>
+<dd>If the table below has different color cells, then your browser supports HTML colored tables  via the <tt>bgcolor=#color</tt> attribute. The first two rows are colors (grey and tan) used in this lesson.
+<p>
+<table border=5 cellspacing=15 cellpadding=8>
+<tr bgcolor=#222222><td>X</td><td>X</td><td>O</td></tr>
+<tr bgcolor=#EE8844><td>O</td><td>O</td><td>X</td></tr>
+<tr bgcolor=#00BBBB><td>X</td><td>O</td><td>X</td></tr>
+</table>
+<p>
+<dt><b>Background Images for Table Cells</b> <tt>&lt;td background="pattern.gif&gt;</tt>
+<dd>If the table below has patterns in the background, then your browser supports HTML colored tables  via the <tt>background="pattern.gif"</tt> attribute.
+<p>
+<table border=5 cellspacing=15 cellpadding=8>
+<tr><td background="../pictures/paper.gif">X</td><td background="../pictures/paper.gif">X</td><td background="../pictures/paper.gif">O</td></tr>
+<tr><td background="../pictures/bar.gif">O</td><td background="../pictures/bar.gif">O</td><td background="../pictures/bar.gif">X</td></tr>
+<tr><td background="../pictures/parch.gif">X</td><td background="../pictures/parch.gif">O</td><td background="../pictures/parch.gif">X</td></tr>
+</table>
+
+<p>
+<dt><b>Background Images for Tables</b> <tt>&lt;table... background="pattern.gif&gt;</tt>
+<dd>If the table below has patterns in the background, then your browser supports HTML colored tables  via the <tt>background="pattern.gif"</tt> attribute. Note the effect can be different in different browsers; NetScape will fill only the table cells while Internet Explorer will cover the entire area of the table.
+<p>
+<table border=5 cellspacing=15 cellpadding=8 background="../pictures/parch.gif">
+<tr><td>X</td><td>X</td><td>O</td></tr>
+<tr><td>O</td><td>O</td><td>X</td></tr>
+<tr><td >X</td><td>O</td><td>X</td></tr>
+</table>
+
+</dl>
+<hr noshade size=1><font face="verdana,helvetica" size=-1><center>
+<b>Writing HTML:</b> Testing HTML for Lesson 21<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><p>
+The Internet Connection at MCLI is 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">Alan Levine --}</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http%3A//www.mcli.dist.maricopa.edu/tut/">feedback center</A></B>
+</font>
+
+<p>
+<tt>URL: http://www.mcli.dist.maricopa.edu/tut/tut21_ex/test.html</tt>
+<p>
+</body>
+</html>
+
+
+
