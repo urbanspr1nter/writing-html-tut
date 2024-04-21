@@ -1,0 +1,68 @@
+#!/usr/local/bin/perl
+
+# energy.pl
+# Author: Alan Levine
+#>
+# Calculates estimated maximum velocity for 
+# input height using simple energy laws
+# 
+#<
+
+# 
+require("CGI.pm");
+
+# Load CGI.pm library to handle input and objects
+use CGI qw(:standard :cgi-lib);
+use CGI::Carp qw(fatalsToBrowser);
+
+# parse form variables to array
+&ReadParse;
+
+# print return html header
+print header;
+
+if (($in{'height'} =~ /\d/) and ( $in{'height'} > 0) ) {
+	# set the gravity constant
+	if ( $in{'units'} eq "meters") {
+		$g = 9.8;
+	} else {
+		$g = 32.0;
+	}
+	
+	$vel = sprintf( "%d", sqrt( 2 * $g * $in{'height'}));
+		
+print <<"end_html";
+<html>
+<head></head>
+<BODY BGCOLOR=#FFFFCC TEXT=#333333 LINK="#0000CC" VLINK=#FF6666>
+<h2 align=center>Simple Calculations</h2>
+<h3>Equation Kinetic and Potential Energies</h3>
+
+For the input height of <b>$in{'height'} $in{'units'}</b>,
+the energy equation provides an estimated maximum velocity of
+<p>
+<center>
+<font size=+3 color=#000066><tt><b>$vel $in{'units'} / sec</b></tt></font>
+</center>
+</body>
+</html>
+end_html
+
+} else {
+
+print <<"end_html";
+<html>
+<head></head>
+<BODY BGCOLOR=#FFFFCC TEXT=#333333 LINK="#0000CC" VLINK=#FF6666>
+<h2 align=center>Simple Calculations</h2>
+<h3>Equation Kinetic and Potential Energies</h3>
+Sorry, but the entered height <b>$in{'height'} $in{'units'}</b>
+is not valid. To complete the calculation, the height, must be a
+number greater than 0. Please click your browser back button to try again
+</body>
+</html>
+
+end_html
+}
+
+exit;

@@ -1,0 +1,284 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>29a. Animate my GIF!</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><I>Writing HTML</I> |
+<a href="index.html">About</a> | 
+<a href="faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="ref/index.html">References</a> | 
+<a href="tags/index.html">Tags</a> |
+<a href="lessons.html">Lessons</a> |
+<a href="tut29.html">previous</a> | 
+<a href="tut29b.html">next</a> | 
+</h5>
+
+<h1>29a. Animate my GIF!</h1>
+
+<table border=0 cellspacing=0 cellpadding=0 width=70% align=center>
+<tr>
+<td><img src="pictures/siren.gif" alt="siren" width="100" height="100" align="right"></td>
+<td><font size=+3 color="#CC0000">It's a GIF!<br>It Moves!<br>It's an Animated GIF!</font>
+</td>
+</tr>
+<tr>
+<td colspan=2 align=center><font size=2 color=#666666 face="helvetica,arial">do we have your attention now?</font><br>
+<font size=1 color=#999999 face="helvetica,arial">can you get it back?</font>
+</td></tr>
+</table>
+
+<h2>Objectives</h2>
+After this lesson you will be able to:
+<ul>
+<li> Identify types of information that are appropriate for GIF animations</li>
+<li> Describe the difference between a GIF image file and an animated GIF image file</li>
+<li> Write the HTML to insert an animated GIF into your web page</li>
+<li> Write JavaScript code to close a window</li>
+</ul>
+<hr>
+
+<h2>Lesson</h2>
+<p>We doubt we have to describe what animated GIF image looks like, as you can find them all over the web. These range from animated icons, to commercial advertisements ("ad banners"), to web site "credits", first pages of web sites that look like the opening screens to a movie. GIF animations are useful because you can count on them being able to be viewed on almost every web browser and they do not require any special add-ons to work.
+</p>
+
+
+
+<table border=0 cellpadding=4 cellspacing=1 width=75% align=center>
+<tr>
+<td valign=top bgcolor=#66FF66 align=right><font size=+1>media type:</font>
+<td colspan=2 bgcolor=#CCFFCC>animated GIF
+</td>
+</tr>
+<tr>
+<td valign=top bgcolor=#66FF66 align=right><font size=+1>what it does well:</font>
+<td colspan=2 bgcolor=#CCFFCC>time-based information, sequences, processes, cartoon style/flip card style animation
+</td>
+</tr>
+
+
+<tr bgcolor=#66FF66>
+<th>issue to consider</th>
+<th>rating</th>
+<th>comments</th>
+</tr>
+
+<tr bgcolor=#EEEEEE>
+<td align=center valign=top>"hurdle" or barrier for creating media</td>
+<td valign=top><font face="verdana,helvetica" size=2>low <img src="pictures/clear.gif" alt="" width="48" height="2"> high</font><br>
+<img src="pictures/cc99ff.gif" alt="----" width="20" height="8"></td>
+<td valign=top>Most newer graphics programs as well as freeware/shareware can create GIF images. Many sites offer free collections of animations you can use</td>
+</tr>
+
+<tr bgcolor=#FFFFFF>
+<td align=center valign=top>"breadth" of audience that can view media</td>
+<td valign=top><font face="verdana,helvetica" size=2>narrow <img src="pictures/clear.gif" alt="" width="30" height="2"> wide</font><br>
+<img src="pictures/cc99ff.gif" alt="----" width="90" height="8"></td>
+<td valign=top>GIF animations can be viewed in nearly every graphical web browser in use today; no plug-ins needed</td>
+</tr>
+
+<tr bgcolor=#EEEEEE>
+<td align=center valign=top>bandwidth consumption</td>
+<td valign=top><font face="verdana,helvetica" size=2>low <img src="pictures/clear.gif" alt="" width="48" height="2"> high</font><br>
+<img src="pictures/cc99ff.gif" alt="----" width="20" height="8"></td>
+<td valign=top>can be quite small file sizes and the data can "pseudo stream" as they play.</td>
+</tr>
+</table>
+<p>
+An animated GIF image is just an extension of the same file format used for inline GIF images we saw in <a href="tut7.html">lesson 7</a>. But rather than just showing one image, an animated GIF has layers of different images, and information in the file can control how long it waits before displaying the next image, and how many times to loop through the entire sequence.</p>
+<p>
+Several current graphics programs should have options to create animated GIF files. Plus, you can find free or low cost shareware programs (e.g. <a href="http://shareware.com/">http://shareware.com/</a>) that can turn a series of images into a GIF animation. And since the web is full of dancing, blinking, and moving GIFs, there are plenty of free clip-art sites where you can download animations to use for your own pages. We provide a list of links to these sites at the end of this lesson.</p>
+<p>
+Another advantage of this media type is that the entire graphics file does not have to be downloaded before it starts to play; an animated GIF will commence as soon as enough information is downloaded to display the first "frame" of the animation. Therefore, it appears to "stream" the animation and you can create animation files that are several hundred k in size that may start playing when perhaps 20% of the file has been received by the viewer.</p>
+<p>
+What are some down sides of animated GIFs? The primary one is that because the movement attracts your eye, they can be distracting to someone trying to comprehend the other information on the same page. The other disadvantage so that they generally tend to be used as a novelty, and after the first few times you see the same animated teddy bear. it can start to look clich&eacute; or juvenile.</p>
+<p>
+Animations can be very useful to show time-ordered information, i.e. to show changes in a feature over time (e.g. erosion of a beach, growth of a plant, changes in stock market prices) or to demonstrate a process (e.g. how to change a tire, how blood moves through the heart). Like GIF images, the files are much smaller for graphics that have large continuous regions of solid color and sharp edges, as compared to images with more spatial variation such as photographs.</p>
+
+<h3>HTML for Inserting an Animated GIF</h3>
+<p>
+This should be an easy lesson since the HTML code for inserting an animated GIF is exactly the same as we learned for inserting a "regular" ("un-animated"?) GIF that we saw in <a href="tut7a.html">lesson 7a</a>:</p>
+
+<pre><font color=#000066>  &lt;img src=&quot;filename.gif&quot; alt="alternative text" width=X height=Y&gt;</font></pre>
+
+<p>where <b><tt><font color="#000066">X</font></tt></b> is the  width of the image and <b><tt><font color="#000066">Y</font></tt></b> is the height of the
+image in pixels.  You can also include the left and right alignment options we saw in <a href="tut20.html">lesson 20</a>.</p>
+
+<a name="dlret"></a>
+<h3>Adding a GIF-animated Slide Show</h3>
+
+<p><b>Note: If you do not have the working documents from the previous
+lessons, <a href="tut29aget.html">download a copy</a> now.</b></p>
+<p>
+For our <i>Volcano Web</i> site we are going to add an animated GIF slide show that reviews the events that led to the May 18, 1980 eruption of Mount St Helens. This consists of photographs, and diagrams, used courtesy of the <a href="http://vulcan.wr.usgs.gov/">USGS/Cascades Volcano Observatory</a>. </p>
+
+<a name="studio"></a>
+<p>
+To view and download the GIF animation, visit the <a href="tut29aimg.html">Lesson 29a Image Studio</a>. Save this image inside of your <b><tt><font color="#000066">pictures</font></tt></b> folder/directory with your other image files.</p>
+<p>
+We are going to first create a basic HTML page that displays the GIF animation. Then we will build a link from our Volcanic Places in the USA page that will load this animation in a separate browser window.
+</p>
+<ol>
+<li> Use your text editor to create a new HTML file called <b><tt><font color="#000066">msh_may18.html</font></tt></b> in your workspace directory/folder.</li>
+<li> Enter the following HTML in this file:
+
+<pre><font color=#000066>
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Mount St Helens: Events of May 18, 1980&lt;/title&gt;
+&lt;/head&gt;
+&lt;BODY BGCOLOR=#000000 TEXT=#FFFFCC LINK=#33CCFF VLINK=#FF6666&gt;
+&lt;center&gt;
+&lt;img src="../pictures/msh_events.gif" alt="Mount St Helens Animation" 
+vspace=10 width="400" height="135"&gt;&lt;br&gt;
+&lt;font face="verdana,helvetica,arial" size=2 color=#999999&gt;
+slide show will load and play automatically&lt;/font&gt;&lt;p&gt;
+&lt;i&gt;Courtesy of the 
+&lt;a href="http://vulcan.wr.usgs.gov/"&gt;USGS/Cascades Volcano Observatory&lt;/a&gt;.&lt;/i&gt;
+&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</font></pre>
+
+<blockquote><b>NOTE: Since the GIF animation may stream in slower "chunks" via a slow internet connection, we provide a message in the small text below the image so a visitor to this page knows to wait while the animation loads and runs.
+</b></blockquote></li>
+
+<li> <b>Save</b> and <b>Reload</b> in your web browser. This should be a fairly simple page with the animated GIF slide show in the center.</li>
+</ol>
+
+<p>Now we will modify the HTML in the Volcanic Places in the USA file <b><tt><font color="#000066">usa.html</font></tt></b> so that it uses JavaScript to display our new document in a smaller web browser window.
+</p>
+
+<ol>
+<li> Use your text editor to open the file <b><tt><font color="#000066">usa.html</font></tt></b></li>
+<li> After the last sentence in the Mount St. Helens section ("...toppled over like toothpicks.") add this HTML:</li>
+
+<pre><font color=#000066>
+&lt;p&gt;
+&lt;a href="msh_may18.html" onClick="window.open('msh_may18.html', 
+'msh', 'width=440,height=280,status,menubar'); return false" 
+onMouseOver="window.status='view animation of eruption events'; 
+return true"&gt;&lt;img src="../pictures/projector.gif" alt="showtime!" 
+width="46" height="32" align="left" border=0&gt;&lt;/a&gt;  
+See the &lt;a href="msh_may18.html" onClick="window.open('msh_may18.html', 
+'msh', 'width=440,height=280,status,menubar'); return false" 
+onMouseOver="window.status='view animation of eruption events'; 
+return true"&gt;animation of events&lt;/a&gt; for this volcanic eruption
+[194k GIF Animation].
+</font></pre>
+
+<blockquote><b>NOTE: We are using JavaScript code from <a href="tut27d.html">lesson 27d</a> to open a specific HTML file <b><tt><font color="#000066">msh_may18.html</font></tt></b> in a new web browser window that is 440 pixels wide and 280 pixels high. We have also included the JavaScript mouseOver code to provide a descriptive text when a viewer moves the mouse over the link (see <a href="tut27a.html"> lesson 27a</a>). The slideshow page is set to open by clicking either the icon of the projector or the hypertext link that is adjacent to the icon.
+<br><br>
+Note also that our link information gives the site visitor a sense of what kind of media (and file size) will be included on the page if they follow the link.
+</b></blockquote></li>
+
+<li> <b>Save</b> and <b>Reload</b> in your web browser. If all went well, when you click the text <b><tt><font color="#000066">animation of events</font></tt></b> from the Volcanic Places in the USA page, the slide show should play in a new browser window.</li>
+</ol>
+
+<p>Now you may realize that as we continue adding features that open new windows via JavaScript, some visitors to your web site may not be sure how they can easily return to the main page, as they tend to leave an array of windows that clutter up or completely cover their desktop. We can help out a little bit by adding a JavaScript button to close a window.</p>
+
+<ol>
+<li>Open the file <b><tt><font color="#000066">msh_may18.html</font></tt></b> in your text editor.</li>
+<li>After the line with the link to the Cascades Volcanic Observatory (and above the <b><tt><font color="#000066">&lt;/center&gt;</font></tt></b> tag) insert this HTML:
+
+<pre><font color=#000066>
+&lt;form&gt;
+&lt;input type=button value="Return to Volcanic Places in the USA" 
+onClick="self.close()"&gt;
+&lt;/form&gt;
+</font></pre>
+
+<blockquote><b>NOTE: We've added a new <b><tt><font color="#000066">FORM</font></tt></b> element, <b><tt><font color="#000066">type=button</font></tt></b> which inserts a normal interface style button, with the label of the text in the <b><tt><font color="#000066">value=...</font></tt></b> option. We add a JavaScript event to happen when the button is clicked that tells the window this document reside in (<b><tt><font color="#000066">self</font></tt></b>) to close itself. In effect, we have created a custom button that will close this window just as if the viewer had clicked the standard window close button from the titlebar. 
+</b></blockquote></li>
+<li> <b>Save</b> and <b>Reload</b> in your web browser.</li>
+</ol>
+
+<h2>Check Your Work</h2>
+<p>Compare your web pages with this <a href="tut29a_ex/usa.html" target="sample">sample</a>
+of how it should appear. If your pages are different from the sample or the hypertext links do not work correctly, review the text you entered in the text editor. Compare your work to the HTML of the samples (look for something like <b>Source</b> from your browser's <b>View</b> menu). </p>
+
+
+<h2>Review</h2>
+<p>Review topics for this lesson:</p>
+<ol>
+<li> What kind of information is good to use to present as a GIF animation?</li>
+<li> What is the difference between a GIF animation file and a GIF image file?</li>
+<li> What is the HTML code to place a GIF animation in a web page?</li>
+<li> How do you write JavaScript code to close a browser window?</li>
+</ol>
+
+
+<h2>Independent Practice</h2>
+<p>Add an animated GIF image to your own web pages. Try some of these resources to find images you can use:</p>
+<ul>
+<li> <b>Animation City</b><br>
+<a href="http://www.animationcity.net/">http://www.animationcity.net/</a></li>
+<li> <b>Cool Archive</b><br>
+<a href="http://www.coolarchive.com/gifanimations.cfm">http://www.coolarchive.com/gifanimations.cfm</a></li>
+<li> <b>The Free Site</b><br>
+<a href="http://www.thefreesite.com/freegraphics.htm">http://www.thefreesite.com/freegraphics.htm</a></li>
+<li> <b>XOOM Free Clip Art- Animated GIFs</b><br>
+<a href="http://www.xoom.com/clips/website/animated-gifs">http://www.xoom.com/clips/website/animated-gifs</a></li>
+<li> <b>Absolute Animation</b><br>
+<a href="http://www.altwebmasters.com/aag/">http://www.altwebmasters.com/aag/</a></li>
+<li> <b>A+ Art Free ClipArt</b><br>
+<a href="http://www.aplusart.com/">http://www.aplusart.com/</a></li>
+<li> <b>Gifart.com</b><br>
+<a href="http://www.gifart.com">http://www.gifart.com</a></li>
+</ul>
+
+
+<h2>More Information</h2>
+<p>
+If you tire of viewing animations on a web page, you can freeze them by clicking the <b>Stop</b> button in your web browser. When you create your own GIF animation files, you have some options to control how many times it will loop through an animation sequence, so you can prevent it from endlessly spinning, dancing, etc.</p>
+<p>
+And like static GIFs, you can make them act as hyperlinks like we learned in <a href="tut8e.html">lesson 8e</a>. If we found on the Cheeselover's Free Clip art site an animated gif of a dancing block of cheese, we could create a hypertext link to another site or HTML file by writing:</p>
+
+<pre><font color=#000066>  &lt;a href="http://www.cheeseanonymous.com/"&gt;&lt;img src="dancing_cheese.gif" 
+  width=200 height=100 alt="animation of dancing cheese" border=0&gt;&lt;/a&gt;</font></pre> 
+<p>
+For more information about GIF Animation, see Royal E. Frazier's <a href="http://member.aol.com/royalef/gifabout.htm">GIF Animation on the WWW</a> as well as the <a href="http://wdvl.com/Multimedia/animation/">Web Developer's Virtual Library</a></p>
+                          
+<hr>
+<h2>Coming Next....</h2>
+
+<p>Viva Video! Movies in your web page!</p>
+
+<h5>  GO TO....  | <a href="lessons.html">Lesson Index</a> | 
+<a href="tut29.html">previous:  "Multimedia in a Page"</a> |
+<a href="tut29b.html">next:  "Multimedia: Movie Time"</a> |</h5>
+
+
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b>  Lesson 29a: Animate my GIF!
+<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut29a.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut29a.html</font><br><br>
+
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/InteractiveResource" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/></License></rdf:RDF> -->
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+
+
+

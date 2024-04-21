@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head></head>
+<BODY BGCOLOR=#FFFFCC TEXT=#333333 LINK="#0000CC" VLINK=#FF6666>
+<h2 align=center>Report Form</h2>
+
+<form method="post">
+<table border=0 cellpadding=4 cellspacing=1>
+<tr>
+<td colspan=2 bgcolor="#003333"><font size=+3 color=#CCCCCC>
+<tt><b>student information</b></font></td>
+</tr>
+<tr>
+<td valign=top align=right><tt><b>name</b></tt></td>
+<td valign=top><input type="text" name="name" size="40"><br>
+<font size=2 color=#000099>enter your full name</font>
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right><tt><b>email</b></tt></td>
+<td valign=top><input type="text" name="email" size="40"><br>
+<font size=2 color=#000099>enter an internet contact address</font> 
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right><tt><b>password</b></tt></td>
+<td valign=top><input type="password" name="pass" size="20"><br>
+<font size=2 color=#000099>enter a code to identify you to your instructor</font> 
+</td>
+</tr>
+
+<tr>
+<td colspan=2 bgcolor="#003333"><font size=+3 color=#CCCCCC>
+<tt><b>volcano report</b></font></td>
+</tr>
+
+<tr>
+<td valign=top align=right><tt><b>volcano name</b></tt></td>
+<td valign=top><input type="text" name="vname" size="40"><br>
+<font size=2 color=#000099>enter the name of the volcano you researched</font>
+</td>
+</tr>
+<tr>
+<td valign=top align=right><tt><b>location</b></tt></td>
+<td valign=top><input type="text" name="vlat" size="10"> latitude<br>
+<input type="text" name="vlong" size="10"> longitude<br>
+<font size=2 color=#000099>enter the map coordinates that locate this volcano</font>
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right><tt><b>type</b></tt></td>
+<td valign=top>
+<select name="vtype">
+<option value="select" selected>Select the type...</option>
+<option value="Hawaiian">Hawaiian</option>
+<option value="Surtseyan">Surtseyan</option>
+<option value="Strombolian">Strombolian</option>
+<option value="Phreato-Plinian">Phreato-Plinian</option>
+<option value="Plinian">Plinian</option>
+</select><br>
+<font size=2 color=#000099>select the volcano type 
+(see <a href="term.html" target="_top">volcano terminology</a>)</font>
+</td>
+</tr>
+
+
+<tr>
+<td valign=top align=right><tt><b>activity</b></tt></td>
+<td valign=top>
+<input type="radio" name="active" value="active" checked> active
+<input type="radio" name="active" value="inactive"> inactive<br>
+<input type="text" name="vdate" size="40"><br>
+<font size=2 color=#000099>enter the date of last known eruption, if known</font>
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right><tt><b>features</b></tt></td>
+<td valign=top>
+<input type="checkbox" name="note1" value="danger risk">danger risk to nearby population<br>
+<input type="checkbox" name="note2" value="historic eruptions">has erupted in historic time<br>
+<input type="checkbox" name="note3" value="observed">has been observed in detail<br>
+<input type="checkbox" name="note4" value="explosive eruptions">explosive eruptions<br>
+<input type="checkbox" name="note5" value="mild eruptions">mild eruptions<br>
+<font size=2 color=#000099>check all that apply</font>
+</td>
+</tr>
+
+<tr>
+<td valign=top align=right><tt><b>more info</b></tt></td>
+<td valign=top><textarea name="info" rows="12" cols="40" wrap=virtual>
+</textarea><br>
+<font size=2 color=#000099>write any other information 
+that you have learned about this volcano</font>
+</td>
+</tr>
+
+<tr>
+<td colspan=2 bgcolor="#003333"><font size=+3 color=#CCCCCC>
+<tt><b>sources</b></font></td>
+</tr>
+
+<tr>
+<td valign=top align=right><tt><b>references</b></tt></td>
+<td valign=top><input type="text" name="ref1" size="40" value="http://"><br>
+<input type="text" name="ref2" size="40" value="http://"><br>
+<input type="text" name="ref3" size="40" value="http://"><br>
+<font size=2 color=#000099>provide three web site URLs that you used in your research</font>
+</td>
+</tr>
+<tr>
+<td colspan=2 bgcolor="#003333"><font size=+3 color=#CCCCCC>
+<tt><b>send report</b></font></td>
+</tr>
+
+<tr>
+<td valign=top align=right> </td>
+<td valign=top>
+<input type="submit" value="Send in My Report">  
+<input type="reset" value="Erase Report Form">
+</td>
+</table>
+</form>
+
+</body>
+</html>

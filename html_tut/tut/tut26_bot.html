@@ -1,0 +1,555 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<body bgcolor=#FFFFFF>
+<base target="_top">
+<h1>26. Framed Web Pages</h1>
+<table border=0 cellpadding=6 cellspacing=2>
+<tr>
+<td valign=top align=right><font size=+2 color="#3366FF"><tt><b>Cop:</b></tt></font></td>
+<td valign=top><font size=+2 color="#3366FF">"Web Page, You've Been Framed!"</font></td>
+</tr>
+<tr>
+<td valign=top align=right><font size=+2 color="#FF6666"><tt><b>Web Page:</b></tt></font></td> 
+<td valign=top><font size=+2 color="#FF6666">"That's Ok! Now I can really control my content! Just keep your eye on the top of this screen as you move down with the right side scroll bar.."</font></td>
+</tr>
+</table>
+
+
+<h2>Objectives</h2>
+<p>After this lesson you will be able to:</p>
+<ul>
+<li> Create a web page that consists of multiple frames</li>
+<li> Write hypertext links to load content into a specified area of a framed web page</li>
+<li> Write hypertext links that will load content into a page replacing the framed web page</li>
+<li> Modify the border attributes of a framed web page</li>
+</ul>
+<hr>
+<a name="dlret"></a>
+<h2>Lesson</h2>
+<p><b>Note: If you do not have the working documents from the previous
+lessons, <a href="tut26get.html">download a copy</a> now.</b></p>
+<p>
+You likely have seen web pages that use <b>frames</b>. If you have not already figured it out, this very page uses frames-- if you scroll down through the page for this lesson, the links in the pale orange area at the top of the page stay fixed. It is in a separate frame from the bottom portion.</p>
+<p> 
+Frames make this web page two different HTML documents-- one document defines the layout for the top portion with the navigation links, and the other contains the remainder of this lesson. Each frame is independent of each other.</p>
+<p>
+The advantage is clear for web sites that contain navigation links to many other web pages. For another example, see our <a href="http://www.mcli.dist.maricopa.edu/authoring/" target="_blank">Multimedia Authoring Web</a>, a searchable database that keeps all of the navigation and control elements in the left frame while content is displayed in the right side.</p> 
+<p>
+Hyperlinks have special uses in framed web pages. Sometimes a hyperlink in one frame will replace the content in that frame with new content. Other times a hyperlink will load new content in another frame. And you can have links that will completely replace all of the frames with a new page. This is actually the same kind of link "targeting" we learned in <a href="tut25.html">lesson 25</a>.</p>
+<p>
+<b>What are some disadvantages of frames?</b> As a web designer, you must keep track of more HTML documents. When converted to a framed design, one single HTML file might end up as 3,4, or maybe 12 HTML files. For the viewer, a framed page can take longer to load and display. Poorly designed, framed web pages look crowded and sometimes amateurish. Frames also make it difficult to print paper copies of the entire page. Finally, you may be restricting some users from your site if they have a web browser that does not support frames (most browsers since NetScape 2.0 and Internet Explorer 3.0 display frames).</p>
+<p>
+<b>When should you use frames?</b> The content should tell you. If there is a need to keep some elements on a web page visible at times while changing the content of other areas, frames can be effective.  You can get a better sense by examining other web sites and see how they use frames.</p>
+
+<h3>Frame Basics</h3>
+<p>A web page that uses frames consists of a "master" HTML document, that we'll call the "blueprint" for the layout, that defines the <b>framesets</b>, or the arrangement of the framed areas on the page. This is the document that loads the frame structure and the one that represents the URL for the framed page.</p>
+<p>
+You can devise many ways to slice and dice the web page area:</p>
+<p align=center>
+<IMG SRC="pictures/frame_ex.gif" ALT="types of frames" WIDTH="421" HEIGHT="240">
+</p>
+
+<p>
+Each of the sub-divided areas will be associated with an HTML file that defines what goes into that particular box. Therefore, the first step is to sketch out how the page should be divided up and how much relative space each area needs.</p>
+<p>
+Once you have a visual idea, you must define it in terms of <b>rows</b> and <b>columns</b>, similar to the approach for designing tables (see <a href="tut21.html">lesson 21</a>).  Start working from the upper left to the lower right.</p>
+<p>
+Looking at the sketches above, <font color="#FF6633"><b>example 1</b></font> is made of 2 rows and <font color="#FF6633"><b>example 2</b></font> contains 2 columns. <font color="#FF6633"><b>Example 3</b></font> can be seen either as two rows, each containing two columns, or 2 columns, each of which contains two rows.</p>
+<p>
+Are you still with us? <font color="#FF6633"><b>Example 5</b></font> can be seen as three rows, where the middle row has two columns. So is <font color="#FF6633"><b>Example 6</b></font> except that first row is the one with two columns.</p>
+<p>
+Now, look carefully at <font color="#FF6633"><b>example 7</b></font>. It is divided into 2 rows. The lower row contains 2 columns, each of which contains two rows of differing proportions.</p>
+<p>
+Each collection of rows and columns makes up an HTML <b>frameset</b> and the HTML "blueprint" document for the framed page can have one or more framesets. The HTML format  is  slightly different from the ones we've created so far-- it lacks a set of <b><tt><font color="#000066">&lt;body&gt;...&lt;/body&gt;</font></tt></b> tags. This make sense from what we learned way back in <a href="tut1.html">lesson 1</a> since none of the frameset definitions actually specify the content that appears on the web page (normally everything inside the <b><tt><font color="#000066">&lt;body&gt;...&lt;/body&gt;</font></tt></b> tags,) but rather the structure of how they are arranged.</p>
+<p>
+Below is a generalized format for a "blueprint" HTML document:
+</p>
+<pre><font color=#000066>
+  &lt;!doctype html public &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;Title of this Whole Page&lt;/title&gt;
+     &lt;/head&gt;
+    
+      &lt;FRAMESET ROWS/COLS=&quot;X,Y,...Z&quot;&gt;
+    	&lt;FRAME SRC=&quot;frame_source1.html&quot;&gt;
+    	&lt;FRAME SRC=&quot;frame_source2.html&quot;&gt;
+    	    :
+    	    :
+    	&lt;FRAME SRC=&quot;frame_sourceN.html&quot;&gt;	    
+      &lt;/frameset&gt;
+      &lt;NOFRAMES&gt;
+      This is what someone would see who does not have a web
+      browser that can display frames.
+      &lt;/NOFRAMES&gt;
+  &lt;/html&gt;
+</font></pre>
+
+<b><BLOCKQUOTE>NOTE: Each frameset defines either a set of rows or columns (either <b><tt><font color="#000066">&lt;FRAMESET ROWS=...&gt;</font></tt></b> or <b><tt><font color="#000066">&lt;FRAMESET COLS=...&gt;</font></tt></b>). The values of X, Y, and Z indicate the amount of screen area each row/column will occupy, either in percentages of the browser window size, or an absolute number of pixels. The number of items in this list defines the number of rows or columns. For each row/column specified, this dimension is associated with the HTML document specified in the subsequent list of <b><tt><font color="#000066">&lt;FRAME SRC=...&gt;</font></tt></b> tags.
+<br><br>
+A browser that cannot display frames will ignore everything between the  <b><tt><font color="#000066">&lt;FRAMESET&gt; ...  &lt;/frameset&gt;</font></tt></b> tags and display what is inside of the <b><tt><font color="#000066">&lt;NOFRAMES&gt; ... &lt;/NOFRAMES&gt;</font></tt></b> tags. On the other hand, web browsers that can display framed content will ignore what is inside the <b><tt><font color="#000066">&lt;NOFRAMES&gt; ... &lt;/NOFRAMES&gt;</font></tt></b> tags.
+</bLOCKQUOTE></b>
+<p>
+The most challenging part of designing framed web site is developing the layout structure of this main document. To repeat, the numbers that you provide in the <b><tt><font color="#000066">&lt;FRAMESET...&gt;</font></tt></b> tag, indicate the number of and the dimensions of a set of rows or columns in the page. You can use either percentages (i.e. <b><tt><font color="#000066">ROWS=10%,30%,60%</font></tt></b>) or absolute numbers of screen pixels (i.e. <b><tt><font color="#000066">COLS=100,300,80,200</font></tt></b>). The choice of this depends on whether the design requires a particular frame to always be the same size (use absolute pixels) or if it can scale to the proportions of the viewer's browser window (use percentages). You will see more examples as we go along.</p>
+<p>
+So let's see how some examples might look. Referring again to our example sketches,
+</p>
+<p align=center>
+<IMG SRC="pictures/frame_ex12.gif" ALT="sketches of examples 1 and 2"  WIDTH="199" HEIGHT="120">  
+</p>
+ <p>
+we might write the page for <font color="#FF6633"><b>example 1</b></font> as:
+</p>
+
+<pre><font color=#000066>    &lt;!doctype html public &quot;&shy;//W3C//DTD HTML 3.2 Final//EN&quot;&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;A Two Row Framed Page&lt;/title&gt;
+     &lt;/head&gt;
+  
+      &lt;FRAMESET ROWS=&quot;15%,85%&quot;&gt;
+    	&lt;FRAME SRC=&quot;frame_source1.html&quot;&gt;
+    	&lt;FRAME SRC=&quot;frame_source2.html&quot;&gt;    
+      &lt;/frameset&gt;
+      &lt;NOFRAMES&gt;
+      This is what someone would see who does not have a web
+      browser that can display frames
+      &lt;/NOFRAMES&gt;
+  &lt;/html&gt;
+</font></pre>
+
+<p>
+We could easily modify this document to create the layout of <font color="#FF6633"><b>example 2</b></font>  by changing <b><tt><font color="#000066">ROWS=</font></tt></b> to <b><tt><font color="#000066">COLS=</font></tt></b>. In either of these cases, if the viewer shrinks or expands their web browser window, the areas of the frames will adjust according to the percentages provided. If you wanted to fix a frame at an absolute width, say in <font color="#FF6633"><b>example 1</b></font> to have the top row to always be 100 pixels high, you would change the tag to read:</p>
+
+<pre><font color=#000066>  &lt;FRAMESET ROWS=&quot;100,*&quot;&gt;</font></pre>
+
+<b><BLOCKQUOTE>NOTE: The "*" or "wildcard" value for the dimension tells the web browser to use what ever space is left for the bottom row.</bLOCKQUOTE></b>
+<p>
+Now let's look at a more complex frame document, the one that would define <font color="#FF6633"><b>example 7</b></font>:
+</p>
+
+<div align=center>
+<IMG SRC="pictures/frame_ex7.gif" ALT="sketches of example 7" WIDTH="98" HEIGHT="118">
+</div>
+
+<pre><font color=#000066>    &lt;!doctype html public &quot;&shy;//W3C//DTD HTML 3.2 Final//EN&quot;&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+      &lt;title&gt;A More Complex Framed Page&lt;/title&gt;
+     &lt;/head&gt;
+      &lt;!-- two main rows --&gt;
+      &lt;FRAMESET ROWS=&quot;120,*&quot;&gt;
+      
+      	&lt;!-- row 1 is a single doc --&gt;
+    	&lt;FRAME SRC=&quot;row1.html&quot;&gt;
+    	
+    	&lt;!-- two main columns in row 2 --&gt;
+    	&lt;FRAMESET COLS=&quot;75%,25%&quot;&gt;
+    		&lt;!-- two rows in first column --&gt;
+    		&lt;FRAMESET ROWS=&quot;60%,40%&quot;&gt;
+    			&lt;FRAME SRC=&quot;row2col1row1.html&quot;&gt;
+    			&lt;FRAME SRC=&quot;row2col1row2.html&quot;&gt;
+    		&lt;/frameset&gt;
+    			
+        	&lt;!-- two rows in second column --&gt;
+    		&lt;FRAMESET ROWS=&quot;100,*&quot;&gt;
+    			&lt;FRAME SRC=&quot;row2col21row1.html&quot;&gt;
+    			&lt;FRAME SRC=&quot;row2col21row2.html&quot;&gt;
+    		&lt;/frameset&gt;
+    	&lt;/frameset&gt;
+      &lt;/frameset&gt;
+      &lt;NOFRAMES&gt;
+      This is what someone would see who does not have a web
+      browser that can display frames
+      &lt;/NOFRAMES&gt;
+  &lt;/html&gt;
+</font></pre>
+
+
+<b><BLOCKQUOTE>NOTE: This web page requires 6 different HTML files to display; one blueprint document with the HTML code above plus 5 more HTML documents that make up the content as defined by the <b><tt><font color="#000066">&lt;FRAME SRC...&gt;</font></tt></b> tags. Carefully compare the diagram with the "nesting" of the multiple <b><tt><font color="#000066">&lt;FRAMESET ... &gt; tags.</font></tt></b></bLOCKQUOTE></b>
+
+<p>
+Yes, it  gets complicated! And... you will learn even more things you can do with the HTML code for frames as you work through the examples below. </p>
+<p>
+Now let's work on our Volcano Web site. The page we had created so far for the Research project page, <tt><a href="tut25_ex/proj.html">proj.html</a></tt> has three different sections:</p>
+<ol>
+<li> a description of the project; </li>
+<li> a list of web site references; and</li>
+<li> a bibliography</li>
+</ol>
+
+<p>We are now going to use <b>frames</b> to convert this single page to a framed version shown in the diagram below.</p>
+
+<table border=0 cellpadding=2 cellspacing=2>
+<tr>
+<td valign=top>
+<IMG SRC="pictures/frames_plan.gif" ALT="frame layout for proj.html" WIDTH="350" HEIGHT="224">
+</td>
+<td valign=top>
+The <b>top</b> frame will contain the navigation links to the other pages of our site. Links from this page must replace the entire frame page. The <b>bottom</b> frame will contain our standard page footer, and any links from this area must also replace the entire frame page.
+<p>
+The <b>left frame in the middle row</b> will contain hyperlinks to the three different parts of the original project page. The hyperlinks from here should load content into the frame to the right. The content for the three sections will be displayed in the <b>right frame in the middle row</b>. Any hyperlinks from this area will jump to external web sites that we will load into a new browser window.
+</td>
+</tr>
+</table>
+
+<p>
+This design allows us to break up the project page into more discrete chunks; for now they are small chunks, but perhaps you could see how this might be useful if we had much more content for each section.</p>
+<p>
+Here are the steps to make the framed version of the projects page.</p>
+<ol>
+<li>Change the name of the <b><tt><font color="#000066">proj.html</font></tt></b> file to <b><tt><font color="#000066">proj-noframes.html</font></tt></b>. This will be the page we will send viewers to if they have a browser that cannot display frames. </li>
+<li>Create a new file in your text editor and save it as <b><tt><font color="#000066">proj.html</font></tt></b>. This will be the frame layout page. Enter the following HTML into this file:</li>
+
+<pre><font color=#000066>&lt;!doctype html public &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&gt;
+&lt;html&gt;&lt;head&gt;
+&lt;title&gt;Project&lt;/title&gt;&lt;/head&gt;
+&lt;FRAMESET ROWS=&quot;45,*,150&quot;&gt;
+	&lt;FRAME NAME=&quot;top&quot; SRC=&quot;proj_nav.html&quot; scrolling=&quot;no&quot;&gt;
+
+	&lt;FRAMESET COLS=&quot;24%,*&quot;&gt;			 
+		&lt;FRAME NAME=&quot;menu&quot; SRC=&quot;proj_menu.html&quot;&gt;
+		&lt;FRAME NAME=&quot;display&quot; SRC=&quot;proj_descrip.html&quot;&gt;		 
+	&lt;/FRAMESET&gt;
+	
+	&lt;FRAME NAME=&quot;bottom&quot; SRC=&quot;proj_footer.html&quot; scrolling=&quot;no&quot;&gt;
+&lt;/FRAMESET&gt;
+
+&lt;NOFRAMES&gt;
+&lt;h2 align=center&gt;NOTE: This site uses frames, but apparently your 
+browser does not support this feature. Try the 
+&lt;a href=&quot;proj-noframes.html&quot;&gt;alternative&lt;/a&gt; page.&lt;/h2&gt;
+&lt;/NOFRAMES&gt;
+&lt;/html&gt;
+</font></pre>
+
+<b><BLOCKQUOTE>NOTE: This frameset is set up so the top row is fixed at 45 pixels high, the bottom at 150 pixels, and the middle row will use whatever screen space remains. The <b><tt><font color="#000066">&lt;FRAME NAME=&quot;top&quot; SRC...&gt;</font></tt></b> tags in the top and bottom frames also have the attribute added for <b><tt><font color="#000066">scrolling=no</font></tt></b> which tells the browser not to add any scroll bars to the frame (these frames are small and should not need to have scrolling content). Without this attribute, the browser assumes a setting of <b><tt><font color="#000066">scrolling=auto</font></tt></b> which means scroll bars will appear only if the content is to large to display in the frame area available. You can also force a frame to have scroll bars with a setting of <b><tt><font color="#000066">scrolling=yes</font></tt></b>.
+<br><br>
+Each of the <b><tt><font color="#000066">&lt;FRAME NAME=&quot;top&quot; SRC...&gt;</font></tt></b> also contains an assigned <b><tt><font color="#000066">NAME=</font></tt></b> attribute which we will use shortly when we set up how the frames link to each other. <br><br>
+Finally, note the <b><tt><font color="#000066">&lt;NOFRAMES&gt;</font></tt></b> area that will provide the frame-disabled viewer to jump to another web page that they can use. You can make this more transparent to these users by putting inside the <b><tt><font color="#000066">&lt;NOFRAMES&gt;</font></tt></b> area the HTML code (including everything between and including  the <b><tt><font color="#000066">&lt;BODY&gt;</font></tt></b> and the <b><tt><font color="#000066">&lt;/bODY&gt;</font></tt></b> tags) for the alternative page. We prefer not to do this because the number of users with browsers that do not display frames is decreasing, and this <b><tt><font color="#000066">&lt;NOFRAMES&gt;</font></tt></b> code becomes extra baggage in your HTML files. Either way, you will have to make sure that if you change the content of your framed pages, you also update the frames-alternative pages. You will find many sites that do not even bother offering the alternative, but we suggest that as a courtesy you at least put a message in the <b><tt><font color="#000066">&lt;NOFRAMES&gt;</font></tt></b> area.
+</bLOCKQUOTE></b>
+
+We have set up the frame layout, but now we must create the HTML documents that fills in the content.</li>
+
+<li> <b>top frame</b>: Create a new HTML file in your text editor and save it as <b><tt><font color="#000066">proj_nav.html</font></tt></b>. Enter the following HTML into this file:
+
+<pre><font color=#000066>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2//EN&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;BODY BGCOLOR=#000000 TEXT=#FFFFCC LINK=#33CCFF VLINK=#FF6666&gt;
+&lt;base target=&quot;_top&quot;&gt;
+&lt;h5&gt;Volcano Web / 
+&lt;a href=&quot;index1.html&quot;&gt;Index&lt;/a&gt; / 
+&lt;a href=&quot;mars.html&quot;&gt;back&lt;/a&gt; / 
+&lt;/h5&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</font></pre>
+
+<b><BLOCKQUOTE>NOTE: The use of the special <b><tt><font color="#000066">"_top"</font></tt></b>  name in the <b><tt><font color="#000066">&lt;base target=...&gt;</font></tt></b> tag tells the browser that any of the hypertext links that follow should load their links in a web page that replaces all of the framed content. (See <a href="tut25.html">lesson 25</a> for more on targets). Also for a frame document, we do not need to specify a <b><tt><font color="#000066">&lt;TITLE&gt;..&lt;/TITLE&gt;</font></tt></b> tag in the <b><tt><font color="#000066">&lt;HEAD&gt;</font></tt></b> area (It would not cause a problem if you did , but it has no meaning here; the <b><tt><font color="#000066">&lt;TITLE&gt;..&lt;/TITLE&gt;</font></tt></b> tag  in the <b><tt><font color="#000066">proj.html</font></tt></b> file serves as the title for the entire framed page).</bLOCKQUOTE></b></li>
+
+<li> <b>bottom frame</b>: Create a new HTML file in your text editor and save it as <b><tt><font color="#000066">proj_footer.html</font></tt></b>. Enter the following HTML into this file:
+
+<pre><font color=#000066>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2//EN&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;BODY BGCOLOR=#000000 TEXT=#FFFFCC LINK=#33CCFF VLINK=#FF6666&gt;
+&lt;base target=&quot;_top&quot;&gt;
+&lt;hr&gt;
+&lt;address&gt;&lt;b&gt;&lt;a href=&quot;index1.html&quot;&gt;Volcano Web&lt;/a&gt; : Research Project&lt;/b&gt; &lt;p&gt;
+created by Lorrie Lava, &lt;a href=&quot;mailto:lava@pele.bigu.edu&quot;&gt;lava@pele.bigu.edu&lt;/a&gt;&lt;br&gt;
+Volcanic Studies, &lt;a href=&quot;http://www.bigu.edu/&quot;&gt;Big University&lt;/a&gt;&lt;p&gt;
+&lt;tt&gt;last modified: April 1, 1995&lt;/tt&gt;
+&lt;/address&gt;
+&lt;p&gt;
+&lt;tt&gt;URL: http://www.bigu.edu/web/proj.html&lt;/tt&gt;
+&lt;p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</font></pre></li>
+
+<li> <b>menu frame</b>: Create a new HTML file in your text editor and save it as <b><tt><font color="#000066">proj_menu.html</font></tt></b>. Enter the following HTML into this file:
+
+<pre><font color=#000066>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2//EN&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;BODY BGCOLOR=#000000 TEXT=#FFFFCC LINK=#33CCFF VLINK=#FF6666&gt;
+&lt;base target=&quot;display&quot;&gt;
+&lt;a href=&quot;proj_descrip.html&quot;&gt;
+  &lt;font size=+2 face=&quot;arial,helvetica&quot;&gt;
+  D&lt;/font&gt;ESCRIPTION...&lt;/a&gt;&lt;br&gt;
+of your project.
+&lt;p&gt;
+&lt;a href=&quot;proj_ref.html&quot;&gt;
+  &lt;font size=+2 face=&quot;arial,helvetica&quot;&gt;
+  R&lt;/font&gt;EFERENCES..&lt;/a&gt;&lt;br&gt;
+web sites to research
+&lt;p&gt;
+&lt;a href=&quot;proj_bib.html&quot;&gt;
+  &lt;font size=+2 face=&quot;arial,helvetica&quot;&gt;
+  B&lt;/font&gt;IBLIOGRAPHY...&lt;/a&gt;&lt;br&gt;
+other print resources
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</font></pre>
+
+<b><BLOCKQUOTE>NOTE: This page provides links to the three different parts of the projects content. Note that the  <b><tt><font color="#000066">&lt;base target=&quot;display&quot;&gt;</font></tt></b> tag in this file will make all of three hypertext links load their HTML into the frame we have called "display".
+<br><br>
+Also, we have used some <b><tt><font color="#000066">&lt;font size=... face=...&gt;</font></tt></b> tags to format the text links.</bLOCKQUOTE></b></li>
+
+<li> <b>display frame (description)</b>: Create a new HTML file in your text editor and save it as <b><tt><font color="#000066">proj_descrip.html</font></tt></b>. Enter the following HTML into this file:
+
+<pre><font color=#000066>
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2//EN&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;BODY BGCOLOR=#FFFFCC TEXT=#333333 LINK=&quot;#0000CC&quot; VLINK=#FF6666&gt;
+&lt;h2 align=center&gt;Research Project&lt;/h2&gt;
+Your mission is to find information and report on a volcano, other
+than the ones listed above, that has erupted in the last 100 years.
+Your reports must include:
+&lt;ul type=circle&gt;
+&lt;li&gt;Type of volcano
+&lt;li&gt;Geographic location
+&lt;li&gt;Name, distance, and population of nearest major city
+&lt;li&gt;Date of most recent eruption and date of most destructive
+eruption
+&lt;li&gt;Other events associated with the last eruption (earthquakes,
+floods, mudslides, etc)
+&lt;/ul&gt;
+&lt;p&gt;
+Then, attach a one page description on the major hazards to humans in
+the vicinity of this volcano. Speculate on what you would do if you
+were in charge of minimizing the risk to the population.
+&lt;/body&gt;
+&lt;/html&gt;
+</font></pre>
+
+<b><BLOCKQUOTE>NOTE: This page that describes the research project is the one that is loaded when the frame page is first assembled. It would also be displayed when the viewer clicks the link in the "menu" frame labelled "DESCRIPTION". This content is simply copied from our original <b><tt><font color="#000066">proj.html</font></tt></b> file, but we have turned it's background to a pale yellow for the new framed page.</bLOCKQUOTE></b></li>
+
+
+<li> <b>display frame (reference)</b>: Create a new HTML file in your text editor and save it as <b><tt><font color="#000066">proj_ref.html</font></tt></b>. Enter the following HTML into this file:
+
+<pre><font color=#000066>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2//EN&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;BODY BGCOLOR=#FFFFCC TEXT=#333333 LINK=&quot;#0000CC&quot; VLINK=#FF6666&gt;
+&lt;base target=&quot;_blank&quot;&gt;
+&lt;h2 align=center&gt;References&lt;/h2&gt;
+Use these references to start your research:
+&lt;p&gt;
+&lt;table&gt;
+&lt;tr&gt;
+&lt;td valign=top&gt;
+&lt;ol type=a&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.avo.alaska.edu/&quot;&gt;
+Alaska Volcano Observatory&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;http://vulcan.wr.usgs.gov/home.html&quot;&gt;
+Cascades Volcano Observatory&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.dartmouth.edu/~volcano/&quot;&gt;
+The Electronic Volcano&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.geo.mtu.edu/volcanoes/&quot;&gt;
+Michigan Tech Volcanoes Page&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;http://volcano2.pgd.hawaii.edu/eos/&quot;&gt;
+NASA Earth Observing System (EOS) IDS Volcanology Team&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.geol.ucsb.edu/~fisher/&quot;&gt;
+Volcano Information Center&lt;/a&gt;
+&lt;/ol&gt;
+&lt;/td&gt;
+&lt;td valign=top&gt;
+&lt;ol type=a start=7&gt;
+&lt;li&gt;&lt;a href=&quot;http://vulcan.wr.usgs.gov/Servers/earth_servers.html&quot;&gt;
+Volcano/Earth Science-Oriented Servers&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;http://volcanoes.usgs.gov/&quot;&gt;
+US Geological Survey Volcanic Hazards Program&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.nmnh.si.edu/gvp/&quot;&gt;
+Global Volcanism Program (GVP) &lt;/a&gt;
+&lt;li&gt;&lt;a href= &quot;http://hvo.wr.usgs.gov/volcanowatch/&quot;&gt;
+Volcano Watch Newsletter&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;http://library.advanced.org/17457/&quot;&gt;
+Volcanoes Online&lt;/a&gt;
+&lt;li&gt;&lt;a href=&quot;http://volcano.und.edu/&quot;&gt;
+VolcanoWorld&lt;/a&gt;
+&lt;/ol&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;</font></pre>
+
+<b><BLOCKQUOTE>NOTE: This page that provides web reference links is the one that is loaded when the viewer clicks the link in the "menu" frame labelled "REFERENCES". This content is simply copied from our original <b><tt><font color="#000066">proj.html</font></tt></b> file, but we have turned it's background to a pale yellow for the new framed page.
+<br><br>
+The <b><tt><font color="#000066">&lt;base target=&quot;_blank&quot;&gt;</font></tt></b> tag makes all of the hyperlinks open in a new empty browser window, so links to external site will not displace  our content. Without this tag, all of the hyperlinks would load content into the "display" frame.</bLOCKQUOTE></b></li>
+
+<li> <b>display frame (bibliography)</b>: Create a new HTML file in your text editor and save it as <b><tt><font color="#000066">proj_bib.html</font></tt></b>. Enter the following HTML into this file:
+
+<pre><font color=#000066>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 3.2//EN&quot;&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;/head&gt;
+&lt;BODY BGCOLOR=#FFFFCC TEXT=#333333 LINK=&quot;#0000CC&quot; VLINK=#FF6666&gt;
+&lt;h2 align=center&gt;Bibliography&lt;/h2&gt;
+Check your library for these books:
+&lt;dl&gt;
+&lt;dt&gt;Cas, R.A.F. and Wright, J. V. (1987). 
+&lt;dd&gt;&lt;I&gt;Volcanic Successions: Modern and Ancient.&lt;/I&gt; 
+London: Allen &amp; Unwin.
+
+&lt;dt&gt;La Croix, A. (1904)
+&lt;dd&gt;&lt;I&gt;La Montagna Pel&amp;eacute;e et ses &amp;Eacute;ruptions.&lt;/I&gt;
+Paris: Masson
+
+&lt;dt&gt;Lipman, P.W. and Mullineaux (eds). (1981)
+&lt;dd&gt;&lt;I&gt;The 1980 Eruptions of Mount St. Helens, Washington.&lt;/I&gt;
+U.S. Geological Survey Professional Paper 1250.
+&lt;/dl&gt;
+&lt;/body&gt;
+&lt;/html&gt;</font>
+</pre>
+
+By this point you should have created seven new html files that correspond to the frame design:
+<br><br>
+<IMG SRC="pictures/frames_plan.gif" ALT="frame layout for proj.html" ALIGN=right hspace=6>
+<ol type=1>
+<li> <tt>proj.html</tt> (defines frameset structure)</li>
+<li> <tt>proj_nav.html</tt> (content for <b>top</b> frame, navigation links)</li>
+<li> <tt>proj_footer.html</tt> (content for <b>bottom</b> frame, footer)</li>
+
+<li> <tt>proj_menu.html</tt> (content for <b>menu</b> frame, left side links to portions of projects content)</li>
+<li> <tt>proj_descrip.html</tt> (content for <b>display</b> frame, project description content)</li>
+<li> <tt>proj_ref.html</tt> (content for <b>display</b> frame, project reference content)</li>
+<li> <tt>proj_bib.html</tt> (content for <b>display</b> frame, project bibliography content)</li>
+</ol>
+<br clear=left></li>
+
+<li>Now it is time to test all of the pages we have just made. <b>Load</b> the <b><tt><font color="#000066">proj.html</font></tt></b> file in your web browser. If all went well, it should look like <a href="tut26_ex/proj1.html" target="_blank">this example</a>. If the web screen is blank, then there is probably a mistake in the page that defines the frame structure,  <b><tt><font color="#000066">proj.html</font></tt></b>. If only some of the frames load, then the file names in the <b><tt><font color="#000066">proj.html</font></tt></b> file may not match the files that you have created.
+<br><br>
+Also test the links in your framed page. All hyperlinks from the "top" and "bottom" frames should replace the framed content. Links in the left side "menu" frame should load content to the right side "display" frame.</li>
+</ol>
+
+<H3>A Few More Frame Options</H3>
+<p>We will introduce a few more things you can do with frames. But first, keep in mind that the implementation of many frame options will not be the same on NetScape and Microsoft browsers (thanks for sticking to "standards"!)-- so we will focus on the ones that we have found to be most browser brand independent.</p>
+<p>
+You may have noticed that your web browser places gray frame dividers between the frames. You can set the width of these dividers and even their color.</p>
+<ol>
+<li>Open the <b><tt><font color="#000066">proj.html</font></tt></b> file in your text editor and edit the first <b><tt><font color="#000066">&lt;FRAMESET...&gt;</font></tt></b> tag to read:
+<pre><font color=#000066>  &lt;FRAMESET ROWS=&quot;45,*,150&quot; BORDER=10 frameborder=&quot;1&quot; BORDERCOLOR=&quot;#66CCFF&quot;&gt;
+</font></pre>
+
+ Setting the <b><tt><font color="#000066">frameborder</font></tt></b> parameter to 1 turns on the features for modifying the border features. The <b><tt><font color="#000066">BORDER=...</font></tt></b> option specifies the width of the frame dividers in pixels. And the <b><tt><font color="#000066">BORDERCOLOR=</font></tt></b> attribute lets you choose a color for the frame dividers (see <a href="tut16.html">lesson 16</a> for more on the color codes).
+
+<BLOCKQUOTE><b>NOTE: In our experience the first frameset tag that sets these options controls the following framesets. Other HTML references suggest that each frameset tag can specify different divider widths and colors, but we've not been able to achieve that result in all browsers- as pointed out to us by Nicole Carbonara, you can view different color frame borders (but not widths) in Microsoft Internet Explorer for Windows- see her <a href="tut26_ex/proj2a.html">example</a> that mixes outer red and and interior green borders.
+</b></bLOCKQUOTE></li>
+<li><b>Save</b> and <b>Reload</b> in your web browser. Compare it to our <a href="tut26_ex/proj2.html" target="_blank">colored border example</a>.</li>
+
+
+<li> In our opinion, framed pages with thick (or thin) dividers, look rather "clunky", like a patchwork of squares. We prefer a less obtuse look, where we display the content with no visible borders. We will modify the first <b><tt><font color="#000066">&lt;FRAMESET...&gt;</font></tt></b> tag in our <b><tt><font color="#000066">proj.html</font></tt></b> file as follows:
+
+<pre><font color=#000066>  &lt;FRAMESET ROWS=&quot;45,*,150&quot;  BORDER=0 frameborder=&quot;0&quot;&gt;
+</font></pre>
+
+<BLOCKQUOTE><b>NOTE: These tags may look redundant, but it is what seems to make most browsers behave the same way.
+</b></bLOCKQUOTE></li>
+<li><b>Save</b> and <b>Reload</b> in your web browser. Compare it to our <a href="tut26_ex/proj3.html" target="_blank">invisible frame border example</a>.</li>
+</ol>
+
+<p>Frames are a place where all browsers do not behave the same. NetScape browsers will "pad" the margins of frames with about 4 pixels of blank space, while Internet Explorer places no space padding around the frames. This means viewed in Internet Explorer, the yellow colored "display" frames will have text that almost touches the black "menu" frame to the left. This is hard to read.</p>
+<p>
+Several HTML references list HTML options for setting this margin space (<b><tt><font color="#000066">MARGINWIDTH=X</font></tt></b> and <b><tt><font color="#000066">MARGNHEIGHT=Z</font></tt></b> in the <b><tt><font color="#000066">&lt;FRAME...&gt;</font></tt></b> tag), but we've been unable to obtain consistent results on enough browsers. But as clever HTML coders, we can find a way to insert a "shim" of blank space between the two frames in the middle row.</p>
+<ol>
+<li>Create a new HTML file called <b><tt><font color="#000066">yellow.html</font></tt></b> and enter in this file:
+<pre><font color=#000066>&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;BODY BGCOLOR=#FFFFCC&gt;&lt;/body&gt;&lt;/html&gt;</font></pre>
+Yes, this is a pretty puny HTML document! It is just a blank yellow page that matches the yellow background of the "display" frame.</li>
+
+<li>Edit the <b><tt><font color="#000066">proj.html</font></tt></b> file by changing the lines that read:
+<pre><font color=#000066>	&lt;FRAMESET COLS=&quot;24%,*&quot;&gt;			 
+		&lt;FRAME NAME=&quot;menu&quot; SRC=&quot;proj_menu.html&quot;&gt;
+		&lt;FRAME NAME=&quot;display&quot; SRC=&quot;proj_descrip.html&quot;&gt;		 
+	&lt;/frameset&gt;</font></pre>
+
+to read:
+
+<pre><font color=#000066>	&lt;FRAMESET COLS=&quot;24%,10,*&quot;&gt;			 
+		&lt;FRAME NAME=&quot;menu&quot; SRC=&quot;proj_menu.html&quot;&gt;
+		&lt;FRAME NAME=&quot;spacer&quot; SRC=&quot;yellow.html&quot;&gt;
+		&lt;FRAME NAME=&quot;display&quot; SRC=&quot;proj_descrip.html&quot;&gt;		 
+	&lt;/frameset&gt;</font></pre>
+
+We have inserted a middle column of 10 pixels width in the <b><tt><font color="#000066">&lt;FRAMESET COLS=...&gt;</font></tt></b>
+tag that points to the blank yellow page we created in the previous step. (See how you can mix frame dimensions that are percentages, pixels, and wildcards!)</p>
+
+<li><b>Save</b> and <b>Reload</b> in your web browser. </p>
+</ol>
+
+
+<h2>Check Your Work</h2>
+<p>Compare your web pages with this <a href="tut26_ex/proj.html" target="sample">sample</a>
+of how it should appear. If your pages are different from the sample or the hypertext links do not work correctly, review the text you entered in the text editor. </p>
+
+<h2>Review</h2>
+<p>Review topics for this lesson:</p>
+<ol>
+<li> What are the purposes of the <b><tt><font color="#000066">&lt;FRAMESET..&gt;</font></tt></b> and <b><tt><font color="#000066">&lt;FRAME...&gt;</font></tt></b> tags?</li>
+<li> How many HTML documents would it take to make a framed web page that had 3 rows, each with 2 columns?</li>
+<li> How do you make a hyperlink from one frame load information into another frame?</li> 
+<li> How do you make a hyperlink from one frame go to a URl that replaces the complete framed structure?</li>
+<li> How do you make red thick dividers between frames? How do you make invisible dividers?</li>
+</ol>
+
+<h2>Independent Practice</h2>
+<p>Set up the frameset pages for examples 4 and 8 from the lesson above.</p>
+<p>
+Review your own web pages and try to identify whether frames would offer you any advantages. </p>
+
+<h2>More Information</h2>
+<p>If your framed page has visible dividers/borders, the user can click and drag that border with the mouse to resize the frame dimensions. Try this on the blue frame border at the top of this page. If you would like to prevent this from occurring, add the attribute NORESIZE to any <b><tt><font color="#000066">&lt;FRAME ...&gt;</font></tt></b> tag:</p>
+
+<pre><font color=#000066>		 
+  &lt;FRAME NAME=&quot;myfixedframe&quot; border=8 frameborder=&quot;1&quot; SRC=&quot;fixed.html&quot; NORESIZE&gt;
+</font></pre>
+
+<hr>
+<h2>Coming Next....</h2>
+
+<p>Adding interactivity with JavaScript.</p>
+
+<h5>  GO TO....  | <a href="lessons.html">Lesson Index</a> | 
+<a href="tut25.html">previous:  "Target That Windows"</a> |
+<a href="tut27.html">next:  "JavaScript (some)"</a> |
+
+</h5>
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b>  Lesson 26: Frames
+<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut26.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut26.html</font><br><br>
+
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/InteractiveResource" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/></License></rdf:RDF> -->
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>Measuring Volcano Shapes</title>
+<body bgcolor=#000000>
+<center>
+
+<!-- begin ---------= s h o c k w a v e =-------------------
+The OBJECT tag is used by Internet Explorer and the EMBED tag 
+is used by NetScape Naviagtor. You can add/edit the volcano
+functionality by editing the values for:
+
+  sw1 : names of all volcanoes
+  sw2 : the file names of the volcano images ------------------>
+
+<!-- OBJECT tag used by Microsoft Internet Explorer ----------->
+<object classid="clsid:166B1BCA-3F9C-11CF-8075-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/director/sw.cab#version=7,0,2,0" 
+WIDTH="480" HEIGHT="400" NAME="volcs" ID="hw">
+	<PARAM NAME="SRC" VALUE="../dswmedia/volc_hw.dcr">
+	<PARAM NAME="BGCOLOR" VALUE="#000000">
+	
+	<PARAM NAME="sw1" 
+	  VALUE="San Francisco Peaks AZ,Black Butte CA,Mauna Kea HI,Popacatepetl Mexico">
+	<PARAM NAME="sw2" 
+	   VALUE="sfpeaks.jpg,black_butte.jpg,mauna_kea.jpg,popo.jpg">
+	 
+<!-- EMBED tag used by NetScape Navigator --------------------->  
+<embed src="../dswmedia/volc_hw.dcr" 
+	width=480 height=400 bgcolor=#000000 
+	pluginspage="http://www.macromedia.com/shockwave/download/"
+	sw1="San Francisco Peaks AZ,Black Butte CA,Mauna Kea HI,Popacatepetl Mexico" 
+	sw2="sfpeaks.jpg,black_butte.jpg,mauna_kea.jpg,popo.jpg">
+</embed>
+</OBJECT>
+
+<!-- end -----------= s h o c k w a v e =--------------------->
+
+<form>
+<input type="button" value="close tool" onClick="self.close()">
+</form>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>17. Don't Blink, Don't Marquee</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><I>Writing HTML</I> |
+<a href="index.html">About</a> | <a href="faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="ref/index.html">References</a> | 
+<a href="tags/index.html">Tags</a> |
+<a href="lessons.html">Lessons</a> |
+<a href="tut16.html">previous</a> | 
+<a href="tut18.html">next</a> |</h5>
+
+<h1>17.  Don't Blink, Don't Marquee!</h1>
+<p>Are you trying to attract attention to your web pages? Rely on compelling <b>content</b> rather than <b>cheap</b> attention grabbers...</p>
+
+<h2>Objectives</h2>
+<p>After this lesson you will (hopefully):</p>
+<ul>
+<li> Never use the <b><tt><font color="#000066">&lt;blink&gt;</font></tt></b> tag</li>
+<li> Never use the <b><tt><font color="#000066">&lt;marquee&gt;</font></tt></b> tag</li>
+<li> Understand why you should use HTML that is part of the HTML standard</li>
+</ul>
+<hr>
+
+<h2>Lesson</h2>
+<p>When Netscape first unveiled their web browser they added a unique tag that would ostensibly draw attention to an important word or phrase -- by causing it to flash on and off in the web page. Rather than working through the international <a href="http://www.w3.org/">W3 consortium</a> and developing an accepted standard for this features, they just added the functionality to their web browser.</p>
+<p>
+The dreaded blink tag:</p>
+<pre><font color=#000066>  &lt;blink&gt;Wow&lt;/blink&gt;</font></pre>
+<p>is a sign that well-travelled web surfers take as <font size=+1 face="verdana,helvetica"><b>"avoid this page -- the person that wrote it just learned HTML from a bubble gum wrapper."</b></font></p>
+
+<p> Short of an extremely urgent reason to use it, avoid using this tag. Besides being obnoxious, it does not work on all web browsers! If you are viewing this page in NetScape, the colored text example below will "blink" visible. If you are viewing this page with Internet Explorer, you will not see any blinking text! (too bad, eh?).
+</p>
+
+<table border=2 cellpadding=3 cellspacing=0 align=center> 
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+</tr>
+<tr>
+	<td bgcolor="#CCCCCC"><blink><font color=#BB0000 size=+3>T</font><font color=#BB0000 size=+2>h</font><font  color=#BB0000 size=+4><b>i</b></font><font color=#BB0000 size=+2>s</font></blink> <font size=+1><I>is</I></font> &nbsp; the <blink><font size=+4><b><I><font color=#DD11BB>HOttEST</font></I></b></font></blink><blink><font color=#0033DD size=+3> place</font></blink> 
+<font size=+2>ON THE </font>
+<blink><font color=#0099DD size=+3>Web </font></blink>
+
+	</td>
+</tr>
+</table>
+<p>
+If you are viewing this page with Internet Explorer, this animated GIF shows what NetScape viewers see (they get double blinked on this page, aren't they special?):
+</p>
+<p align=center>
+<img src="pictures/blinking.gif" alt="Blinking Text" width="465" height="70">
+</p>
+<p>
+But not to be outdone, Microsoft created its own special, non-standard tag to work only in Internet Explorer</p>
+
+<pre><font color=#000066>  &lt;marquee&gt;Wow&lt;/marquee&gt;</font></pre>
+
+<p>which takes the text inside and displays it like a ticker tape (one letter added at a time) across the page. So if you are viewing this page in Internet Explorer, you would see this text march across the screen:
+</p>
+
+<table border=2 cellpadding=3 cellspacing=0 align=center width=500> 
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+</tr>
+<tr>
+	<td bgcolor="#CCCCCC"><marquee><font color=#BB0000 size=+3>T</font><font color=#BB0000 size=+2>h</font><font  color=#BB0000 size=+4><b>i</b></font><font color=#BB0000 size=+2>s</font> <font size=+1><I>is</I></font> &nbsp; the <font size=+4><b><I><font color=#DD11BB>HOttEST</font></I></b></font><font color=#0033DD size=+3> place</font>
+<font size=+2>ON THE </font>
+<font color=#0099DD size=+3>Web </font></marquee>
+
+	</td>
+</tr>
+</table>
+<p>
+but if you are using a NetScape browser, nothing moves in the example above, so this animated GIF shows what Internet Explorer viewers see (they get double marqueed on this page, all is fair, eh?):
+</p>
+<p align=center>
+<center>
+<img src="pictures/marquee.gif" alt="Blinking Text" width="550" height="90">
+</center></p>
+<p>
+And who knows what you will see if you are using yet another web browser?</p>
+<p>
+Unless you are building the <tt><b><font color=#FF00EE>sleaze</font></b></tt>  row of web pages, avoid HTML tags like <b><tt><font color=#000066>&lt;blink&gt;...&lt;/blink&gt;</font></tt></b> and  <b><tt><font color=#000066>&lt;marquee&gt;...&lt;/marquee&gt;</font></tt></b> that only work on specific browsers.</p>
+<p>
+Stay with the <a href="http://www.w3.org/MarkUp/">standard HTML</a> endorsed by the <a href="http://www.w3.org/">W3 Constortium.</a></p>
+<p>
+Yes, this is our editorial stance. Go ahead and argue.</p>
+<h2>Coming Next....</h2>
+<p>Let's get out of this drab, monotonous, black text and 
+<b><font face="arial,helvetica" size=+2 color=#CC3300">L</font>
+<font face="arial,helvetica" size=+3 color="#CC3333">I</font>
+<font face="arial,helvetica" size=+4 color="#CC3399">V</font>
+<font face="arial,helvetica" size=+3 color="#CC33FF">E</font>
+<font face="arial,helvetica" size=+2 color="#9933FF">N</font></b> it up a little! You know, take it to the <font face="verdana,hevetica" size=6 color="#000099">n<sup>th</sup></font> degree!
+</p>
+<h5>  GO TO....  | <a href="lessons.html">Lesson Index</a> | 
+<a href="tut16.html">previous:  "Backgrounds"</a> |
+<a href="tut18.html">next:  "Spiffing Up text"</a> |
+</h5>
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b>  Lesson 17: Don't Blink<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut17.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut17.html
+<br><br>
+
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/InteractiveResource" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/></License></rdf:RDF> -->
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Tables References</title>
+<script language="javascript">
+<!-- hide scripts from crusty old browsers
+
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+		} else {  
+
+// send page to designated URL		 	
+   			document.location.href = newURL;
+   		}
+   	}
+   	return true;
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 8;
+}
+
+
+// done hiding -->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" onLoad="resetMenu()">
+<h5><I>Writing HTML</I> |
+<a href="../index.html">About</a> | <a href="../faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="../ref.html">References</a> |
+<a href="../tags/index.html">Tags</a> |
+<a href="../lessons.html">Lessons</a> |
+</h5>
+<p align=center>
+<center>
+<font size=+3><tt>r e f e r e n c e s</tt></font>
+</center>
+</p>
+<center>
+<form name="gomenu">
+<font size=2 face"helvetica,arial" size=2 color=#666666>select a category</font><br>
+<select onChange="goPage(this.options[this.selectedIndex].value.toString())" name="selector">
+<option value = "css.html">Cascading Style Sheets
+<option value = "dhtml.html">Dynamic HTML
+<option value = "cgi.html">Forms and CGI
+<option value = "frames.html">Frames
+<option value = "graphics.html">Graphics
+<option value = "html.html">HTML Reference
+<option value = "java.html">Java
+<option value = "javascript.html">JavaScript
+<option value = "" selected>Tables
+<option value = "design.html">Web Design and Style
+<option value = "xml.html">XML
+<option value = "-"> -----------
+<option value = "all.html"> All References
+</select>
+</form>
+</center>
+
+<noscript>
+<b>The menu above requires JavaScript! Apparently you do not have JavaScript active, so try the <a href="all.html">alternative static reference page</a>.
+</noscript>
+<p>
+<table cellpadding=10 cellspacing=2 border=0>
+<tr>
+<td valign=top align=right bgcolor=#CCFFCC width=110><font size=+2><b>Tables</b></font><br>
+<font color="#333333" face="verdana,helvetica" size=2>The unseen layout for many web sites, but perhaps soon to be displaced by Style Sheets.</font></td>
+<td valign=top>
+<dl>
+
+<dt><b><a href="http://www.ahfb2000.com/htmltables.php">Advanced HTML for Beginners: Tables</a></b>
+<dd>a fairly detailed review of HTML for tables<br>
+<tt>http://www.ahfb2000.com/htmltables.php</tt>
+
+<dt><b><a href="http://wdvl.com/authoring/HTML/Tables/">HTML Tables</a></b>
+<dd>from the Web Developers Virtual Library<br>
+<tt>http://wdvl.com/authoring/HTML/Tables/</tt>
+
+<dt><b><a href="http://www.killersites.com/tutorial/">Killer Tables</a></b>
+<dd>This is part of the fantastic book <i>Creating Killer Web Sites" </i> and the accompanying web site by Dave Siegel, in which he illustrates the use of tables to layout your web pages. We were heavily influenced by this work!<br>
+<tt>http://www.killersites.com/tutorial/</tt>
+<dt><b><a href="http://www.pagetutor.com/pagetutor/tables/index.html">Table Tutor</a></b>
+<dd>a step-by-step guide from Joe Barta<br>
+<tt>http://www.pagetutor.com/pagetutor/tables/index.html</tt>
+</dl>
+</td>
+</tr>
+</table>
+
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b> References<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http%3A//www.mcli.dist.maricopa.edu/tut/">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+

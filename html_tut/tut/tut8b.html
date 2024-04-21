@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>8b. URLs: Pointers to the Internet</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><I>Writing HTML</I> |
+<a href="index.html">About</a> | <a href="faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="ref/index.html">References</a> | 
+<a href="tags/index.html">Tags</a> |
+<a href="lessons.html">Lessons</a> |
+<a href="tut8a.html">previous</a> | 
+<a href="tut8c.html">next</a>   | 
+</h5>
+
+<h1>8b. URLs: Pointers to the Internet</h1>
+<p><font size=+2><tt>URL? Earl? Yurl? hurl? gyrl? </tt></font> <br> 
+It's getting time to link to that Big Wide Web using the web's addressing scheme.
+</p>
+<h2>Objectives</h2>
+<p>After this lesson you will be able to:</p>
+<ul>
+<li>Identify the function of Uniform Resource Locators (URLs).</li>
+<li>Recognize the structure of a URL.</li>
+<li>Examine the URLs in the hypertext links of any web page.</li>
+</ul>
+<hr>
+
+<h2>Lesson</h2>
+<p><b>Note: For this lesson, you will not need your HTML text file.</b>
+This is another low-effort lesson!</p>
+
+<h3>What is a URL?</h3>
+<p>The <a href="http://archive.ncsa.uiuc.edu/demoweb/url-primer.html">Uniform
+Resource Locator (URL)</a> is what the WWW uses to find the location
+of files and documents from computers on the Internet. On your web browser
+screen, the URL for this document is typically displayed in the upper part of
+the Web browser window. The URL includes:</p>
+<ul>
+<li>an identifier for the type of Internet server;</li>
+<li>an Internet address; and</li>
+<li>a file path to the particular item of interest.</li>
+</ul>
+<p>
+The URL is what you will need to build a link from the web page that 
+you are creating to connect to some other piece of information
+available on the Internet. For more information, see
+<a href="http://www.mcli.dist.maricopa.edu/links/Curling-up-2-URLs.html">
+Curling Up To URLs (v0.2)</a></p>
+
+<h3>How are URLs Structured?</h3>
+The structure of a URL is:
+<pre><font color=#000066>    type://in.ter.net.address/directory/sub-directory/.../filename</font></pre>
+
+<p>The <b><tt><font color="#000066">"type"</font></tt></b> indicates the type of Internet server being
+accessed:
+</p>
+<dl>
+<dt><b>http</b>
+<dd> a web server, "HttP"
+stands for HyperText Transfer Protocol<br><br>
+<dt><b>gopher</b>
+<dd> an Internet Gopher site or menu driven directories of files and
+information<br><br>
+<dt><b>ftp</b>
+<dd>an anonymous File Transfer Protocol (FTP) site, archives of
+files.<br><br>
+<dt><b>telnet</b>
+<dd>initiates a Telnet session to log on remotely to another
+computer When selected, your web browser will launch a Telnet external program
+and connect to the specified site.<br><br>
+<dt><b>WAIS</b>
+<dd>Wide Area Indexed Server -- a site to search a collection of
+subject oriented documents by keywords<br><br>
+<dt><b>file</b>
+<dd>A file on your local computer system (hard drive, floppy, local
+file server)
+</dl>
+<p>
+The <b><tt><font color="#000066">type</font></tt></b> is always followed by <b><tt><font color="#000066">"://"</font></tt></b> and the Internet address
+of a remote computer. This is in the structure of:</p>
+<pre><font color="#000066">     host.domain.domain.domain</font></pre>
+<p>For example:</p>
+<pre><font color="#000066">     machine.department.college.edu
+     123.45.6.78
+     office.company.com
+     agency.branch.gov
+     machine.organization.country     
+</font></pre>
+<p>If the URL is to the main level of this host (its "home page"), then the URL is
+terminated with a slash "/". If you are linking to a
+sub-directory or a file, you must also add the exact path to that
+item using the slash character to indicate the entire file path.</p>
+
+<BLOCKQUOTE><b>Note: For most web servers spelling does count! So does capitalization!
+File names on UNIX computers are case sensitive, meaning that a file
+named
+<pre><font color="#000066">     SpiffyText.html</font></pre>
+
+is a different file than  
+<pre><font color="#000066">     spiffytext.html</font></pre></b>
+</bLOCKQUOTE>
+
+<h3>Experimenting With URLs</h3>
+<p>Note that URLs can link to any site, directory, subdirectory,
+text file, image, digital movie, or sound file on any Internet site
+that is set up for public access. The best way to see different URLs is just to move your mouse over any hypertext link in any web page -- if you look at the bottom of your web browser, it should display the URL that you would connect to if you clicked on that link. You could go to a big site such as <a href="http://www.yahoo.com/">Yahoo</a> and "peek" at URLs (did you see the URL for Yahoo when you moved your mouse over the link in the this sentence?)</p>
+<p>
+Here is an easy way to copy a URL for a link in any page. You first must access the "secret" pop-up menu from any hypertext link in a web page -- click and hold the mouse for Macintosh; click the right mouse button for Windows and Unix. From this menu, select <b>Copy This Link Location</b> (or similar menu item). After releasing the mouse button, jump to any text document and select <b>Paste</b> from the <b>Edit</b> menu. Voil&agrave;! You've just nabbed a URL from a link in the web page (this way, you can copy a URL without even visiting the page it links to!)</p>
+
+
+<hr>
+<h2>Review Topics</h2>
+<ol>
+<li>What purpose do URLs serve for the World Wide Web? </li>
+<li>Where are URLs found on a WWW screen? </li>
+<li>What is the basic structure of an URL?</li>
+<li>How can you see the URLs that a hypertext link will jump to?</li>
+</ol>
+<h2>Independent Practice</h2>
+<p>Find some sites on the Internet that intrigue you. For each one,
+record its name and its URL displayed near the top of your browser
+window. See if you can copy and paste the URLs into a text document. You will use this list later to add links from your own web pages to these sites that you found.</p>
+
+<hr>
+<h2> Coming Next....</h2>
+<p>You will use URLs in <b><tt><font color="#000066">anchor</font></tt></b> tags to create links to files on the 
+Internet for your <i>Volcano Web</i> page.
+</p>
+<h5>  GO TO....  | <a href="lessons.html">Lesson Index</a> | 
+<a href="tut8a.html">previous:  " Links to Local Files"</a> |
+<a href="tut8c.html">next:  "Links to the Internet"</a> |
+</h5>
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2><b>Writing HTML:</b> Lesson 8b: URLs: Pointers to the Internet<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut8b.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut8b.html</font><br><br>
+
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/InteractiveResource" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/></License></rdf:RDF> -->
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+
+
+
+

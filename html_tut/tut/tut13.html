@@ -1,0 +1,283 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>13. Blockquotes</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><I>Writing HTML</I> |
+<a href="index.html">About</a> | <a href="faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="ref/index.html">References</a> | 
+<a href="tags/index.html">Tags</a> |
+<a href="lessons.html">Lessons</a> |
+<a href="tut12.html">previous</a> | 
+<a href="tut14.html">next</a> | 
+</h5>
+
+<h1>13. You Can Blockquote Me on That!</h1>
+<p>Yet another simple HTML tag for re-arranging your text:</p>
+
+<BLOCKQUOTE><b>"What is going on here?"</b> asked the <tt><font color="#000066">&lt;blockquote&gt;</font></tt> 
+tag to the <tt><font color="#000066">&lt;p&gt;</font></tt> and <tt><font color="#000066">&lt;br&gt;</font></tt> tags.
+They replied, "We are not sure, but you are very different from us!"</bLOCKQUOTE>
+
+<h2>Objectives</h2>
+<p>After this lesson you will be able to:</p>
+<ul>
+<li>Insert a block of text that is indented from the body text</li>
+<li>Apply style tags within blockquote text</li>
+</ul>
+<hr>
+
+<h2>Lesson</h2>
+<p><a name="dlret"></a><b>Note: If you do not have the working documents from the previous
+lessons, <a href="tut13get.html">download a copy</a> now.</b></p>
+<p>
+In traditional writing, quotations of three or more sentences are set off from
+the main text as an indented block of text. HTML also includes this capability
+via the <b><tt><font color="#000066">&lt;blockquote&gt;....&lt;/blockquote&gt;</font></tt></b> tag:</p>
+
+<pre><font color=#000066>
+&lt;blockquote&gt;
+"This is a long quotation from a very famous person. Since it is so long
+and interesting, it should really be set off from the rest of the text.
+This indicates clearly that the quote is from someone other than the writer."
+&lt;/blockquote&gt;
+</font></pre>
+
+<p>which yields:</p>
+
+
+<table border=2 cellpadding=3 cellspacing=0 align=center width=75%> 
+
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+</tr>
+<tr>
+	<td bgcolor=#EEEEEE>
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+<BLOCKQUOTE>"This is a long quotation from a very famous person. Since it is so long
+and interesting, it should really be set off from the rest of the text.
+This indicates clearly that the quote is from someone other than the writer."
+</bLOCKQUOTE>
+
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah	</td>
+</tr>
+</table>
+
+<p>
+Note that we can apply any and all HTML we have learned so far <b>inside</b> of the
+<b><tt><font color="#000066">&lt;blockquote&gt;</font></tt></b> tags, such as this example:</p>
+
+<PRE><font color=#000066>&lt;blockquote&gt;
+&lt;H2&gt;A Manifesto&lt;/H2&gt;
+This is a &lt;b&gt;long&lt;/b&gt; quotation from a 
+&lt;a href=&quot;http://www.mcli.dist.maricopa.edu/alan/&quot;&gt;
+very famous person&lt;/a&gt;. 
+Since it is so long and interesting, it should really be
+&lt;pre&gt;     set off&lt;/pre&gt;
+from the rest of the text.
+&lt;p&gt;
+&lt;I&gt;This indicates&lt;/I&gt;:
+&lt;ul&gt; 
+&lt;li&gt;clearly that 
+&lt;li&gt;the quote is from 
+&lt;li&gt;someone other than the writer.
+&lt;/ul&gt;
+&lt;/blockquote&gt;</font>
+</PRE>
+
+<p>which yields the following:</p>
+
+
+<table border=2 cellpadding=3 cellspacing=0 align=center width=75%> 
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+</tr>
+<tr>
+	<td bgcolor=#EEEEEE>	
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+<blockquote>
+<H2>A Manifesto</H2>
+This is a <b>long</b> quotation from a 
+<a href="http://www.mcli.dist.maricopa.edu/alan/">very famous person</a>. 
+Since it is so long and interesting, it should really be
+<pre>    set off</pre>
+from the rest of the text.
+<p>
+<I>This indicates</I>:
+<ul> 
+<li>clearly that </li>
+<li>the quote is from </li>
+<li>someone other than the writer.</li>
+</ul>
+</blockquote>
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah 
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+	blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+	</td>
+</tr>
+</table>
+
+<p>
+Let's add a blockquote to the introduction of our Volcano web page. We will
+use blockquote from the Roman naturalist, Pliny, who witnessed the eruption
+of the volcano Vesuvius in 79 A.D.</p>
+
+<ol>
+<li>Open the HTML file, <b><tt><font color="#000066">index.html</font></tt></b> in your text editor.</li>
+<li>Under the <b><tt><font color="#000066">&lt;h1&gt;Volcano Web&lt;/h1&gt;</font></tt></b> heading, add the following:
+<pre><font color=#000066>
+  &lt;BLOCKQUOTE&gt;
+  &lt;b&gt;&lt;I&gt;
+  &quot;Nature raves savagely, threatening the lands&quot;
+  &lt;/I&gt;&lt;/b&gt;&lt;br&gt;
+   -- &lt;a href=&quot;http://www.livius.org/pi-pm/pliny/pliny_e.html&quot;&gt;
+  Pliny the Elder&lt;/a&gt;, who died of asphyxiation after 
+  observing the destruction of Pompeii by the
+  79 A.D. eruption of Mount Vesuvius.
+  &lt;/bLOCKQUOTE&gt;
+</font></pre>
+<BLOCKQUOTE><b>NOTE: See how we have used a combination of the bold and italic style tags
+(see <a href="tut5.html">Lesson 5</a>) to highlight the quote. The citation 
+is forced to a new line
+with the <tt><font color="#000066">&lt;br&gt;</font></tt> tag (see <a href="tut4.html">Lesson 4</a>). 
+We have also hyper linked "Pliny the Elder" to another web site that contains
+more information about Pliny and his life.
+<br><br>
+See also how the <tt><font color="#000066">&lt;blockquote&gt;</font></tt> tag forces a paragraph break
+above and below the block of text.
+<br><br>
+And finally, these NOTES (like this one) we have used through the tutorial have made use
+of the <tt><font color="#000066">&lt;blockquote&gt;</font></tt> tag!</b></bLOCKQUOTE></li>
+<li><b>Save</b> and <b>Reload</b> the HTML file.</li>
+</ol>
+
+
+<h2>Check Your Work</h2>
+<p>Compare your web page with a <a href="tut13_ex/index.html">sample</a>
+of how this document should appear. If your
+document was different from the sample, review the text you
+entered in the text editor.</p>
+
+<h2>Review</h2>
+<p>Review topics for this lesson:</p>
+<ol>
+<li>What does the <b><tt><font color="#000066">&lt;blockquote&gt;</font></tt></b> tag do?</li>
+<li>Why don't you need a <b><tt><font color="#000066">&lt;p&gt;</font></tt></b> tag before a blockquote?</li>
+</ol>
+
+<h2>Independent Practice</h2>
+<p>Experiment with the <b><tt><font color="#000066">&lt;blockquote&gt;</font></tt></b> tag in your own web page.
+Do not just think in terms of using it only for quotations. The tag can
+be effective for adding some variety to your web page layout. The  <b><tt><font color="#000066">&lt;blockquote&gt;</font></tt></b> tag is one way 
+to avoid having many pages full worth of plain text paragraphs.</p>
+<p>
+Some developers will use two or three (or more) nested <b><tt><font color="#000066">&lt;blockquote&gt;</font></tt></b> tags to create an effect of wider margins. For example,</p>
+<PRE><font color=#000066>&lt;BLOCKQUOTE&gt;
+  &lt;BLOCKQUOTE&gt;
+    &lt;BLOCKQUOTE&gt;&quot;Oh, for more tags,&quot; he lamented.
+      &lt;p&gt;Replied she, &quot;Remember, dear, that while HTML may
+      be limited in terms of control 
+      over page layout, there is a great 
+      deal of potential in the creative use 
+      of the number of tags.&quot;
+    &lt;/bLOCKQUOTE&gt;
+  &lt;/bLOCKQUOTE&gt;
+&lt;/bLOCKQUOTE&gt;</font></PRE>
+<p>
+produces:</p>
+
+
+<table border=2 cellpadding=3 cellspacing=0 align=center width=75%> 
+
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+</tr>
+<tr>
+	<td bgcolor=#EEEEEE>
+<BLOCKQUOTE>
+  <BLOCKQUOTE>
+    <BLOCKQUOTE>"Oh, for more tags," he lamented.
+      <p>Replied she, "Remember, dear, that while HTML may
+      be limited in terms of control 
+      over page layout, there is a great 
+      deal of potential in the creative use 
+      of the number of tags."
+    </bLOCKQUOTE>
+  </bLOCKQUOTE>
+</bLOCKQUOTE>
+	</td>
+</tr>
+</table>
+
+<p>
+If had just used one set of <b><tt><font color="#000066">&lt;BLOCKQUOTE&gt; ... &lt;/bLOCKQUOTE&gt;</font></tt></b> tags, we would have seen:</p>
+
+<table border=2 cellpadding=3 cellspacing=0 align=center width=75%> 
+
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+</tr>
+<tr>
+	<td bgcolor=#EEEEEE>
+    <BLOCKQUOTE>"Oh, for more tags," he lamented.
+      <p>Replied she, "Remember, dear, that while HTML may
+      be limited in terms of control 
+      over page layout, there is a great 
+      deal of potential in the creative use 
+      of the number of tags."
+    </bLOCKQUOTE>
+	</td>
+</tr>
+</table>
+
+<p>You cannot predict the exact amount of spacing this will provide on the sides of the pages, but it is an easy and effective variation for presenting text.</p>
+
+<hr>
+<h2>Coming Next....</h2>
+<p>Divide a single web page into logical, connected "chunks"... </p>
+
+<h5>  GO TO....  | <a href="lessons.html">Lesson Index</a> | 
+<a href="tut12.html">previous:  "Address Footers and E-Mail Links"</a> |
+<a href="tut14.html">next:  "Lumping v.s. Splitting"</a> |
+</h5>
+
+			
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b>  Lesson 13: Blockquotes<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut13.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut13.html</font><br><br>
+
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/InteractiveResource" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/></License></rdf:RDF> -->
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+
+
+

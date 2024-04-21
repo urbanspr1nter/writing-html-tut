@@ -1,0 +1,414 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>27c. JavaScript- Window Openers</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><I>Writing HTML</I> |
+<a href="index.html">About</a> | 
+<a href="faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="ref/index.html">References</a> | 
+<a href="tags/index.html">Tags</a> |
+<a href="lessons.html">Lessons</a> |
+<a href="tut27b.html">previous</a> | 
+<a href="tut27d.html">next</a> | 
+</h5>
+
+<IMG SRC="pictures/dose.gif" ALIGN=LEFT WIDTH="77" HEIGHT="180" HSPACE="18">
+<h1>27c. JavaScript : Window Openers</h1>
+
+<p><font size=+2 face="helvetica,arial" color="#CC6699"><b> So you want to open Browser Windows?<br><br>
+JavaScript Does Windows...<br><br>
+ Where you Want Them, How big You Want Them, and with What Browser Buttons You Choose... </b>
+</font></p>
+<br clear=left>
+
+<h2>Objectives</h2>
+<p>After this lesson you will be able to:</p>
+<ul>
+<li> Write JavaScript code that opens another web browser window of any size and any combination of browser features</li>
+<li> Write JavaScript code that opens another web browser window in a specific screen location (for version 4.0 browsers)</li>
+<li> Write a JavaScript function in the <b><tt><font color="#000066">&lt;HEAD&gt;...&lt;/HEAD&gt;</font></tt></b> that can be used several  times</li>
+</ul>
+<hr>
+
+<a name="dlret"></a>
+<h2>Lesson</h2>
+<p>
+<b>Note: If you do not have the working documents from the previous
+lessons, <a href="tut27cget.html">download a copy</a> now.</b></p>
+<p>
+In <a href="tut25.html">lesson 25</a>, we learned how to add a TARGET option to a hyperlink so that a mouse click would load the link in a new browser window. You may have noticed that this second window opens with the same web browser buttons and fields as the original window, and that it is usually the same size as that first window.</p>
+<p>
+With JavaScript we can write code that creates a new window of arbitrary size, and we can instruct it not to display the URL field or the web browser navigation buttons. Furthermore, for 4.0 version web browsers, we can even specify where the window should appear on the screen.</p>
+<p>
+Why would we want to do this? If we are doing something like loading an image in a new web browser window, there is no real need for all of the browser buttons and fields, which take up valuable screen real estate. Furthermore, it allows us to create small web browser windows that can work like "tool palettes" in other computer programs. </p>
+<p>
+<A NAME="try">How about trying it out?</a></p> 
+<p>
+Look at <a href="pictures/macdougal.jpg" onClick="window.open('pictures/macdougal.jpg', 'volc', 'status,resizable,scrollbars,width=740,height=290'); return false">this photo of a crater in Mexico that opens in long skinny window</a> or this one of a <a href="pictures/agassiz.jpg" onClick="window.open('pictures/agassiz.jpg', 'volc', 'status,resizable,scrollbars,width=425,height=290'); return false">volcanic mountain in Arizona</a> that opens in a window that fits the image. Finally, try looking at our <a href="pictures/dose.gif" onClick="window.open('pictures/dose.gif', 'volc', 'status,resizable,toolbar,scrollbars,width=125,height=200,screenX=125,screenY=100,top=125,left=100'); return false">pink JavaScript bottle</a> in a small window that displays browser buttons.</p>
+
+<p>
+The general JavaScript approach to writing this code looks like:
+</p>
+
+<pre><font color=#000066>  &lt;a href=&quot;URL&quot; 
+  onClick=&quot;window.open('URL', 'window_name', 'window_options'); return false&quot;&gt;
+  linking text&lt;/a&gt;
+</font></pre>
+<p>
+where <b><tt><font color="#000066">URL</font></tt></b> is the URL for the image that we wish to display in this new window. As we saw in <a href="tut27a.html">lesson 27a</a> we use the same URL in the <b><tt><font color="#000066">href</font></tt></b> part and include a <b><tt><font color="#000066">return=false</font></tt></b> in the JavaScript <b><tt><font color="#000066">onClick</font></tt></b> code just in case the person looking at our page has a browser that does not understand JavaScript. In this case, the link tag will jump to a page that displays the picture by itself in a full web page.</p>
+<p>
+The <b><tt><font color="#000066">onClick</font></tt></b> JavaScript event initiates the action;  a command called <b><tt><font color="#000066">window.open()</font></tt></b> that talks to the web browser and tells it to open a new window. The window is filled with the content specified by the URL in the first parameter, which in the above examples was an image file, but could also be a local HTML file or a remote URL. The second parameter provides a "name" for this window, in case we use it again to target a link (see <a href="tut25.html">lesson 25</a>).</p>
+<p>
+The third parameter is where we list all the options that indicate how the window will appear. These items are all in one string of text enclosed in quotes:</p>
+<ol>
+<li><tt><font color=#000066>toolbar</font></tt><br>
+displays the browser buttons (forward, back, home, print, etc)</li>
+<li><tt><font color=#000066>location</font></tt><br>
+displays the field that shows the URL for the window</li>
+<li><tt><font color=#000066>directories</font></tt><br>
+displays other web browser directory buttons</li>
+<li><tt><font color=#000066>status</font></tt><br>
+displays the browser status bar at the bottom</li>
+<li><tt><font color=#000066></font>menubar</font></tt><br>
+displays the web browser menu bar</li>
+<li><tt><font color=#000066>resizable</font></tt><br>
+allows user to change the size of the window</li>
+<li><tt><font color=#000066>scrollbars</font></tt><br>
+provides scroll bars if the content is larger than the window size</li>
+<li><tt><font color=#000066>width=XX</font></tt><br>
+specifies the width of the window when opened, in pixels</li>
+<li><tt><font color=#000066>height=YY</font></tt><br>
+specifies the height of the window when opened, in pixels</li>
+</ol>
+
+<p>You can list the first seven as <tt><font color=#000066>OPTION=yes</font></tt> or <tt><font color=#000066>OPTION=no</font></tt> to indicate that we want them to be used or not used in our newly opened window, separating each by a comma. For example:</p>
+
+<pre><font color=#000066>  I have provided a sneak peek of 
+  &lt;a href=&quot;myimage.gif&quot; 
+  onClick=&quot;window.open('myimage.gif', 'myWin', 
+  'toolbar=no, directories=no, location=no, 
+  status=yes, menubar=no, resizable=no, scrollbars=no, 
+  width=300, height=200'); 
+  return false&quot;
+  &gt;my image&lt;/a&gt; for you to see.
+</font></pre>
+
+<p><p>will create a link to open an image file <b><tt><font color="#000066">myimage.gif</font></tt></b> in window named "myWin", that shows no browser buttons, and is pretty much a fixed window size; you cannot resize it or scroll it.</p>
+<p>
+On the other hand, we could link to a URL in a new window:</p>
+
+<pre><font color=#000066>
+  How about trying the best  
+  &lt;a href=&quot;http://www.mcli.dist.maricopa.edu/tut/&quot;   
+  onClick=&quot;window.open('http://www.mcli.dist.maricopa.edu/tut/', 
+  'myWin', 'toolbar=yes, directories=no, location=no, status=yes, menubar=no, 
+  resizable=yes, scrollbars=yes, width=500, height=400'); return false&quot;
+  &gt;web page tutorial in the universe&lt;/a&gt; for free!
+</font></pre>
+
+<p>This code provides the browser navigation buttons (but not the extra directory ones) and the URL display field. The window is opened at a window that is 500 pixels wide and 400 pixels high, and we allow the viewer to resize it and the window will have scrollbars activated.</p>
+<p>
+You can write these options more compactly by just listing the ones that you wish to activate; the browser assumes the ones not mentioned are turned "off". For example, here is the alternative way to write the two examples above:</p>
+
+<pre><font color=#000066>
+  I have provided a sneak peek of 
+  &lt;a href=&quot;myimage.gif&quot; 
+    onClick=&quot;window.open('myimage.gif', 'myWin', 
+    'status, width=300, height=200'); return false&quot;&gt;my image&lt;/a&gt; 
+    for you to see.
+
+   How about trying the best 
+   &lt;a href=&quot;http://www.mcli.dist.maricopa.edu/tut/&quot; 
+     onClick=&quot;window.open('http://www.mcli.dist.maricopa.edu/tut/', 
+     'myWin',
+     'toolbar,status,resizable,scrollbars,width=500,height=400');
+     return false&quot;&gt;
+     web page tutorial in the universe&lt;/a&gt; for free!
+</font></pre>
+
+<p>With the 4.0 versions (and later) of NetScape and Internet Explorer browsers, we can also, through JavaScript, specify the location on the screen that the window opens. These dimensions are given in pixels,  measured horizontally and vertically down from the top left corner of the screen. Older web browsers will just ignore these options.</p>
+<p>
+Unfortunately, NetScape and Internet Explorer use different names for these options! So to make it work on both browsers, you must specify the settings twice:</p>
+<ol>
+<li><tt><font color=#000066>screenX=hh,screenY=yy</font></tt><br>
+specifies the location of the upper left corner of the window, measured from the top left corner of the monitor (for NetScape 4.0 and later)</li>
+<li><tt><font color=#000066>left=hh,top=yy</font></tt><br>
+specifies the location of the upper left corner of the window, measured from the top left corner of the monitor (for Internet Explorer 4.0 and later)</li>
+</ol>
+
+<p>
+Adding on to our earlier example, this code will tell 4.0 version web browsers to place the window 100 pixels over and 75 pixels down from the top left corner of the viewer's screen:</p>
+
+<pre><font color=#000066>  I have provided a sneak peek of 
+  &lt;a href=&quot;myimage.gif&quot; 
+  onClick=&quot;window.open('myimage.gif', 'myWin', 
+  'status, width=300, height=200, screenX=100,screenY=75,left=100,top=75');
+  return false&quot;&gt;my image&lt;/a&gt; for you to see.
+</font></pre>
+
+<h3>Putting it in Your &lt;HEAD&gt;</h3>
+
+<p>We will soon move on to our <i>Volcano Web</i> example for creating custom window openers. To date, we have written small JavaScript segments that are added to hyperlink tags or embedded into the body of a page to write dynamic content. For a task like opening  windows to display a series of images, it makes sense to write a generic chunk of JavaScript code that can do this task, and all we have to tell it is which picture it should load. This is the purpose of a JavaScript <b>function</b>, a block of code we can re-use as much as we need to perform a similar task.</p>
+<p>
+The typical place to write JavaScript functions is to put them into the non-display part of our document inside the <b><tt><font color="#000066">&lt;HEAD&gt;...&lt;/HEAD&gt;</font></tt></b> tags. This way, we can load the "brains" of our JavaScript into the web browsers, and then call it as we need from our document.</p>
+<p>
+For our <i>Volcano Web</i> site, we are going to modify the page that discusses <a href="tut27b_ex/usa.html">Volcanoes from the USA</a>. We have a link from a small picture of a seismometer that loads a larger verson of that image into a separate web browser window (using the TARGET attribute of the hyperlink tag). We will add some links to this document that display pictures of other Volcano landforms, and we will use JavaScript to load these images into a new window.</p>
+<p>
+But rather than just loading a picture in a window, we want to tell JavaScript, "Here is the image file, a title, and a caption; please load a new web browser window with the image and write some caption text on the bottom of the page". So we will use JavaScript to create the new window and then write dynamic content to that window from a template. We want this ability to be written as a function, so we can use it for 4 different images.</p>
+<p>
+<ol>
+<li> Open the <b><tt><font color="#000066">usa.html</font></tt></b> file in your text editor.</li>
+<li> Between the tags:
+<pre><font color=#000066>&lt;head&gt;
+&lt;title&gt;Volcanic Places in the USA&lt;/title&gt; </font></pre>
+
+and
+
+<pre><font color=#000066>&lt;/head&gt;</font></pre>
+
+add this JavaScript function:
+
+<pre><font color=#000066>
+&lt;SCRIPT LANGUAGE=&quot;JavaScript&quot;&gt;
+&lt;!-- hide this script from old browsers
+
+// This script opens a new browser window and writes
+// HTML to display an image with a title and caption
+
+function show_photo( pFileName, pTitle, pCaption) {
+
+// specify window parameters
+  photoWin = window.open( &quot;&quot;, &quot;photo&quot;,
+     &quot;width=600,height=450,status,scrollbars,resizable,
+     screenX=20,screenY=40,left=20,top=40&quot;);
+
+// wrote content to window
+  photoWin.document.write('&lt;html&gt;&lt;head&gt;&lt;title&gt;' + 
+    pTitle + '&lt;/title&gt;&lt;/head&gt;');	
+  photoWin.document.write('&lt;BODY BGCOLOR=#000000 TEXT=#FFFFCC
+    LINK=#33CCFF VLINK=#FF6666&gt;');
+  photoWin.document.write('&lt;center&gt;');
+  photoWin.document.write('&lt;font size=+3 
+    face=&quot;arial,helvetica&quot;&gt;&lt;b&gt;' + 
+    pCaption + '&lt;/b&gt;&lt;/font&gt;&lt;br&gt;');
+  photoWin.document.write('&lt;img src=&quot;' + 
+    pFileName + '&quot;&gt;&lt;p&gt;');
+  photoWin.document.write('&lt;font face=
+    &quot;arial,helvetica&quot;&gt;');
+  photoWin.document.write( '&quot;' + pTitle + 
+    '&quot; photo &amp;copy; Lorrie Lava&lt;br&gt;');
+  photoWin.document.write('&lt;a href=&quot;mailto:
+    lava@pele.bigu.edu&quot;&gt;
+    lava@pele.bigu.edu&lt;/a&gt;&lt;br&gt;');
+  photoWin.document.write('Volcanic Studies, 
+    &lt;a href=&quot;http://www.bigu.edu/&quot;&gt;
+    Big University&lt;/a&gt;');
+  photoWin.document.write('&lt;p&gt;&lt;/font&gt;
+    &lt;/body&gt;&lt;/html&gt;');
+  photoWin.document.close();	
+	
+// If we are on NetScape, we can bring the window to the front
+	if (navigator.appName.substring(0,8) == 
+	   &quot;Netscape&quot;) photoWin.focus();
+}
+// done hiding from old browsers --&gt;
+&lt;/SCRIPT&gt;
+</font></pre>
+
+If you would like to copy and paste this code, use this <a href="tut27c_ex/cut1.html" target="_blank">sample of HTML</a> that will load in a new browser window.
+
+</li>
+</ol>
+<p>Our function is named <b><tt><font color="#000066">show_photo</font></tt></b>; when we use it in our pages, we will send it three pieces of information  listed as the <b>variables</b> <b><tt><font color="#000066">pFileName</font></tt></b> (the URL for the image file), <b><tt><font color="#000066">pTitle</font></tt></b> (a string of text for the title of the web page we will create via JavaScript), and <b><tt><font color="#000066">pCaption</font></tt></b> (a short caption to display below the image). These three items can be different every time we use it but are represented in our function by their variable names.</p>
+<p>
+We then use the <b><tt><font color="#000066">window.open</font></tt></b> function to create a window that is 600 wide  by 400 pixels high; note that unlike our earlier examples, the first parameter for this function, the window URL, is empty. That's because the page that will fill the window does not exist. In fact, we will use the <b><tt><font color="#000066">document.write</font></tt></b> function in the subsequent lines to write the entire contents for that page. By using the notation <b><tt><font color="#000066">photoWin.document.write</font></tt></b>, we are telling the web browser to write the content to the new window using the template provided. Note that near the end, we let the browser know we are done by the code <b><tt><font color="#000066">photoWin.document.close();</font></tt></b></p>
+<p>
+The last little bit is some special code that allows our function to tell NetScape browsers to bring this window in front of any other web browser windows (This function is not yet available to Internet Explorer browsers).</p>
+<p>
+
+As it stands now, we only have built the functionality for our window opener. We will now create the code that "calls" the function:
+
+<ol>
+<li> In your <b><tt><font color="#000066">usa.html</font></tt></b> document, replace the two ocurrences of:
+
+<pre><font color=#000066>&lt;a href=&quot;../pictures/seismo.jpg&quot; target=&quot;photo&quot;&gt;</font></pre>
+
+with this new code:
+
+<pre><font color=#000066>&lt;a href=&quot;../pictures/seismo.jpg&quot; 
+  onClick=&quot;show_photo('../pictures/seismo.jpg', 'Field Seismometer', 
+  'Volcanic Tableland, Long Valley, California'); return false&quot; 
+  onMouseOver=&quot;window.status='view a large image of a field seismometer'; 
+  return true&quot;&gt;</font></pre>
+
+<blockquote><b>NOTE: We use the <b><tt><font color="#000066">onClick</font></tt></b> event to trigger a call to our JavaScript function. The picture to load in the new window is <b><tt><font color="#000066">seismo.jpg</font></tt></b>, the title for the new page is <b><tt><font color="#000066">Field Seismometer</font></tt></b>, and the caption to be placed at the bottom is <b><tt><font color="#000066">Volcanic Tableland, Long Valley, California</font></tt></b>. If our function works, it will generate a web page in a new window that contains this information in the format specified by our function.
+<br><br>
+We also use the <b><tt><font color="#000066">onMouseOver</font></tt></b> event to control the display in the status bar when the user moves the mouse over this link (see <a href="tut27a.html">lesson 27a</a>)
+</b></blockquote></li>
+
+<li> <b>Save</b> and <b>Reload</b> in your web browser. </li>
+</ol>
+
+<p>When you click on either the postage stamp image of the seismometer or the hypertext link below it, a new web browser window should appear, and the larger picture is displayed in a black background page with yellow text (you may have to scroll down to see the caption). If it did not work, compare it to <a href="tut27c_ex/usa1.html">the sample web page</a> for this part of this lesson.</p>
+<p>
+
+We will now demonstrate the usefulness of writing JavaScript functions-- using the same code for different content. In our previous versions of the document we have been working on, <b><tt><font color="#000066">usa.html</font></tt></b> the link listed under Mount St Helens went to another web page, <b><tt><font color="#000066">msh.html</font></tt></b>, which had only one sentence and a link to an image. We will no longer use this second web page, and instead, we will modify our first page to just display this image in a new browser window.</p>
+
+<ol>
+<li> Open your <b><tt><font color="#000066">usa.html</font></tt></b> file in your text editor.</li>
+<li> Change the HTML under the Mount St. Helens section that reads:
+
+<pre><font color=#000066>&lt;td valign=top&gt;On May 18, 1980, after a long period of rest, 
+this quiet mountain in Washington provided 
+&lt;a href=&quot;msh.html&quot;&gt;detailed observations&lt;/a&gt; on
+the mechanics of highly explosive eruptions.
+&lt;/td&gt;</font></pre>
+
+to read:
+
+<pre><font color=#000066>
+&lt;td valign=top&gt;On May 18, 1980, after a long period of rest, 
+this quiet mountain in Washington provided detailed observations on
+the mechanics of highly explosive eruptions. The towering pine trees 
+of this once-quiet mountain were &lt;a href=&quot;../pictures/msh.gif&quot;
+onClick=&quot;show_photo('../pictures/msh.gif', 'Trees Toppled', 
+'Mount St. Helens Blast Area'); return false&quot; 
+onMouseOver=&quot;window.status='view a photo showing the strength of the eruption'; 
+return true&quot;&gt; toppled over like toothpicks&lt;/a&gt;. 
+&lt;/td&gt;
+</font></pre>
+
+<blockquote><b>NOTE: We are using the same JavaScript function that we wrote for the link to the seismometer image to display a different image title, and caption for the Mount St. Helens picture.
+</b></blockquote></li>
+
+<li> <b>Save</b> and <b>Reload</b> in your web browser. 
+</ol>
+
+<a name="studio"></a>
+
+<p>But let's not stop here! We will add two more description sections to this document, and use our JavaScript function to display two new volcano images.</p>
+
+<ol>
+<li> Go to the <a href="tut27cimg.html">Lesson 27c Image Studio</a> to get copies of the pictures of MacDougal Crater and Mt Agassiz.</li>
+<li> Open your <b><tt><font color="#000066">usa.html</font></tt></b> file in your text editor.</li>
+<li> We will add a new row for our table in this page, so immediately before the <tt><font color=#000066>&lt;/table&gt;</font></tt> tag, add this code:
+
+<pre><font color=#000066>
+&lt;tr&gt;
+&lt;td&gt;
+  &lt;font size=+1&gt;&lt;b&gt;
+  San Francisco Peaks
+  &lt;/b&gt;&lt;/font&gt;
+&lt;/td&gt;
+
+&lt;td colspan=2&gt;
+  &lt;font size=+1&gt;&lt;b&gt;
+  MacDougal Crater
+  &lt;/b&gt;&lt;/font&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td valign=top&gt;Scientists believe that the volcanic eruptions 
+several million years ago that shaped 
+&lt;a href=&quot;../pictures/agassiz.jpg&quot; 
+onClick="show_photo('../pictures/agassiz.jpg', 'Mount Agassiz', 
+'San Francisco Peaks, Arizona'); return false"
+onMouseOver="window.status='view an image of a volcano in Arizona'; 
+return true"&gt;this mountain in northern Arizona&lt;/a&gt; 
+were very similar to the ones observed at Mount St. Helens.
+&lt;/td&gt;
+
+&lt;td valign=top colspan=2&gt;
+When hot volcanic magma encounters ground water, 
+these explosive eruptions can 
+form &lt;a href=&quot;../pictures/macdougal.jpg&quot; 
+onClick="show_photo('../pictures/macdougal.jpg', 'MacDougal Crater', 
+'Pincate Volcanic region, Mexico'); return false"
+onMouseOver="window.status='view an image of a volcanic crater in Mexico'; 
+return true"&gt;deep craters&lt;/a&gt; seen just south of Arizona in 
+the Pincate Volcanic region of Mexico.
+&lt;/td&gt;
+&lt;/tr&gt;
+</font></pre></li>
+
+<li> Since we now have more than two volcanic places listed on this page, change the first sentence to read:
+
+<pre><font color=#000066>  Listed below are places in the United States that are considered
+  "active" volcanic areas.</font></pre>
+
+(remove the word "two")</li>
+
+<li> <b>Save</b> and <b>Reload</b> in your web browser.</li>
+</ol>
+
+<p>
+If all works well, you will have four different links that reference the same JavaScript function to generate different content!</p>
+
+<h2>Check Your Work</h2>
+<p>Compare your web pages with this <a href="tut27c_ex/usa.html" target="sample">sample</a>
+of how it should appear. If your pages are different from the sample or the hypertext links do not work correctly, review the text you entered in the text editor. Note that JavaScript is <b>very</b> sensitive to typographical mistakes -- one missing quote or semi-colon can ruin the page! Make sure to check that you do not have extra RETURN characters inside your JavaScript statements.</p>
+
+
+<h2>Review</h2>
+<p>Review topics for this lesson:</p>
+<ol>
+<li> What are the differences between opening a new browser window with JavaScript as compare to using the TARGET attribute in a hyperlink?</li>
+<li> How can you open a new browser window to this web lesson page that has no browser buttons but shows the URLs in the display field?</li>
+<li> How can you make a new web browser window open 300 pixels down from the top of the screen? Will it work on all web browsers?</li>
+<li> Why do we place JavaScript functions in the <b><tt><font color="#000066">&lt;HEAD&gt;..&lt;/HEAD&gt;</font></tt></b> of our HTML documents?</li>
+<li> What are advantages of using JavaScript functions?</li>
+</ol>
+
+
+<h2>Independent Practice</h2>
+<p>Use our custom window opener in your own web pages. See if you can update the format for the HTML that it writes dynamically.</p> 
+<p>
+What are some purposes you might want to use a small window that opens from your site? Can it be used like a Navigation control?</p>
+
+<hr>
+<h2>Coming Next....</h2>
+
+<p>It is our last JavaScript Dose... Swapping images in response to user interactions...</p>
+
+<h5>  GO TO....  | <a href="lessons.html">Lesson Index</a> | 
+<a href="tut27b.html">previous:  "JavaScript: Dynamic Content"</a> |
+<a href="tut27d.html">next:  "JavaScript: Swapping Images"</a> |</h5>
+
+
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b>  Lesson 27c: A Wee Dose of JavaScript : Window Openers
+<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut27c.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut27c.html</font>
+<br><br>
+
+<!--Creative Commons License--><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/"><img alt="Creative Commons License" border="0" src="http://creativecommons.org/images/public/somerights20.png"/></a><br/>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/2.5/">Creative Commons Attribution-NonCommercial-NoDerivs 2.5 License</a>.<!--/Creative Commons License--><!-- <rdf:RDF xmlns="http://web.resource.org/cc/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+		<Work rdf:about="">
+			<license rdf:resource="http://creativecommons.org/licenses/by-nc-nd/2.5/" />
+	<dc:type rdf:resource="http://purl.org/dc/dcmitype/InteractiveResource" />
+		</Work>
+		<License rdf:about="http://creativecommons.org/licenses/by-nc-nd/2.5/"><permits rdf:resource="http://web.resource.org/cc/Reproduction"/><permits rdf:resource="http://web.resource.org/cc/Distribution"/><requires rdf:resource="http://web.resource.org/cc/Notice"/><requires rdf:resource="http://web.resource.org/cc/Attribution"/><prohibits rdf:resource="http://web.resource.org/cc/CommercialUse"/></License></rdf:RDF> -->
+</font>
+</p>
+<!-- end writing HTML footers  -->
+
+</body>
+</html>
+
+
+
+

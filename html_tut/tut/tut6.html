@@ -1,0 +1,336 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+			"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html>
+<head>
+<title>6. Lists, Lists, Lists</title>
+</head>
+<body bgcolor="#FFFFFF">
+<h5><I>Writing HTML</I> |
+<a href="index.html">About</a> | <a href="faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+<a href="ref/index.html">References</a> | 
+<a href="tags/index.html">Tags</a> |
+<a href="lessons.html">Lessons</a> |
+<a href="tut5.html">previous</a>   | 
+<a href="tut7.html">next</a>   | 
+</h5>
+
+<h1>6. Lists, Lists, Lists</h1>
+<p>Lists can present items of information in an easy-to-read
+format.  In fact, there is a list right here, lurking under the next
+heading!</p>
+<h2>Objectives</h2>
+<p>After this lesson, you will be able to:</p>
+<ul>
+<li>Identify HTML codes for creating unordered, ordered, and nested
+lists for a web page.</li>
+<li>Place different list types within your HTML document and view
+the changes within your web page.</li>
+</ul>
+<hr>
+<h2>Lesson</h2>
+
+<p>Many web pages display lists of items -- these may be items
+preceded with a "bullet" (Unordered) or a sequentially numbered list
+(Ordered). </p>
+<p>
+These lists are easy to format in HTML, and they may even be nested
+(lists of lists) to produce an outline format. Lists are also handy
+for creating an index or table of contents to a series of documents
+or chapters.</p>
+
+<h3>Unordered Lists</h3>
+<p>Unordered Lists, or <b><tt><font color="#000066">&lt;ul&gt; .. &lt;/ul&gt;</font></tt></b> tags, are ones that appear as a list
+of items with "bullets" or markers in the front. The bullet marks
+will depend on the particular version of your web browser and the font
+specified for displaying normal WWW text (e.g. for Macintosh, the
+bullets are the option-8 character -- in Times font this is a small
+square, in Geneva it is a large round dot).</p>
+<p>
+Here is an example of an unordered list:<p>
+
+
+<table border=2 cellpadding=3 cellspacing=0 align=center width=40% align=center> 
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+</tr>
+<tr>
+	<td bgcolor=#EEEEEE>
+<b>My Unordered List:</b>
+<ul>
+<li> Item 1
+<li> Item 2
+<li> Item 3
+</ul>
+	</td>
+</tr>
+</table>
+
+<p>
+And this is the HTML format for producing this format:</p>
+<pre><font color=#000066>
+     &lt;b&gt;My Unordered List:&lt;/b&gt;
+     &lt;ul&gt;
+       &lt;li&gt; Item 1
+       &lt;li&gt; Item 2
+       &lt;li&gt; Item 3
+     &lt;/ul&gt;
+</font></pre>
+<p>
+The <b><tt><font color="#000066">&lt;ul&gt;</font></tt></b> tag marks the beginning and end of the list, and the <b><tt><font color="#000066">&lt;li&gt;</font></tt></b> indicates each <b>l</b>ist <b>i</b>tem.</p>
+
+
+<h4>Ordered Lists</h4>
+<p>Ordered lists are ones where the browser numbers each successive list
+item starting with "1." Note that the only difference is
+changing the <b><tt><font color="#000066">ul</font></tt></b> tag to <b><tt><font color="#000066">ol</font></tt></b> tag.</p>
+<p>
+Using the example from above:</p>
+
+
+	<table border=2 cellpadding=3 cellspacing=0 align=center width=40% align=center> 
+	
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+	</tr>
+	<tr>
+		<td bgcolor=#EEEEEE>
+	<b>My Ordered List:</b>
+	<ol>
+	<li> Item 1
+	<li> Item 2
+	<li> Item 3
+	</ol>
+		</td>
+	</tr>
+	</table>
+
+<p>And this is the HTML format for producing this format:</p>
+<pre><font color=#000066>
+     &lt;b&gt;My Ordered List:&lt;/b&gt;
+     &lt;ol&gt;
+       &lt;li&gt; Item 1
+       &lt;li&gt; Item 2
+       &lt;li&gt; Item 3
+     &lt;/ol&gt;
+</font></pre>
+
+<h3>Nested Lists</h3>
+<p>Ordered Lists and Unordered lists can have different levels; each
+will be indented appropriately by your web browser. Your major concern will be
+to verify that each list is properly terminated and the nesting order
+is correct.</p>
+<p>
+It can start to look complicated with all of those &lt;ol&gt; &lt;li&gt; &lt;/ul&gt; &lt;li&gt; tags
+floating around, but just try to remember the basic structure:</p>
+
+<pre><font color=#000066>
+      &lt;ul&gt;            &lt;ol&gt;
+          &lt;li&gt;           &lt;li&gt;
+          &lt;li&gt;           &lt;li&gt;
+      &lt;/ul&gt;           &lt;/ol&gt;
+</font></pre>
+<p>
+Here is an example of an unordered list with sublevels of
+other lists:</p>
+
+
+	<table border=2 cellpadding=3 cellspacing=0 align=center width=75% align=center> 
+	
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+	</tr>
+	<tr>
+		<td bgcolor=#EEEEEE>
+<b>Nested Unordered List</b>
+<ul>
+<li> This is the first item
+<li> This is the second item
+<ul>
+<li> This is the first subitem of the second item
+<ul>
+<li> And this is a subitem of a subitem
+<li> Getting lost yet?
+</ul>
+<li> This is the second subitem of the second item
+<li> This is the third subitem of the second item
+</ul>
+<li> This is the third item
+</ul>
+		</td>
+	</tr>
+	</table>
+
+<p>Note how the bullet marks change for different levels of the list.</p>
+<p>
+And this is the HTML format for producing this format:</p>
+<pre><font color=#000066>
+  &lt;b&gt;Nested Unordered List&lt;/b&gt;
+  &lt;ul&gt;
+     &lt;li&gt;This is the first item
+     &lt;li&gt;This is the second item
+     &lt;ul&gt;
+       &lt;li&gt; This is the first subitem of the second item
+       &lt;ul&gt;
+         &lt;li&gt; And this is a subitem of a subitem
+         &lt;li&gt; Getting lost yet?
+       &lt;/ul&gt;
+       &lt;li&gt; This is the second subitem of the second item
+       &lt;li&gt; This is the third subitem of the second item
+       &lt;/ul&gt;
+     &lt;li&gt;This is the third item
+  &lt;/ul&gt;
+</font></pre>
+
+<h3>Nested Lists  -- Mixing them together</h3>
+<p>Not only can you include ordered lists within ordered lists, but you can
+also mix and match list types.
+Hold onto your hats! The HTML starts to look pretty ugly, but watch
+how lists completely contain other lists.</p>
+<p>
+For example, this ordered list includes a nested unordered list:</p>
+
+	<table border=2 cellpadding=3 cellspacing=0 align=center width=75% align=center> 
+	
+<tr>
+	<td align=center valign=top background="pictures/bar.gif"><IMG SRC="pictures/sample.gif" ALT="sample web page" WIDTH="155" HEIGHT="15"></td>
+	</tr>
+	<tr>
+		<td bgcolor=#EEEEEE>
+<b>Nested Unordered List</b>
+<b>Nested Unordered List</b>
+<ol>
+<li>This is the first item
+<li>This is the second item
+<ul>
+<li>This is the first subitem of the second item
+<ol>
+<li>An this is a numbered subitem of a subitem
+<li>An this is another numbered subitem of a subitem
+<li>Getting lost yet?
+</ol>
+<li>This is the second subitem of the second item
+<li>This is the third subitem of the second item
+</ul>
+<li>This is the third item
+</ol>
+		</td>
+	</tr>
+	</table>
+<p>
+And this is the HTML format for producing this format. Note how the
+HTML has been indented to make it easier to read:</p>
+<pre><font color=#000066>
+&lt;b&gt;Nested Unordered List&lt;/b&gt;
+     &lt;ol&gt;
+        &lt;li&gt;This is the first item
+        &lt;li&gt;This is the second item
+           &lt;ul&gt;
+           &lt;li&gt; This is the first subitem of the second item
+              &lt;ol&gt;
+              &lt;li&gt; And this is a numbered subitem of a subitem
+              &lt;li&gt; And this is another numbered subitem of a subitem
+              &lt;li&gt; Getting lost yet?
+              &lt;/ol&gt;
+           &lt;li&gt; This is the second subitem of the second item
+           &lt;li&gt; This is the third subitem of the second item
+           &lt;/ul&gt;
+        &lt;li&gt;This is the third item
+     &lt;/ol&gt;</font></pre>
+
+<h3>Placing Lists in Your HTML Document</h3>
+<p><a name="dlret"></a><b>Note: If you do not have the working document from the previous
+lesson, <a href="tut6get.html">download a copy</a> now. </b></p>
+<p>
+Using the <b>list</b> tags, you will now add an ordered and an
+unordered list to your <i>Volcano Web</i> page.</p>
+
+<ol>
+<li>Re-open your workspace (if not already opened).</li>
+<li>Open your HTML document in the text editor.</li>
+<li>Under the <b><tt><font color="#000066">Volcano Terminology</font></tt></b> header we will use an
+unordered list to display examples of technical words used in the
+study of volcanoes. Go to this section in your HTML document.</li>
+<li>First add the following sentence.  
+<pre><font color=#000066>     How many of these do you know?</font></pre></li>
+<li>Now enter the HTML format to create the list of terms:
+<pre><font color=#000066>      &lt;ul&gt;
+          &lt;li&gt;caldera
+          &lt;li&gt;vesicularity
+          &lt;li&gt;pahoehoe
+          &lt;li&gt;rheology
+          &lt;li&gt;lahar
+      &lt;/ul&gt;
+</font></pre></li>
+<li>Now we will use an ordered list to define the required parts of
+the assignment in this lesson. Under the <b><tt><font color="#000066">Research
+Project</font></tt></b> heading, enter the following: (HINT -- this might be a
+good time to copy and paste from the web page, unless you enjoy
+typing in text!)
+<pre><font color=#000066>
+  Your mission is to find information and report on a volcano, 
+  other than the ones listed above, that has erupted in the last 
+  100 years. Your reports must include:
+  &lt;ol&gt;
+    &lt;li&gt;Type of volcano
+    &lt;li&gt;Geographic location
+    &lt;li&gt;Name, distance, and population of nearest major city
+    &lt;li&gt;Dates of most recent and most destructive eruptions.
+    &lt;li&gt;Other events associated with the recent eruptions  
+    (earthquakes, floods, mudslides, etc)
+  &lt;/ol&gt;
+  &lt;p&gt;
+  Then, write a one page description on the major hazards to humans 
+  in the vicinity of this volcano. Speculate on what you would do 
+  if you were in charge of minimizing the risk to the population.
+</font></pre></li>
+<li><b>Save</b> your HTML file and <b>Reload</b> in your web browser.</li>
+</ol>
+<hr>
+<h2>Check Your Work</h2>
+<p>You may want to compare your document with a <a
+href="tut6_ex.html">sample</a> for this section. If your list is
+different than the list in the sample, review how you entered your
+list in your text editor. Make sure it matches the instructions in
+the <b>Placing Lists in Your HTML Document</b> section of this
+lesson.</p>
+<h2>Review Topics</h2>
+<ol>
+<li>How are lists valuable in a web page?</li>
+<li>What is the HTML tag for a unordered list?</li>
+<li>What is the tag for a ordered list?</li>
+<li>How might you set up a nested list?</li>
+<li>What steps did you use in adding a list to your HTML document?</li>
+</ol> 
+<h2>Independent Practice</h2>
+<p>You may want to experiment with changing the ordered list you created to one that is
+unordered. Also, insert an ordered or an unordered list of items to your own WWW
+document. Be sure to verify that it displays correctly in your web browser.
+Can you create a list that includes sub-lists?</p>
+<hr>
+<h2>Coming Next....</h2>
+<p>Making it more than just plain text -- adding pictures to your page.
+</p>
+<h5> GO TO....  |  <a href="lessons.html">Lesson Index</a> | 
+<a href="tut5.html">previous:  "Stylized Text"</a> |
+<a href="tut7.html">next:  "Graphics"</a> |
+</h5>
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b>  Lesson 6: Lists, Lists, Lists<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http://www.mcli.dist.maricopa.edu/tut/tut6.html">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/tut6.html
+
+</font>
+</p>
+</body>
+</html>
+

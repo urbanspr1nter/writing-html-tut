@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Writing HTML References</title>
+<script language="javascript">
+<!-- hide scripts from crusty old browsers
+
+function goPage (newURL) {
+// This function is called from the pop-up menus to transfer to
+// a different page. Ignore the value returned is a null string
+
+   	if (newURL != "") {
+   	
+// skip the menu dividers and reset the menu selection to default
+   		if (newURL == "-" ) {
+			resetMenu();
+		} else {  
+
+// send page to designated URL		 	
+   			document.location.href = newURL;
+   		}
+   	}
+   	return true;
+}
+
+function resetMenu() {
+// resets the menu selection upon entry to this page
+   document.gomenu.selector.selectedIndex = 0;
+}
+
+
+// done hiding -->
+</script>
+
+</head>
+<body bgcolor="#FFFFFF" onLoad="resetMenu()">
+<h5><I>Writing HTML</I> |
+<a href="../index.html">About</a> | <a href="../faq.html">FAQ</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/ten_alumni.php">Alumni</a> |
+<a href="http://www.mcli.dist.maricopa.edu/tut/kudos.php">Kudos</a> |
+References | 
+<a href="../tags/index.html">Tags</a> |
+<a href="../lessons.html">Lessons</a> |
+</h5>
+
+<img src="../pictures/tut.gif" alt="..." width="397" height="114"><br>
+<i>/ June 2000 / version 4.5.2 /
+<a href="../version.html">version history</a> /</i>
+<p align=center>
+<center>
+<font size=+3><tt>r e f e r e n c e s</tt></font>
+</center>
+</p>
+<p>
+These resources included other tutorials and references that may help you along the way or fill in the gaps we have not explained. We highly recommend <a href="http://html.about.com/">About.com</a>, <a href="http://www.htmlgoodies.com/">HTML Goodies</a>, <a href="http://www.gettingstarted.net/">gettingstarted.net</a>, <a href="http://webreference.com/">webreference.com</a>, <a href="http://www.webteacher.org/">webTeacher</a>, <a href="http://builder.cnet.com/">builder.com</a>, <a href="http://www.projectcool.com/developer/">projectcool's  developerzone</a>, <a href="http://www.hotwired.com/webmonkey/">webmonkey</a>, <a href="http://www.weballey.net/">WEBalley</a>, or <a href="http://webreview.com/">Web Review</a>.</p>
+<p>
+The <a href="http://www.webteacher.org/">WebTeacher</a> site in particular offers a very comprehensive set of tutorials that are clearly written and cover everything from basics of web browsers to file formats to Java and CGI.
+</p>
+<p>
+Because our list of references grew long, we broke it into sections that you can navigate using the menu below (you will learn how to do this yourself in <a href="../tut28c.html">lesson 28c</a>). If you wish, you can still view <a href="all.html">all of the references on a single page</a>.</p>
+<center>
+<center>
+<form name="gomenu">
+<select onChange="goPage(this.options[this.selectedIndex].value.toString())" name="selector">
+<option value = "" selected>Select a category...
+<option value = "css.html">Cascading Style Sheets
+<option value = "dhtml.html">Dynamic HTML
+<option value = "cgi.html">Forms and CGI
+<option value = "frames.html">Frames
+<option value = "graphics.html">Graphics
+<option value = "html.html">HTML Reference
+<option value = "java.html">Java
+<option value = "javascript.html">JavaScript
+<option value = "tables.html">Tables
+<option value = "design.html">Web Design and Style
+<option value = "xml.html">XML
+<option value = "-"> -----------
+<option value = "all.html"> All References
+</select>
+</form>
+</center>
+
+<noscript>
+<b>The menu above requires JavaScript! Apparently you do not have JavaScript active, so try the <a href=".all.html">alternative static reference page</a>.
+</noscript>
+
+
+<!-- begin writing HTML footers  -->
+<hr size=1 noshade>
+<p align=center>
+<font face="verdana,helvetica" size=2>
+<b>Writing HTML:</b> References<br>
+&copy;1994-2002 <a href="http://www.mcli.dist.maricopa.edu/">
+Maricopa Center for Learning and Instruction (MCLI)</a><br>
+<a href="http://www.maricopa.edu/">Maricopa Community Colleges</a><br>
+Questions? Comments? Visit our <B><A HREF="http://www.mcli.dist.maricopa.edu/feedback/index.php?url=http%3A//www.mcli.dist.maricopa.edu/tut/ref/">feedback center</A></B>
+
+<br><br>
+URL: http://www.mcli.dist.maricopa.edu/tut/
+</font>
+</p>
+<!-- end writing HTML footers  -->
+</body>
+</html>
+
+

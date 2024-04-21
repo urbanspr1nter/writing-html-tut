@@ -21,4 +21,10 @@ The website looked like this:
 
 ## Viewing
 
-You will find all the files in `html_tut`. The starting page is `index.html`. You can view the site locally in any modern web browser. Most files are downloaded, so broken links should be minimal if referencing anything related to the tutorial. (Of course, external links may take you to no where nowadays.)
+You will find all the files in `html_tut`. The starting page is `start.html`. You can view the site locally in any modern web browser. Most files are downloaded, so broken links should be minimal if referencing anything related to the tutorial. (Of course, external links may take you to no where nowadays.)
+
+## Archived ZIP
+
+Additionally, the original ZIP archive is also included in this repository as `writinghtml.zip`.
+
+Why? Data hoarding, I suppose.
